@@ -1,4 +1,7 @@
-dotfiles
+Atoms custom dotfiles
 ========
 
-My dotfiles
+Setting up
+```bash
+  ln -s workspace/dotfiles/tmux.conf .tmux.conf;
+```
