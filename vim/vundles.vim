@@ -10,6 +10,8 @@ Plugin 'gmarik/Vundle.vim'
 
 
 " ~/.vim/vundles/ to edit them:
+runtime appearance.vundle
+runtime vim-inprovements.vundle
 runtime languages.vundle
 
 

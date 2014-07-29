@@ -1,3 +1,5 @@
+" https://github.com/spf13/spf13-vim
+"
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
@@ -104,4 +106,6 @@ set sidescroll=1
 
 
 " ================ Custom Settings ========================
-"so ~/.yadr/vim/settings.vim
+for fpath in split(globpath('~/.vim/settings', '*.vim'), '\n')
+  exe 'source' fpath
+endfor
