@@ -1,2 +1,3 @@
 Plugin 'itchyny/lightline.vim'
-Plugin 'skwp/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized.git'
+Plugin 'flazz/vim-colorschemes'

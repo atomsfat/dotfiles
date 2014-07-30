@@ -13,6 +13,8 @@ Plugin 'gmarik/Vundle.vim'
 runtime appearance.vundle
 runtime vim-inprovements.vundle
 runtime languages.vundle
+runtime project.vundle
+runtime vim-improvements.vundle
 
 
 

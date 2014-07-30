@@ -1,9 +1,10 @@
+set background=dark
+colorscheme solarized
 if has("gui_running")
     "tell the term has 256 colors
     set t_Co=256
 
     "colorscheme molokai
-    colorscheme solarized
     set guitablabel=%M%t
     set lines=60
     set columns=190
