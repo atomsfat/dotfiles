@@ -109,3 +109,7 @@ set sidescroll=1
 for fpath in split(globpath('~/.vim/settings', '*.vim'), '\n')
   exe 'source' fpath
 endfor
+
+" ================ AutoSave ===============================
+:au FocusLost * silent! wa
+

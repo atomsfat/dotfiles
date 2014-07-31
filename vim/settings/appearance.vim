@@ -16,7 +16,7 @@ if has("gui_running")
     endif
 
     if has("gui_mac") || has("gui_macvim")
-        set guifont=Menlo:h12
+        set guifont=Menlo:h13
         set transparency=7
     endif
 
