@@ -1,8 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/Users/tomas/workspace/gee/mediotiempo/mt-fan'
 let g:netrw_dirhist_2='/Users/tomas/workspace/gee/mediotiempo/mt-fan/src'
 let g:netrw_dirhist_3='/Users/tomas/workspace/gee/mediotiempo/mt-fan'
 let g:netrw_dirhist_4='/Users/tomas/workspace/gee/mediotiempo/mt-fan/src'
 let g:netrw_dirhist_5='/Users/tomas/workspace/gee/mediotiempo/mt-fan/src/main'
 let g:netrw_dirhist_6='/Users/tomas/workspace/gee/mediotiempo/mt-fan/src/main/resources'
+let g:netrw_dirhist_7='/Users/tomas/workspace/gee/oso/raml2code'
+let g:netrw_dirhist_8='/Users/tomas/workspace/gee/oso/raml2code/test'
+let g:netrw_dirhist_9='/Users/tomas/workspace/gee/oso/raml2code'

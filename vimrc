@@ -113,3 +113,5 @@ endfor
 " ================ AutoSave ===============================
 :au FocusLost * silent! wa
 
+" ================ highlighting search matches ============
+:set hlsearch

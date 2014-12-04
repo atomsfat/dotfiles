@@ -1,5 +1,11 @@
 Atoms custom dotfiles
 ========
+Some ideas from:
+spf13
+yadr
+
+Install power line fonts
+https://github.com/Lokaltog/powerline-fonts
 
 Setting up
 ```sh
