@@ -16,6 +16,7 @@ Setting up
   ln -s workspace/dotfiles/vim .vim
   ln -s workspace/dotfiles/nvimrc .nvimrc
   ln -s workspace/dotfiles/nvim .nvim
+  git clone https://github.com/gmarik/Vundle.vim.git ~/.nvim/bundle/Vundle.vim
 ```
 To install linters
 ```sh
