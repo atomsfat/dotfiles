@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm vi-mode brew gradle grails)
+plugins=(git nvm vi-mode brew gradle grails mvn)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,6 +87,10 @@ if [ -n "$TMUX" ]; then
   unset GVM_INIT
 fi
 
+alias jjs='rlwrap $(/usr/libexec/java_home -v 1.8)/bin/jjs'
+function setjava() {
+export JAVA_HOME=$(/usr/libexec/java_home -v $1)
+} 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
 [[ -s "/Users/tomas/.gvm/bin/gvm-init.sh" ]] && source "/Users/tomas/.gvm/bin/gvm-init.sh"
 
