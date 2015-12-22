@@ -45,7 +45,7 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git nvm vi-mode brew gradle grails mvn)
+plugins=(git nvm vi-mode brew gradle )
 
 source $ZSH/oh-my-zsh.sh
 
@@ -91,6 +91,5 @@ alias jjs='rlwrap $(/usr/libexec/java_home -v 1.8)/bin/jjs'
 function setjava() {
 export JAVA_HOME=$(/usr/libexec/java_home -v $1)
 } 
-#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/Users/tomas/.gvm/bin/gvm-init.sh" ]] && source "/Users/tomas/.gvm/bin/gvm-init.sh"
 
+export SDKMAN_DIR="/Users/tomas/.sdkman" && source "/Users/tomas/.sdkman/bin/sdkman-init.sh"
