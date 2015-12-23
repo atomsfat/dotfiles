@@ -91,5 +91,3 @@ alias jjs='rlwrap $(/usr/libexec/java_home -v 1.8)/bin/jjs'
 function setjava() {
 export JAVA_HOME=$(/usr/libexec/java_home -v $1)
 } 
-
-export SDKMAN_DIR="/Users/tomas/.sdkman" && source "/Users/tomas/.sdkman/bin/sdkman-init.sh"
