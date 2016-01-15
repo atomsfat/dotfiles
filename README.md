@@ -18,6 +18,13 @@ Setting up
   ln -s workspace/dotfiles/nvim .nvim
   git clone https://github.com/gmarik/Vundle.vim.git ~/.nvim/bundle/Vundle.vim
 ```
+For brew nvim
+```sh
+  ln -s ~/.vim ~/.config/nvim
+  ln -s ~/.vimrc ~/.config/nvim/init.vim
+```
+
+
 To install linters
 ```sh
   npm install -g eslint
