@@ -116,3 +116,8 @@ endfor
 
 " ================ highlighting search matches ============
 :set hlsearch
+
+" ================ Turning solarized 
+
+set background=dark
+colorscheme solarized
