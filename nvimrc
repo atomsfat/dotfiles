@@ -30,6 +30,12 @@ set hidden
 "turn on syntax highlighting
 syntax on
 
+
+syntax enable
+set background=dark
+colorscheme solarized
+
+
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
 " The mapleader has to be set before vundle starts loading all
@@ -116,3 +122,8 @@ endfor
 
 " ================ highlighting search matches ============
 :set hlsearch
+
+" ================ Turning solarized 
+
+set background=dark
+colorscheme solarized
