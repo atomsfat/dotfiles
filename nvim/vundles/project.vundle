@@ -1,2 +1,3 @@
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'kien/ctrlp.vim'
+Plugin 'rizzatti/dash.vim'
