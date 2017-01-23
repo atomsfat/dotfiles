@@ -26,6 +26,42 @@ exe 'map <silent> <Leader>9 :tabn 9<cr>'
 tnoremap <C-q> <C-\><C-n> 
 
 
+" ==== Compile things
+autocmd Filetype java set makeprg=javac\ %
+set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+map <silent> <Leader>c :make<CR>:copen<CR>
+
+
+map <silent> <Leader>r :call CompileRun()<CR>
+func! CompileRun()
+  exec "w"
+  if &filetype == 'c'
+    exec "!gcc % -o %<"
+    exec "!time ./%<"
+  elseif &filetype == 'cpp'
+    exec "!g++ % -o %<"
+    exec "!time ./%<"
+  elseif &filetype == 'java'
+    exec "!javac %"
+    exec "!time java -cp %:p:h %:t:r"
+    set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+  elseif &filetype == 'sh'
+    exec "!time bash %"
+  elseif &filetype == 'python'
+    exec "!time python2.7 %"
+  elseif &filetype == 'html'
+    exec "!firefox % &"
+  elseif &filetype == 'go'
+    exec "!go build %<"
+    exec "!time go run %"
+  elseif &filetype == 'mkd'
+    exec "!~/.vim/markdown.pl % > %.html &"
+    exec "!firefox %.html &"
+  endif
+endfunc
+
+
+
 " ==== CTRL-P
 " We don't want to use Ctrl-p as the mapping because
 " it interferes with YankRing (paste, then hit ctrl-p)
@@ -60,3 +96,12 @@ map ,jT :CtrlP test<CR>
 "Ctrl-m is not good - it overrides behavior of Enter
 nnoremap <silent> <D-M> :CtrlPBufTag<CR>
 
+" Disable arrow keys
+inoremap  <Up>     <NOP>
+inoremap  <Down>   <NOP>
+inoremap  <Left>   <NOP>
+inoremap  <Right>  <NOP>
+noremap   <Up>     <NOP>
+noremap   <Down>   <NOP>
+noremap   <Left>   <NOP>
+noremap   <Right>  <NOP>
