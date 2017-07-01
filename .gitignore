@@ -4,3 +4,4 @@ vim/backups
 bundle
 nvim/backups
 tmux-client-9180.log
+vim/plugged

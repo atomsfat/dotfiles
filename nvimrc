@@ -1,47 +1,57 @@
-  " https://github.com/spf13/spf13-vim
-  "
-  " Use Vim settings, rather then Vi settings (much better!).
-  " This must be first, because it changes other options as a side effect.
-  set nocompatible
-  set encoding=utf-8
+	" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+set encoding=utf-8
 
-  " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
-  " source ~/.nvimrc.before if it exists.
-  if filereadable(expand("~/.nvimrc.before"))
-    source ~/.nvimrc.before
-  endif
+" TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
+" source ~/.nvimrc.before if it exists.
+if filereadable(expand("~/.nvimrc.before"))
+  source ~/.nvimrc.before
+endif
 
-  " ================ General Config ====================
+" ================ General Config ====================
 
-  set number                      "Line numbers are good
-  set backspace=indent,eol,start  "Allow backspace in insert mode
-  set history=1000                "Store lots of :cmdline history
-  set showcmd                     "Show incomplete cmds down the bottom
-  set showmode                    "Show current mode down the bottom
-  set gcr=a:blinkon0              "Disable cursor blink
-  set visualbell                  "No sounds
-  set autoread                    "Reload files changed outside vim
+set termguicolors               "True color 
 
-  " This makes vim act like all other editors, buffers can
-  " exist in the background without being in a window.
-  " http://items.sjbach.com/319/configuring-vim-right
-  set hidden
+" Permit the cursor shape to change between vertical bar and block
+let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
-  "turn on syntax highlighting
-  syntax on
+set clipboard+=unnamedplus
+set nopaste
+
+set number                      "Line numbers are good
+set backspace=indent,eol,start  "Allow backspace in insert mode
+set history=1000                "Store lots of :cmdline history
+set showcmd                     "Show incomplete cmds down the bottom
+set showmode                    "Show current mode down the bottom
+set gcr=a:blinkon0              "Disable cursor blink
+set visualbell                  "No sounds
+set autoread                    "Reload files changed outside vim
+set mouse=a
+
+" This makes vim act like all other editors, buffers can
+" exist in the background without being in a window.
+" http://items.sjbach.com/319/configuring-vim-right
+set hidden
+
+"turn on syntax highlighting
+syntax on
 
 " Change leader to a comma because the backslash is too far away
 " That means all \x commands turn into ,x
 " The mapleader has to be set before vundle starts loading all
 " the plugins.
-let mapleader='`'
+"let mapleader='`'
+let mapleader=','
 
 " =============== Vundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/vundle.vim
 " Use Vundle plugin to manage all other plugins
-if filereadable(expand("~/.nvim/vundle.vim"))
-  source ~/.nvim/vundle.vim
-endif
+"if filereadable(expand("~/.nvim/vundle.vim"))
+"  source ~/.nvim/vundle.vim
+"endif
+
+source ~/.nvim/vim-plug.vim
 
 " ================ Turn Off Swap Files ==============
 
@@ -117,7 +127,24 @@ endfor
 " ================ highlighting search matches ============
 :set hlsearch
 
-" ================ Turning solarized 
+" ================ Apperance
 
-set background=dark
-colorscheme solarized
+"set background=dark
+"colorscheme solarized
+
+
+
+" ================ Disable the scrollbars (NERDTree)
+set guioptions-=r
+set guioptions-=L
+
+" ================ Disable the macvim toolbar
+set guioptions-=T
+
+syntax on
+colorscheme OceanicNext
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
+
+
+
+

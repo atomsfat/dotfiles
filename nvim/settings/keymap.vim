@@ -1,3 +1,11 @@
+" ==== No need for ex mode
+nnoremap Q <nop>
+vnoremap // y/<C-R>"<CR>
+" ==== recording macros is not my thing
+map q <Nop>
+
+" ==== repmap ; to ;
+nnoremap ; :
 
 " ==== NERD tree
 " Cmd-Shift-e for nerd tree
@@ -11,20 +19,9 @@ exe 'imap <Leader>/ <Esc>:TComment<CR>i'
 
 
 
-" Use numbers to pick the tab you want (like iTerm)
-exe 'map <silent> <Leader>1 :tabn 1<cr>'
-exe 'map <silent> <Leader>2 :tabn 2<cr>'
-exe 'map <silent> <Leader>3 :tabn 3<cr>'
-exe 'map <silent> <Leader>4 :tabn 4<cr>'
-exe 'map <silent> <Leader>5 :tabn 5<cr>'
-exe 'map <silent> <Leader>6 :tabn 6<cr>'
-exe 'map <silent> <Leader>7 :tabn 7<cr>'
-exe 'map <silent> <Leader>8 :tabn 8<cr>'
-exe 'map <silent> <Leader>9 :tabn 9<cr>'
-
 " ==== Terminal
 tnoremap <C-q> <C-\><C-n> 
-
+tmap <esc> <c-\><c-n><esc><cr>
 
 " ==== Compile things
 autocmd Filetype java set makeprg=javac\ %
@@ -66,10 +63,10 @@ endfunc
 " We don't want to use Ctrl-p as the mapping because
 " it interferes with YankRing (paste, then hit ctrl-p)
 let g:ctrlp_map = ',t'
-nnoremap <silent> `p :CtrlP<CR>
+nnoremap <silent> <Leader>p :CtrlP<CR>
 
 " Additional mapping for buffer search
-nnoremap <silent> `b :CtrlPBuffer<cr>
+nnoremap <silent> <Leader>b :CtrlPBuffer<cr>
 
 " Cmd-Shift-P to clear the cache
 nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
@@ -96,7 +93,7 @@ map ,jT :CtrlP test<CR>
 "Ctrl-m is not good - it overrides behavior of Enter
 nnoremap <silent> <D-M> :CtrlPBufTag<CR>
 
-" Disable arrow keys
+" ==== Disable arrow keys
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
 inoremap  <Left>   <NOP>
