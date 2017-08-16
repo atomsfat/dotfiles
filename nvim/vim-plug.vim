@@ -7,6 +7,7 @@ Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'ap/vim-css-color'
+Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 
 
@@ -30,6 +31,11 @@ Plug 'mhartington/oceanic-next'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
+Plug 'airblade/vim-gitgutter'
+
+" ================ Git ========================
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 

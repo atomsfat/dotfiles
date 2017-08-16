@@ -21,7 +21,7 @@ exe 'imap <Leader>/ <Esc>:TComment<CR>i'
 
 " ==== Terminal
 tnoremap <C-q> <C-\><C-n> 
-tmap <esc> <c-\><c-n><esc><cr>
+"tmap <esc> <c-\><c-n><esc><cr>
 
 " ==== Compile things
 autocmd Filetype java set makeprg=javac\ %
@@ -76,7 +76,7 @@ nnoremap <silent> <D-P> :ClearCtrlPCache<cr>
 " more likely to find the correct thing first. mnemonic 'jump to [something]'
 map ,ja :CtrlP app/assets<CR>
 map ,jm :CtrlP app/models<CR>
-map ,jc :CtrlP app/controllers<CR>
+map ,jc :CtrlP app/controllers<CR
 map ,jv :CtrlP app/views<CR>
 map ,jh :CtrlP app/helpers<CR>
 map ,jl :CtrlP lib<CR>
