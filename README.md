@@ -17,10 +17,14 @@ Setting up
 ```
 For brew nvim
 ```sh
-  ln -s ~/workspace/dotfiles/nvim ~/.nvim
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.nvim/bundle/Vundle.vim
+  ln -s ~/Workspace/dotfiles/nvim ~/.nvim
+
   ln -s  ~/workspace/dotfiles/nvimrc ~/.config/nvim/init.vim
 ```
+
+
+Win 10
+ln -s /mnt/c/Users/atoms/Worspace/github/dotfiles/nvimrc ~/.config/nvim/init.vim/init.vim
 
 
 To install linters
