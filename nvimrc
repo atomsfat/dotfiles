@@ -10,8 +10,8 @@ if filereadable(expand("~/.nvimrc.before"))
 endif
 
 " ================ General Config ====================
-
-set termguicolors               "True color 
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors               "True color, hyper.js is not true color this disable background color
 
 " Permit the cursor shape to change between vertical bar and block
 let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
@@ -129,8 +129,11 @@ endfor
 
 " ================ Apperance
 
-"set background=dark
+set background=light
 "colorscheme solarized
+
+"colorscheme OceanicNext
+colorscheme one
 
 
 
@@ -142,9 +145,5 @@ set guioptions-=L
 set guioptions-=T
 
 syntax on
-colorscheme OceanicNext
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:h13
 
-
-
-
+"set guifont=Inconsolata\ for\ Powerline

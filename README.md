@@ -4,31 +4,44 @@ Some ideas from:
 spf13
 yadr
 
-Install power line fonts
-https://github.com/Lokaltog/powerline-fonts
+#Setting up
 
-Setting up
+General setup
 ```sh
-  brew install reattach-to-user-namespace
-  ln -s workspace/dotfiles/tmux.conf .tmux.conf;
-  git clone https://github.com/gmarik/Vundle.vim.git ~/.vimbundle/Vundle.vim;
-  ln -s ~/workspace/dotfiles/vimrc .nvimrc
-  ln -s ~/workspace/dotfiles/vim .vim
+  git clone https://github.com/powerline/fonts.git --depth=1
+  git clone https://github.com/seebi/dircolors-solarized.git
+  brew install tmux
+  brew install nvim
+  brew install tmux-mem-cpu-load
+  ln -s ~/Workspace/dotfiles/tmux.conf .tmux.conf;
+  ln -s ~/Workspace/github/dotfiles/tmux_wsdl.conf .tmux_wsdl.conf
+  ln -s ~/Workspace/dotfiles/vimrc .nvimrc
+  ln -s ~/Workspace/dotfiles/vim .vim
+
 ```
 For brew nvim
 ```sh
   ln -s ~/Workspace/dotfiles/nvim ~/.nvim
-
-  ln -s  ~/workspace/dotfiles/nvimrc ~/.config/nvim/init.vim
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  ln -s  ~/Workspace/dotfiles/nvimrc ~/.config/nvim/init.vim
 ```
 
 
 Win 10
-ln -s /mnt/c/Users/atoms/Worspace/github/dotfiles/nvimrc ~/.config/nvim/init.vim/init.vim
 
+https://github.com/mintty/wsltty
+```
+ln -s ~/Worspace/github/dotfiles/nvimrc ~/.config/nvim/init.vim
+```
+
+Darwin
+```sh
+  brew install reattach-to-user-namespace
+```
 
 To install linters
 ```sh
   npm install -g eslint
+  npm install -g ternjs
 ```
-

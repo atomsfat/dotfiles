@@ -12,6 +12,7 @@ Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 
 Plug 'artur-shaik/vim-javacomplete2'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
 " ================ editor =======================
 Plug 'terryma/vim-multiple-cursors'
@@ -25,6 +26,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mhartington/oceanic-next'
+Plug 'rakr/vim-one'
 
 
 " ================ File =======================
