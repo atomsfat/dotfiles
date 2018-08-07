@@ -4,9 +4,9 @@ Some ideas from:
 * spf13
 * yadr
 
-#Setting up
+# Setting up
 
-###General setup
+### General setup
 ```bash
   git clone https://github.com/powerline/fonts.git --depth=1
   git clone https://github.com/seebi/dircolors-solarized.git
@@ -15,13 +15,13 @@ Some ideas from:
   brew install tmux-mem-cpu-load
   ln -s ~/Workspace/dotfiles/tmux.conf ~/.tmux.conf;
 ```
-####For Vim
+#### For Vim
 ```bash
   ln -s ~/Workspace/dotfiles/vimrc ~/.nvimrc
   ln -s ~/Workspace/dotfiles/vim ~/.vim
 ```
 
-####For brew nvim
+#### For brew nvim
 ```bash
   ln -s ~/Worspace/github/dotfiles/nvimrc ~/.config/nvim/init.vim  
   ln -s ~/Workspace/dotfiles/nvim ~/.nvim
@@ -32,20 +32,20 @@ Some ideas from:
 Inside nvim :PlugInstall
 
 
-###Win 10
+### Win 10
 
 [Install wsltty](https://github.com/mintty/wsltty)
 ```bash
   ln -s ~/Workspace/github/dotfiles/tmux_wsdl.conf ~/.tmux_wsdl.conf
 ```
 
-###Darwin
+### Darwin
 ```bash
   brew install reattach-to-user-namespace
   ln -s ~/Workspace/github/dotfiles/tmux_darwing.conf ~/.tmux_darwin.conf
 ```
 
-###To install linters
+### To install linters
 ```bash
   npm install -g eslint
 ```
