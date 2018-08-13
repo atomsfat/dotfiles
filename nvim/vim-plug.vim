@@ -10,7 +10,7 @@ Plug 'ap/vim-css-color'
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 
 
-
+Plug 'hashivim/vim-terraform'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 
