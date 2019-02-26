@@ -2,7 +2,8 @@ call plug#begin('~/.vim/plugged')
 
 
 " ================ Code =======================
-Plug 'scrooloose/syntastic'
+" Plug 'scrooloose/syntastic'
+Plug 'neomake/neomake' 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }

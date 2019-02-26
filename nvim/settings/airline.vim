@@ -7,8 +7,8 @@ set hidden
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline_powerline_fonts = 1
-let g:airline#extensions#neomake#error_symbol='• '
-let g:airline#extensions#neomake#warning_symbol='•  '
+let g:airline#extensions#neomake#error_symbol=' '
+let g:airline#extensions#neomake#warning_symbol='  '
 let g:airline_theme='one'
 cnoreabbrev <silent> <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'Sayonara' : 'x'
 tmap <leader>x <c-\><c-n>:bp! <BAR> bd! #<CR>
@@ -17,6 +17,7 @@ nmap <leader>, :bnext<CR>
 tmap <leader>, <C-\><C-n>:bnext<cr>
 nmap <leader>. :bprevious<CR>
 tmap <leader>. <C-\><C-n>:bprevious<CR>
+nnoremap <leader><tab> :b#<cr>
 tmap <leader>1  <C-\><C-n><Plug>AirlineSelectTab1
 tmap <leader>2  <C-\><C-n><Plug>AirlineSelectTab2
 tmap <leader>3  <C-\><C-n><Plug>AirlineSelectTab3
