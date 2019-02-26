@@ -1,4 +1,4 @@
-	" Use Vim settings, rather then Vi settings (much better!).
+" Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 set encoding=utf-8
@@ -136,7 +136,6 @@ set background=light
 colorscheme one
 
 
-
 " ================ Disable the scrollbars (NERDTree)
 set guioptions-=r
 set guioptions-=L
@@ -146,4 +145,4 @@ set guioptions-=T
 
 syntax on
 
-"set guifont=Inconsolata\ for\ Powerline
+set guifont=Meslo\ LG\ M\ DZ\ Regular\ Nerd\ Font\ Complete

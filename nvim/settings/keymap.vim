@@ -93,7 +93,7 @@ map ,jT :CtrlP test<CR>
 "Ctrl-m is not good - it overrides behavior of Enter
 nnoremap <silent> <D-M> :CtrlPBufTag<CR>
 
-" ==== Disable arrow keys
+" ============== Disable arrow keys
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
 inoremap  <Left>   <NOP>

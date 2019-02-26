@@ -8,13 +8,18 @@ Some ideas from:
 
 ### General setup
 ```bash
-  git clone https://github.com/powerline/fonts.git --depth=1
   git clone https://github.com/seebi/dircolors-solarized.git
   brew install tmux
   brew install nvim
   brew install tmux-mem-cpu-load
   ln -s ~/Workspace/dotfiles/tmux.conf ~/.tmux.conf;
 ```
+[https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts](nerd-fonts)
+```
+brew tap caskroom/fonts
+brew cask install font-hack-nerd-font
+```
+
 #### For Vim
 ```bash
   ln -s ~/Workspace/dotfiles/vimrc ~/.nvimrc
