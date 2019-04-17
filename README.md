@@ -44,6 +44,8 @@ Inside nvim :PlugInstall
   ln -s ~/Workspace/github/dotfiles/tmux_wsdl.conf ~/.tmux_wsdl.conf
 ```
 
+Edit `%AppData%/Roaming/wsltty/config` config font `Font=RobotoMono Nerd Font`
+
 ### Darwin
 ```bash
   brew install reattach-to-user-namespace
