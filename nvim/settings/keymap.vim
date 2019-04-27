@@ -102,3 +102,6 @@ noremap   <Up>     <NOP>
 noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
+
+" ============= Copy to clipboard
+"vnoremap <A-y> "*y

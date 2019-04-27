@@ -45,6 +45,12 @@ Inside nvim :PlugInstall
 ```
 
 Edit `%AppData%/Roaming/wsltty/config` config font `Font=RobotoMono Nerd Font`
+Install Neovim for windows 'choco install neovim'
+## Enable clipboard on windows
+```
+   sudo ln -s /mnt/c/tools/neovim/Neovim/bin/win32yank.exe /usr/local/bin/win32yank.exe
+
+```
 
 ### Darwin
 ```bash

@@ -42,7 +42,7 @@ syntax on
 " The mapleader has to be set before vundle starts loading all
 " the plugins.
 "let mapleader='`'
-let mapleader=','
+"let mapleader=','
 
 " =============== Vundle Initialization ===============
 " This loads all the plugins specified in ~/.vim/vundle.vim
@@ -145,4 +145,4 @@ set guioptions-=T
 
 syntax on
 
-set guifont=Meslo\ LG\ M\ DZ\ Regular\ Nerd\ Font\ Complete
+" ================ set guifont=Meslo\ LG\ M\ DZ\ Regular\ Nerd\ Font\ Complete
