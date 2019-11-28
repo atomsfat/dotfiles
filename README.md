@@ -49,8 +49,13 @@ Install Neovim for windows 'choco install neovim'
 ## Enable clipboard on windows
 ```
    sudo ln -s /mnt/c/tools/neovim/Neovim/bin/win32yank.exe /usr/local/bin/win32yank.exe
-
 ```
+```
+Power shell
+mklink /d ~\AppData\Local\nvim c:\Users\atoms\Workspace\github\dotfiles\
+mklink /d ~/.nvim c:\Users\atoms\Workspace\github\dotfiles\nvim\
+```
+### Install Plug for windows
 
 ### Darwin
 ```bash

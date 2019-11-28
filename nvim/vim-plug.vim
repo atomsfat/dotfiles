@@ -22,6 +22,7 @@ Plug 'tomtom/tcomment_vim'
 Plug 'rking/ag.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-vinegar'
 
 " ================ Appearance =======================
 "Plug 'itchyny/lightline.vim'

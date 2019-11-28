@@ -10,16 +10,15 @@ if filereadable(expand("~/.nvimrc.before"))
 endif
 
 " ================ General Config ====================
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors               "True color, hyper.js is not true color this disable background color
-
 
 " Permit the cursor shape to change between vertical bar and block
 " let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
-hi Cursor guifg=green guibg=green
-hi Cursor2 guifg=red guibg=red
-set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver50-Cursor2/lCursor2,r-cr:hor20,o:hor50
-
+" set guicursor=
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+                  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+                  \,sm:block-blinkwait175-blinkoff150-blinkon175
 set clipboard+=unnamedplus
 set nopaste
 
@@ -133,7 +132,7 @@ endfor
 
 " ================ Apperance
 
-set background=dark
+set background=light
 "colorscheme solarized
 
 "colorscheme OceanicNext
@@ -150,5 +149,4 @@ set guioptions-=T
 syntax on
 
 " ================ set guifont=Meslo\ LG\ M\ DZ\ Regular\ Nerd\ Font\ Complete
-"
-au VimLeave * set guicursor=a:ver30-blinkon0 " Restore cursor
+let g:python3_host_prog = 'C:\Users\atoms\.conda\envs\nvim\python.exe'
