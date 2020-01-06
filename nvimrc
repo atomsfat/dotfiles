@@ -133,9 +133,8 @@ endfor
 
 " ================ Apperance
 
-set background=dark
+set background=light
 "colorscheme solarized
-
 "colorscheme OceanicNext
 colorscheme one
 
