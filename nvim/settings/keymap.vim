@@ -105,3 +105,7 @@ noremap   <Right>  <NOP>
 
 " ============= Copy to clipboard
 "vnoremap <A-y> "*y
+"
+
+" ============= Emmet leader
+let g:user_emmet_leader_key='<C-x>'
