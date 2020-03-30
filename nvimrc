@@ -3,6 +3,8 @@
 set nocompatible
 set encoding=utf-8
 
+let g:python3_host_prog = '/usr/local/bin/python3'
+
 " TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.nvimrc.before if it exists.
 if filereadable(expand("~/.nvimrc.before"))
