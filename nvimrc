@@ -20,8 +20,10 @@ set termguicolors               "True color, hyper.js is not true color this dis
 " let $NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 hi Cursor guifg=green guibg=green
 hi Cursor2 guifg=red guibg=red
-set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver50-Cursor2/lCursor2,r-cr:hor20,o:hor50
-
+" set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver50-Cursor2/lCursor2,r-cr:hor20,o:hor50
+set guicursor=n-v-c:block,i-ci-ve:ver40,r-cr:hor20,o:hor50
+		  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+		  \,sm:block-blinkwait175-blinkoff150-blinkon175
 set clipboard+=unnamedplus
 set nopaste
 

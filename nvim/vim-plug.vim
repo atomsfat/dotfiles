@@ -15,7 +15,10 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'hashivim/vim-terraform'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'zchee/deoplete-jedi'
 
+Plug 'yuezk/vim-js'
+Plug 'maxmellon/vim-jsx-pretty'
 " ================ editor =======================
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'tomtom/tcomment_vim'
