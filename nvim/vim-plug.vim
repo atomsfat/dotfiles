@@ -2,7 +2,6 @@ call plug#begin('~/.vim/plugged')
 
 
 " ================ Code =======================
-" Plug 'scrooloose/syntastic'
 Plug 'neomake/neomake' 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -25,10 +24,16 @@ Plug 'tomtom/tcomment_vim'
 Plug 'rking/ag.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-endwise'
+Plug 'andymass/vim-matchup'
+Plug 'wsdjeg/FlyGrep.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'mhinz/vim-startify'
+Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
+
 
 " ================ Appearance =======================
-"Plug 'itchyny/lightline.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'ryanoasis/vim-devicons'
 Plug 'altercation/vim-colors-solarized'
@@ -37,7 +42,8 @@ Plug 'rakr/vim-one'
 
 
 " ================ File =======================
-Plug 'kien/ctrlp.vim'
+" Plug 'kien/ctrlp.vim'
+Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'Xuyuanp/nerdtree-git-plugin', { 'on':  'NERDTreeToggle' }
@@ -45,6 +51,8 @@ Plug 'airblade/vim-gitgutter'
 
 " ================ Git ========================
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/gv.vim'
+Plug 'neoclide/denite-git'
 
 call plug#end()
 

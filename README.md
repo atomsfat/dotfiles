@@ -1,8 +1,5 @@
 Atoms custom dotfiles
 ========
-Some ideas from:
-* spf13
-* yadr
 
 # Setting up
 
@@ -20,19 +17,13 @@ brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 ```
 
-#### For Vim
-```bash
-  ln -s ~/Workspace/dotfiles/vimrc ~/.nvimrc
-  ln -s ~/Workspace/dotfiles/vim ~/.vim
-```
-
 #### For brew nvim
 ```bash
   ln -s ~/Worspace/github/dotfiles/nvimrc ~/.config/nvim/init.vim  
   ln -s ~/Workspace/dotfiles/nvim ~/.nvim
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  ln -s  ~/Workspace/dotfiles/nvimrc ~/.config/nvim/init.vim
+  ln -s  ~/Workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
 ```
 Inside nvim :PlugInstall
 
@@ -67,3 +58,11 @@ mklink /d ~/.nvim c:\Users\atoms\Workspace\github\dotfiles\nvim\
 ```bash
   npm install -g eslint
 ```
+
+Some ideas from:
+* spf13
+* yadr
+* https://github.com/SpaceVim/SpaceVim/tree/master/config/plugins
+* https://github.com/ctaylo21/jarvis/blob/master/config/nvim/init.vim
+* https://github.com/sodiumjoe/dotfiles/blob/master/init.vim
+* https://www.reddit.com/r/neovim/comments/f92lap/example_denitenvim_configs/

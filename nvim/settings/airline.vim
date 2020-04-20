@@ -10,6 +10,10 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#neomake#error_symbol=' '
 let g:airline#extensions#neomake#warning_symbol='  '
 let g:airline_theme='one'
+
+" Smartly uniquify buffers names with similar filename, suppressing common parts of paths.
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+
 cnoreabbrev <silent> <expr> x getcmdtype() == ":" && getcmdline() == 'x' ? 'Sayonara' : 'x'
 tmap <leader>x <c-\><c-n>:bp! <BAR> bd! #<CR>
 nmap <leader>T :term<cr>
