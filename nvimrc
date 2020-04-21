@@ -2,7 +2,12 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 set encoding=utf-8
+let uname = system('uname -a')
+if uname !~ 'windows'
+  let g:python3_host_prog = '/usr/local/bin/python3'
+endif
 
+" TODO: this may not be in the correct place. It is intended to allow overriding <Leader>.
 " source ~/.nvimrc.before if it exists.
 if filereadable(expand("~/.nvimrc.before"))
   source ~/.nvimrc.before
@@ -100,22 +105,6 @@ set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
-" ================ Completion =======================
-"
-" set wildmode=list:longest
-" set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-" set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-" set wildignore+=*vim/backups*
-" set wildignore+=*sass-cache*
-" set wildignore+=*DS_Store*
-" set wildignore+=vendor/rails/**
-" set wildignore+=vendor/cache/**
-" set wildignore+=*.gem
-" set wildignore+=log/**
-" set wildignore+=tmp/**
-" set wildignore+=*.png,*.jpg,*.gif
-
-"
 " ================ Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
