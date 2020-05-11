@@ -107,6 +107,6 @@ nnoremap <leader>8 :<C-u>DeniteCursorWord grep:.<CR>
 nnoremap <leader>f :<C-u>Denite -start-filter grep:::!<CR>
 nnoremap <leader><Space>/ :<C-u>DeniteBufferDir -start-filter grep:::!<CR>
 nnoremap <leader>d :<C-u>DeniteBufferDir file/rec -start-filter<CR>
-nnoremap <leader>r :<C-u>Denite -resume -cursor-pos=+1<CR>
+nnoremap <leader><Space>r :<C-u>Denite -resume -cursor-pos=+1<CR>
 nnoremap <leader><C-r> :<C-u>Denite register:.<CR>
 nnoremap <leader>g :<C-u>Denite gitstatus<CR>

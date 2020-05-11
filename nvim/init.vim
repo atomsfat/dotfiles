@@ -2,15 +2,19 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 set encoding=utf-8
+" g:python3_host_prog =  system('which python3')
 
 " source ~/.nvimrc.before if it exists.
 if filereadable(expand("~/.nvimrc.before"))
   source ~/.nvimrc.before
 endif
 
-" ================ General Config ====================
+" This use sensible setting from
+" https://github.com/tpope/vim-sensible
+
+" General Config 
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-set termguicolors               "True color, hyper.js is not true color this disable background color
+set termguicolors
 
 
 " Permit the cursor shape to change between vertical bar and block
@@ -19,136 +23,88 @@ hi Cursor guifg=green guibg=green
 hi Cursor2 guifg=red guibg=red
 " set guicursor=n-v-c:block-Cursor/lCursor,i-ci-ve:ver50-Cursor2/lCursor2,r-cr:hor20,o:hor50
 set guicursor=n-v-c:block,i-ci-ve:ver40,r-cr:hor20,o:hor50
-		  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
-		  \,sm:block-blinkwait175-blinkoff150-blinkon175
+  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+  \,sm:block-blinkwait175-blinkoff150-blinkon175
 set clipboard+=unnamedplus
 set nopaste
 
 set number                      "Line numbers are good
-set backspace=indent,eol,start  "Allow backspace in insert mode
-set history=1000                "Store lots of :cmdline history
 set showcmd                     "Show incomplete cmds down the bottom
 set showmode                    "Show current mode down the bottom
 " set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
-set autoread                    "Reload files changed outside vim
 set mouse=a
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
 " http://items.sjbach.com/319/configuring-vim-right
-set hidden
+set hidden " Allow buffer switching without saving
 
 "turn on syntax highlighting
 syntax on
 
-" Change leader to a comma because the backslash is too far away
-" That means all \x commands turn into ,x
+" Change leader to a space because the backslash is too far away
 " The mapleader has to be set before vundle starts loading all
 " the plugins.
-"let mapleader='`'
 let mapleader=' '
 
-" =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundle.vim
-" Use Vundle plugin to manage all other plugins
-"if filereadable(expand("~/.nvim/vundle.vim"))
-"  source ~/.nvim/vundle.vim
-"endif
-
+"  Plug init Initialization 
 source ~/.nvim/vim-plug.vim
 
-" ================ Turn Off Swap Files ==============
-
+" Turn Off Swap Files 
 set noswapfile
 set nobackup
 set nowb
 
-" ================ Persistent Undo ==================
+" Persistent Undo =
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
 if has('persistent_undo')
-  silent !mkdir ~/.nvim/backups > /dev/null 2>&1
-  set undodir=~/.nvim/backups
+  silent !mkdir ~/.nvim_persistent_undo > /dev/null 2>&1
+  set undodir=~/.nvim_persistent_undo
   set undofile
 endif
 
-" ================ Indentation ======================
+" Indentation 
 
-set autoindent
 set smartindent
-set smarttab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
 set expandtab
 
-filetype plugin on
-filetype indent on
-
-" Display tabs and trailing spaces visually
-"set list listchars=tab:\ \ ,trail:·
-
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
-" ================ Folds ============================
+" Folds
 
-set foldmethod=indent   "fold based on indent
+set foldmethod=syntax   "fold based on syntax
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
-" ================ Completion =======================
-"
-" set wildmode=list:longest
-" set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
-" set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
-" set wildignore+=*vim/backups*
-" set wildignore+=*sass-cache*
-" set wildignore+=*DS_Store*
-" set wildignore+=vendor/rails/**
-" set wildignore+=vendor/cache/**
-" set wildignore+=*.gem
-" set wildignore+=log/**
-" set wildignore+=tmp/**
-" set wildignore+=*.png,*.jpg,*.gif
-
-"
-" ================ Scrolling ========================
-
-set scrolloff=8         "Start scrolling when we're 8 lines away from margins
-set sidescrolloff=15
-set sidescroll=1
-
-
-" ================ Custom Settings ========================
+" Custom Settings 
 for fpath in split(globpath('~/.nvim/settings', '*.vim'), '\n')
   exe 'source' fpath
 endfor
 
-" ================ AutoSave ===============================
+" Settings override
+set t_Co=256       " Use 256 colors
+set splitright     " Puts new vsplit windows to the right of the current
+set splitbelow     " Puts new split windows to the bottom of the current
+set mousehide      " Hide the mouse cursor while typing
+
+
+" AutoSave
 :au FocusLost * silent! wa
 
-" ================ highlighting search matches ============
-:set hlsearch
-
-" ================ Apperance
+" Apperance
 
 set background=light
 "colorscheme solarized
 "colorscheme OceanicNext
 colorscheme one
 
-
-" ================ Disable the scrollbars (NERDTree)
-set guioptions-=r
-set guioptions-=L
-
-" ================ Disable the macvim toolbar
+" Disable the macvim toolbar
 set guioptions-=T
 
-syntax on
-
-" ================ set guifont=Meslo\ LG\ M\ DZ\ Regular\ Nerd\ Font\ Complete
-"
 au VimLeave * set guicursor=a:ver30-blinkon0 " Restore cursor

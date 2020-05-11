@@ -1,24 +1,15 @@
 " ==== No need for ex mode
 nnoremap Q <nop>
 vnoremap // y/<C-R>"<CR>
-" ==== recording macros is not my thing
+" ==== Disable macros
 map q <Nop>
 
 " ==== repmap ; to ;
 nnoremap ; :
 
-" ==== NERD tree
-let g:NERDTreeWinPos = 'rightbelow'
-"  <leader>n - Toggle NERDTree on/off
-"  <leader>f - Opens current file location in NERDTree
-nmap <leader>n :NERDTreeToggle<CR>
-nmap <leader>nf :NERDTreeFind<CR>
-
 " Command-/ to toggle comments
 exe 'map <Leader>/ :TComment<CR>'
 exe 'imap <Leader>/ <Esc>:TComment<CR>i'
-
-
 
 " ==== Terminal
 tnoremap <C-q> <C-\><C-n> 
@@ -46,7 +37,7 @@ func! CompileRun()
   elseif &filetype == 'sh'
     exec "!time bash %"
   elseif &filetype == 'python'
-    exec "!time python2.7 %"
+    exec "!time python %"
   elseif &filetype == 'html'
     exec "!firefox % &"
   elseif &filetype == 'go'
@@ -55,13 +46,11 @@ func! CompileRun()
   elseif &filetype == 'mkd'
     exec "!~/.vim/markdown.pl % > %.html &"
     exec "!firefox %.html &"
+  elseif &filetype == 'ruby'
+    exec "!time ruby %"
   endif
 endfunc
 
-
-"Cmd-Shift-(M)ethod - jump to a method (tag in current file)
-"Ctrl-m is not good - it overrides behavior of Enter
-nnoremap <silent> <D-M> :CtrlPBufTag<CR>
 
 " ============== Disable arrow keys
 inoremap  <Up>     <NOP>
@@ -84,3 +73,33 @@ nnoremap <Leader>F :FlyGrep<cr>
 
 " =============  Undotree
 nnoremap <F5> :UndotreeToggle<cr>
+
+" Split
+nnoremap <leader>- :split<CR>
+nnoremap <leader>\| :vsplit<CR>
+
+
+" ============ cgn
+nnoremap <Leader>x /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn
+nnoremap <Leader>X ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN
+xnoremap <Leader>x "sy:let @/=@s<CR>cgn
+
+nnoremap <leader>cd :cd %:p:h<CR>
+
+" Quit buffer
+nnoremap <leader>q :q<CR>
+
+" Save
+nnoremap <leader>w :w<CR>
+
+" Navigate with keyboard
+nmap <leader>h <C-w>h
+nmap <leader>j <C-w>j
+nmap <leader>k <C-w>k
+nmap <leader>l <C-w>l
+
+" Resize
+nnoremap <Left> :vertical resize -1<CR>
+nnoremap <Right> :vertical resize +1<CR>
+nnoremap <Up> :resize -1<CR>
+nnoremap <Down> :resize +1<CR>
