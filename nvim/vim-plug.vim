@@ -46,7 +46,7 @@ Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
 
 " Git 
-Plug 'tpope/vim-fugitive'
+" Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'neoclide/denite-git'
 

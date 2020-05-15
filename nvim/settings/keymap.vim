@@ -1,25 +1,24 @@
-" ==== No need for ex mode
+" No need for ex mode
 nnoremap Q <nop>
-vnoremap // y/<C-R>"<CR>
-" ==== Disable macros
+
+" Disable macros
 map q <Nop>
 
-" ==== repmap ; to ;
+" repmap ; to ;
 nnoremap ; :
 
 " Command-/ to toggle comments
 exe 'map <Leader>/ :TComment<CR>'
 exe 'imap <Leader>/ <Esc>:TComment<CR>i'
 
-" ==== Terminal
+" Terminal
 tnoremap <C-q> <C-\><C-n> 
-"tmap <esc> <c-\><c-n><esc><cr>
+" tmap <esc> <c-\><c-n><esc><cr>
 
-" ==== Compile things
+" Compile things
 autocmd Filetype java set makeprg=javac\ %
 set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
 map <silent> <Leader>c :make<CR>:copen<CR>
-
 
 map <silent> <Leader>r :call CompileRun()<CR>
 func! CompileRun()
@@ -51,8 +50,7 @@ func! CompileRun()
   endif
 endfunc
 
-
-" ============== Disable arrow keys
+" Disable arrow keys
 inoremap  <Up>     <NOP>
 inoremap  <Down>   <NOP>
 inoremap  <Left>   <NOP>
@@ -62,27 +60,25 @@ noremap   <Down>   <NOP>
 noremap   <Left>   <NOP>
 noremap   <Right>  <NOP>
 
-
-" ============= Emmet leader
+" Emmet leader
 let g:user_emmet_leader_key='<C-x>'
 
-" =============  FlyGrep
+" FlyGrep
 let g:spacevim_data_dir = '~/.cache'
 nnoremap <Leader>F :FlyGrep<cr>
-"
 
-" =============  Undotree
+" Undotree
 nnoremap <F5> :UndotreeToggle<cr>
 
 " Split
 nnoremap <leader>- :split<CR>
 nnoremap <leader>\| :vsplit<CR>
 
-
-" ============ cgn
+" Change next selected cgn
 nnoremap <Leader>x /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn
 nnoremap <Leader>X ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN
 xnoremap <Leader>x "sy:let @/=@s<CR>cgn
+
 
 nnoremap <leader>cd :cd %:p:h<CR>
 

@@ -1,12 +1,11 @@
-nnoremap <silent> <F3> :Defx<Cr>  
-nnoremap <leader>n :Defx<Cr>noremap <silent> <leader>n :Defx `expand('%:p:h')` -search=`expand('%:p')` -toggle -columns=git:mark:indent:icon:icons:filename:type<cr>
 call defx#custom#option('_', {
       \ 'split': 'vertical',
       \ 'direction': 'rightbelow',
       \ 'winwidth':  30,
-      \ 'buffer_name': '',
+      \ 'buffer_name': 'explorer',
       \ 'toggle': 1,
-      \ 'resume': 1
+      \ 'resume': 1,
+      \ 'columns': 'indent:git:icons:filename:mark'
       \ })
 
 call defx#custom#column('mark', {
@@ -25,10 +24,10 @@ call defx#custom#column('filename', {
       \ })
 
 call defx#custom#column('git', 'indicators', {
-  \ 'Modified'  : 'M',
+  \ 'Modified'  : '✹',
   \ 'Staged'    : '✚',
   \ 'Untracked' : 'U',
-  \ 'Renamed'   : 'R',
+  \ 'Renamed'   : '➜',
   \ 'Unmerged'  : '鍁',
   \ 'Ignored'   : 'I',
   \ 'Deleted'   : '✖',
@@ -86,7 +85,7 @@ function! s:defx_my_settings() abort
         \ defx#do_action('toggle_ignored_files')
   nnoremap <silent><buffer><expr> ;
         \ defx#do_action('repeat')
-  nnoremap <silent><buffer><expr> h
+  nnoremap <silent><buffer><expr> u
         \ defx#do_action('cd', ['..'])
   nnoremap <silent><buffer><expr> ~
         \ defx#do_action('cd')
