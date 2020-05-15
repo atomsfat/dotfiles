@@ -2,8 +2,8 @@
 # https://github.com/rike422/dotfiles
 
 export EDITOR=vim     # Set editor to vim
-# export LANG=en.UTF-8  # Set character code to UTF-8
-# export LC_TYPE=en.UTF-8
+export LANG=en_US.UTF-8
+export LC_TYPE=en_US.UTF-8
 export KCODE=utf-8    # Set UTF-8 to KCODE
 export AUTOFEATURE
 
@@ -41,7 +41,7 @@ bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
 # Zplug 
-export ZPLUG_HOME=/home/linuxbrew/.linuxbrew/opt/zplug
+export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
 zplug mafredri/zsh-async, from:github
@@ -63,7 +63,19 @@ zplug load --verbose
 
 # Alias
 alias vi=nvim
-alias pbcopy='xclip -selection clipboard'
-alias pbpaste='xclip -selection clipboard -o'
+if [[ "$(uname -a)" = *"microsoft"* ]]; then
+  echo "WSL"
+  export PATH=$PATH:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/system32/Windows
+  alias pbcopy='xclip -selection clipboard'
+  alias pbpaste='xclip -selection clipboard -o'
+  # X server
+  export LIBGL_ALWAYS_INDIRECT=1
+  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+fi
+
 alias top="vtop --theme=wizard"
 alias hs='history | grep'
+
+export EDITOR='nvim'
+# rbenv
+eval "$(rbenv init -)"
