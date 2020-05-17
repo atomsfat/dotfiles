@@ -22,17 +22,20 @@ Plug 'maxmellon/vim-jsx-pretty'
 " Editor 
 Plug 'tomtom/tcomment_vim'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'andymass/vim-matchup'
+Plug 'andymass/vim-matchup'     " highlight sets of matching words
 Plug 'wsdjeg/FlyGrep.vim'
-Plug 'Yggdroot/indentLine'
-Plug 'mhinz/vim-startify'
+Plug 'Yggdroot/indentLine'      " Display lines on indent
+Plug 'mhinz/vim-startify'       " Start buffer
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'Raimondi/delimitMate'
 Plug 'MattesGroeger/vim-bookmarks'
-Plug 'junegunn/vim-peekaboo'
+Plug 'junegunn/vim-peekaboo'    " Display paste register
+
 
 " Appearance 
-Plug 'vim-airline/vim-airline'
+Plug 'ryanoasis/vim-devicons'   
+Plug 'itchyny/lightline.vim'
+Plug 'taohexxx/lightline-buffer'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mhartington/oceanic-next'
 Plug 'rakr/vim-one'
@@ -46,9 +49,12 @@ Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
 
 " Git 
-" Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
 Plug 'neoclide/denite-git'
+
+" Tool
+Plug 'edkolev/tmuxline.vim'
 
 
 call plug#end()

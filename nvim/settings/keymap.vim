@@ -94,8 +94,40 @@ nmap <leader>j <C-w>j
 nmap <leader>k <C-w>k
 nmap <leader>l <C-w>l
 
-" Resize
-nnoremap <Left> :vertical resize -1<CR>
-nnoremap <Right> :vertical resize +1<CR>
-nnoremap <Up> :resize -1<CR>
-nnoremap <Down> :resize +1<CR>
+" Filetree
+nnoremap <silent> <F3> :Defx<Cr>  
+nnoremap <silent> <leader>n :Defx `expand('%:p:h')` -search=`expand('%:p')` -columns=mark:indent:icon:icons:filename:type<cr>
+
+" Denite
+nnoremap <leader>s :<C-u>Denite buffer<CR>
+nnoremap <leader>8 :<C-u>DeniteCursorWord grep:.<CR>
+nnoremap <leader>f :<C-u>Denite -start-filter grep:::!<CR>
+nnoremap <leader><Space>/ :<C-u>DeniteBufferDir -start-filter grep:::!<CR>
+nnoremap <leader>d :<C-u>DeniteBufferDir file/rec -start-filter<CR>
+nnoremap <leader><Space>r :<C-u>Denite -resume -cursor-pos=+1<CR>
+nnoremap <leader><C-r> :<C-u>Denite register:.<CR>
+nnoremap <leader>g :<C-u>Denite gitstatus<CR>
+
+" Move bewteen buffer
+" https://vi.stackexchange.com/questions/4919/exit-from-terminal-mode-in-neovim
+" tmap <leader>q <c-\><c-n>:bp! <BAR> bd! #<CR>
+" tmap <leader>, <C-\><C-n>:bnext<cr>
+" tmap <leader>. <C-\><C-n>:bprevious<CR>
+" tmap <leader><tab> :b#<CR>
+" nmap <leader>T :term<cr>
+
+nmap <leader>, :bnext<CR>
+nmap <leader>. :bprevious<CR>
+nnoremap <leader><tab> :b#<CR>
+
+" Switch bewteen buffers lightline
+nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+nmap <Leader>0 <Plug>lightline#bufferline#go(10) 
