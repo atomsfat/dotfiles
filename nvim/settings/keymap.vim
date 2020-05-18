@@ -99,6 +99,7 @@ nnoremap <silent> <F3> :Defx<Cr>
 nnoremap <silent> <leader>n :Defx `expand('%:p:h')` -search=`expand('%:p')` -columns=mark:indent:icon:icons:filename:type<cr>
 
 " Denite
+nnoremap <leader>p :<C-u>Denite file/rec -start-filter<CR>
 nnoremap <leader>s :<C-u>Denite buffer<CR>
 nnoremap <leader>8 :<C-u>DeniteCursorWord grep:.<CR>
 nnoremap <leader>f :<C-u>Denite -start-filter grep:::!<CR>

@@ -2,7 +2,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 set encoding=utf-8
-" g:python3_host_prog =  system('which python3')
+let g:python_host_prog = system('echo -n $(brew --prefix)') . '/bin/python'
+let g:python3_host_prog = system('echo -n $(brew --prefix)') . '/bin/python3'
 
 " source ~/.nvimrc.before if it exists.
 if filereadable(expand("~/.nvimrc.before"))

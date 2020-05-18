@@ -1,4 +1,4 @@
-" denite options
+" denite option
 let g:webdevicons_enable_denite = 1
 let s:denite_options = {
       \ 'default' : {
