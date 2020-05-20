@@ -52,3 +52,6 @@ zle -N zle-line-init
 zle -N zle-line-finish
 zle -N zle-keymap-select
 zle -N edit-command-line
+
+alias history="history 1"
+alias hist="history 1"
