@@ -25,6 +25,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'andymass/vim-matchup'     " highlight sets of matching words
 Plug 'wsdjeg/FlyGrep.vim'
 Plug 'Yggdroot/indentLine'      " Display lines on indent
+Plug 'elzr/vim-json'
 Plug 'mhinz/vim-startify'       " Start buffer
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'Raimondi/delimitMate'
@@ -56,6 +57,4 @@ Plug 'neoclide/denite-git'
 " Tool
 Plug 'edkolev/tmuxline.vim'
 
-
 call plug#end()
-

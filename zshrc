@@ -1,6 +1,11 @@
 # Resources:
 # https://github.com/rike422/dotfiles
 
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+if [[ "$(uname -a)" = *"microsoft"* ]]; then
+  export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH" 
+fi
+
 export EDITOR=vim     # Set editor to vim
 export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
@@ -25,10 +30,12 @@ setopt equals             # = command the same as `which command`
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
 
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
+zplug "b4b4r07/emoji-cli"
+zplug "zsh-users/zsh-autosuggestions"
 zplug "~/.zsh", from:local
 
 # Install plugins if there are plugins that have not been installed
@@ -42,10 +49,13 @@ fi
 # Then, source plugins and add commands to $PATH
 zplug load --verbose
 
+#NVM
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completiona
 # Alias
 alias vi=nvim
 if [[ "$(uname -a)" = *"microsoft"* ]]; then
-  echo "WSL"
   export PATH=$PATH:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/system32/Windows
   alias pbcopy='xclip -selection clipboard'
   alias pbpaste='xclip -selection clipboard -o'
@@ -66,3 +76,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # rbenv
 eval "$(rbenv init -)"
+# pyenv
+eval "$(pyenv init -)"
+# java things
+source "$HOME/.sdkman/bin/sdkman-init.sh"

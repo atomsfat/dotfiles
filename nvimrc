@@ -13,7 +13,7 @@ if filereadable(expand("~/.nvimrc.before"))
   source ~/.nvimrc.before
 endif
 
-" ================ General Config ====================
+" General Config 
 " let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors               "True color, hyper.js is not true color this disable background color
 
@@ -56,22 +56,19 @@ syntax on
 "let mapleader='`'
 let mapleader=' '
 
-" =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundle.vim
-" Use Vundle plugin to manage all other plugins
-"if filereadable(expand("~/.nvim/vundle.vim"))
-"  source ~/.nvim/vundle.vim
-"endif
-
+" Plugins
 source ~/.nvim/vim-plug.vim
+"  Pluging Settings 
+for fpath in split(globpath('~/.nvim/settings', '*.vim'), '\n')
+  exe 'source' fpath
+endfor
 
-" ================ Turn Off Swap Files ==============
-
+" Turn Off Swap Files 
 set noswapfile
 set nobackup
 set nowb
 
-" ================ Persistent Undo ==================
+" Persistent Undo 
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
 if has('persistent_undo')
@@ -80,8 +77,7 @@ if has('persistent_undo')
   set undofile
 endif
 
-" ================ Indentation ======================
-
+" Indentation 
 set autoindent
 set smartindent
 set smarttab
@@ -99,31 +95,27 @@ filetype indent on
 set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
-" ================ Folds ============================
+" Folds 
 
 set foldmethod=indent   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
-" ================ Scrolling ========================
+" Scrolling 
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
 
 
-" ================ Custom Settings ========================
-for fpath in split(globpath('~/.nvim/settings', '*.vim'), '\n')
-  exe 'source' fpath
-endfor
 
-" ================ AutoSave ===============================
+" AutoSave 
 :au FocusLost * silent! wa
 
-" ================ highlighting search matches ============
+" highlighting search matches 
 :set hlsearch
 
-" ================ Apperance
+" Apperance
 
 set background=light
 "colorscheme solarized
@@ -131,15 +123,15 @@ set background=light
 colorscheme one
 
 
-" ================ Disable the scrollbars (NERDTree)
+" Disable the scrollbars (NERDTree)
 set guioptions-=r
 set guioptions-=L
 
-" ================ Disable the macvim toolbar
+" Disable the macvim toolbar
 set guioptions-=T
 
 syntax on
 
-" ================ set guifont=Meslo\ LG\ M\ DZ\ Regular\ Nerd\ Font\ Complete
+" set guifont=Meslo\ LG\ M\ DZ\ Regular\ Nerd\ Font\ Complete
 "
 au VimLeave * set guicursor=a:ver30-blinkon0 " Restore cursor
