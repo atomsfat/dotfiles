@@ -82,7 +82,7 @@ let g:lightline_buffer_show_bufnr = 1
 let g:lightline_buffer_fname_mod = ':t'
 
 " hide buffer list
-let g:lightline_buffer_excludes = ['vimfiler']
+let g:lightline_buffer_excludes = ['vimfiler', 'defx', 'No Name']
 
 " max file name length
 let g:lightline_buffer_maxflen = 30
