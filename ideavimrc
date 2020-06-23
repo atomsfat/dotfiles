@@ -1,0 +1,53 @@
+let mapleader=" "
+
+set ignorecase
+set smartcase
+
+" Copy to system clipboard as well
+set clipboard+=unnamed
+
+" Use Idea to join lines smartly
+set ideajoin
+
+" highlight search matches
+:set hlsearch
+
+" These create newlines like o and O but stay in normal mode
+nmap zj o<Esc>k
+nmap zk O<Esc>j
+
+" key bindings for quickly moving between windows
+" h left, l right, k up, j down
+nmap <leader>h <c-w>h
+nmap <leader>l <c-w>l
+nmap <leader>k <c-w>k
+nmap <leader>j <c-w>j
+
+" Navigation
+nmap <leader>g :action GotoDeclaration<cr>
+nmap <leader>L :action RecentLocations<cr>
+nmap <leader>[ :action Back<cr>
+nmap <leader>] :action Forward<cr>
+
+nmap <leader><tab> :action RecentChangedFiles<cr>
+" nmap <leader><tab> :action Switcher<cr>
+
+" Closing tabs
+nmap <leader>q :action CloseContent<cr>
+nmap <leader>Q :action ReopenClosedTab<cr>
+
+" Search
+" nmap <leader>/ :action Find<cr>
+nmap <leader>/  :action CommentByLineComment<cr>
+nmap <leader>f :action FindInPath<cr>
+nmap <leader>p :action FileStructurePopup<cr>
+
+" Split
+nnoremap <leader>- :split<CR>
+nnoremap <leader>\| :vsplit<CR>
+
+" Terminal
+nmap <leader>T :action ActivateTerminalToolWindow<cr>
+
+set laststatus=2
+nnoremap <leader>h :nohlsearch<CR>
