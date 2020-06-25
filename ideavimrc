@@ -1,5 +1,8 @@
 let mapleader=" "
 
+" Plugins
+set commentary
+
 set ignorecase
 set smartcase
 
