@@ -19,7 +19,6 @@ brew cask install font-hack-nerd-font
 
 #### For brew nvim
 ```bash
-  ln -s ~/Worspace/github/dotfiles/nvimrc ~/.config/nvim/init.vim  
   ln -s ~/Workspace/dotfiles/nvim ~/.nvim
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
