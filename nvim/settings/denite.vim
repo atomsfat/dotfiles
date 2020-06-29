@@ -2,7 +2,7 @@
 let g:webdevicons_enable_denite = 1
 let s:denite_options = {
       \ 'default' : {
-      \ 'winheight' : 15,
+      \ 'winheight' : 5,
       \ 'mode' : 'insert',
       \ 'start_filter' : 1,
       \ 'quit' : 1,

@@ -42,6 +42,10 @@ function! s:defx_my_settings() abort
         \ defx#is_directory() 
             \ ? defx#do_action('open_or_close_tree') :
             \ defx#do_action('multi', ['drop', 'quit'])
+  nnoremap <silent><buffer><expr> <TAB>
+        \ defx#is_directory() 
+            \ ? defx#do_action('open_or_close_tree') :
+            \ defx#do_action('multi', ['drop'])
   nnoremap <silent><buffer><expr> <2-LeftMouse>
     \ defx#is_directory() 
     \ ? defx#do_action('open_or_close_tree') :
@@ -60,7 +64,7 @@ function! s:defx_my_settings() abort
         \ defx#do_action('open', 'pedit')
   nnoremap <silent><buffer><expr> o
         \ defx#do_action('open_tree', 'toggle')
-  nnoremap <silent><buffer><expr> K
+  nnoremap <silent><buffer><expr> N
         \ defx#do_action('new_directory')
   nnoremap <silent><buffer><expr> n
         \ defx#do_action('new_file')
