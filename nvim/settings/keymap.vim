@@ -122,16 +122,16 @@ nmap <leader>. :bprevious<CR>
 nnoremap <leader><tab> :b#<CR>
 
 " Switch bewteen buffers lightline
-nmap <Leader>1 :buffer 1<CR>
-nmap <Leader>2 :buffer 2<CR>
-nmap <Leader>3 :buffer 3<CR>
-nmap <Leader>4 :buffer 4<CR>
-nmap <Leader>5 :buffer 5<CR>
-nmap <Leader>6 :buffer 6<CR>
-nmap <Leader>7 :buffer 7<CR>
-nmap <Leader>8 :buffer 8<CR>
-nmap <Leader>9 :buffer 9<CR>
-nmap <Leader>0 :buffer 10<CR> 
+nmap <Leader>1 <Plug>lightline#bufferline#go(1)
+nmap <Leader>2 <Plug>lightline#bufferline#go(2)
+nmap <Leader>3 <Plug>lightline#bufferline#go(3)
+nmap <Leader>4 <Plug>lightline#bufferline#go(4)
+nmap <Leader>5 <Plug>lightline#bufferline#go(5)
+nmap <Leader>6 <Plug>lightline#bufferline#go(6)
+nmap <Leader>7 <Plug>lightline#bufferline#go(7)
+nmap <Leader>8 <Plug>lightline#bufferline#go(8)
+nmap <Leader>9 <Plug>lightline#bufferline#go(9)
+nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
 " remap arrow keys
 nnoremap <Left> :bprev<CR>

@@ -24,19 +24,14 @@ let g:lightline.active = {
   \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
 
 let g:lightline.tabline = {
-    \ 'left': [ [ 'bufferinfo' ], ['separator'],
-    \ ['bufferbefore', 'buffercurrent', 'bufferafter'] ],
+    \ 'left': [ [ 'buffers' ] ],
     \ 'right': [ [ 'close' ] ] }
 
 let g:lightline.component_expand = {
-    \ 'buffercurrent': 'lightline#buffer#buffercurrent',
-    \ 'bufferbefore': 'lightline#buffer#bufferbefore',
-    \ 'bufferafter': 'lightline#buffer#bufferafter'}
+    \ 'buffers': 'lightline#bufferline#buffers'}
 
 let g:lightline.component_type = {
-    \ 'buffercurrent': 'tabsel',
-    \ 'bufferbefore': 'raw',
-    \ 'bufferafter': 'raw'}
+    \ 'buffers': 'tabsel'}
 
 function! MyFiletype()
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
@@ -57,47 +52,16 @@ function! LightlineFugitive()
   endif
   return ''
 endfunction
-
-" lightline-buffer
-" replace these symbols with ascii characters if your environment does not support unicode
-let g:lightline_buffer_logo = ''
-let g:lightline_buffer_readonly_icon = ''
-let g:lightline_buffer_modified_icon = '✭'
-let g:lightline_buffer_git_icon = ''
-let g:lightline_buffer_ellipsis_icon = '..'
-let g:lightline_buffer_expand_left_icon = '◀ '
-let g:lightline_buffer_expand_right_icon = ' ▶'
-let g:lightline_buffer_active_buffer_left_icon = ''
-let g:lightline_buffer_active_buffer_right_icon = ''
-let g:lightline_buffer_separator_icon = '  '
-
-" enable devicons, only support utf-8
-" require <https://github.com/ryanoasis/vim-devicons>
-let g:lightline_buffer_enable_devicons = 1
-
-" lightline-buffer function settings
-let g:lightline_buffer_show_bufnr = 1
-
-" :help filename-modifiers
-let g:lightline_buffer_fname_mod = ':t'
-
-" hide buffer list
-let g:lightline_buffer_excludes = ['vimfiler', 'defx', 'No Name']
-
-" max file name length
-let g:lightline_buffer_maxflen = 30
-
-" max file extension length
-let g:lightline_buffer_maxfextlen = 3
-
-" min file name length
-let g:lightline_buffer_minflen = 16
-
-" min file extension length
-let g:lightline_buffer_minfextlen = 3
-
-" reserve length for other component (e.g. info, close)
-let g:lightline_buffer_reservelen = 20
+" bufferline
+let g:lightline#bufferline#modified = '✭' 
+let g:lightline#bufferline#read_only = ''
+let g:lightline#bufferline#show_number = 2
+let g:lightline#bufferline#enable_devicons = 1
+let g:lightline#bufferline#clickable = 1
+let g:lightline.component_raw = {'buffers': 1}
+let g:lightline#bufferline#number_map = {
+\ 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴',
+\ 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹'}
 
 " Tmux generator
 let g:tmuxline_powerline_separators = 0

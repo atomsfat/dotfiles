@@ -36,7 +36,8 @@ Plug 'junegunn/vim-peekaboo'    " Display paste register
 " Appearance 
 Plug 'ryanoasis/vim-devicons'   
 Plug 'itchyny/lightline.vim'
-Plug 'taohexxx/lightline-buffer'
+" Plug 'taohexxx/lightline-buffer'
+Plug 'mengelbrecht/lightline-bufferline'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mhartington/oceanic-next'
 Plug 'rakr/vim-one'
