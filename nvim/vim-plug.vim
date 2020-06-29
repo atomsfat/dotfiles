@@ -57,4 +57,7 @@ Plug 'neoclide/denite-git'
 " Tool
 Plug 'edkolev/tmuxline.vim'
 
+" Testing
+Plug 'easymotion/vim-easymotion'
+
 call plug#end()

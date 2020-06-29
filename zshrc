@@ -26,6 +26,7 @@ setopt prompt_subst       # Handle variable substitution and command substitutio
 setopt notify             # Immediately report changes in background job status make 
 setopt equals             # = command the same as `which command`
 
+export EMOJI_CLI_KEYBIND="^e"
 # Zplug 
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
