@@ -10,6 +10,9 @@ if filereadable(expand("~/.nvimrc.before"))
   source ~/.nvimrc.before
 endif
 
+" Autosave
+:au FocusLost * silent! wa
+
 " This use sensible setting from
 " https://github.com/tpope/vim-sensible
 
