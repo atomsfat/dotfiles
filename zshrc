@@ -77,6 +77,7 @@ export NVM_DIR="$HOME/.nvm"
 # rbenv
 eval "$(rbenv init -)"
 # pyenv
+export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 # java things
 source "$HOME/.sdkman/bin/sdkman-init.sh"
