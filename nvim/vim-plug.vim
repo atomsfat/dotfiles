@@ -31,7 +31,7 @@ Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'Raimondi/delimitMate'
 Plug 'MattesGroeger/vim-bookmarks'
 Plug 'junegunn/vim-peekaboo'    " Display paste register
-
+Plug 'tmux-plugins/vim-tmux-focus-events' " Autoread working while inside tmux
 
 " Appearance 
 Plug 'ryanoasis/vim-devicons'   
@@ -41,7 +41,7 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mhartington/oceanic-next'
 Plug 'rakr/vim-one'
-
+Plug 'machakann/vim-highlightedyank'
 
 " File 
 Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }

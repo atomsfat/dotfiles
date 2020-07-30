@@ -53,6 +53,7 @@ function! LightlineFugitive()
   return ''
 endfunction
 " bufferline
+
 let g:lightline#bufferline#modified = '✭' 
 let g:lightline#bufferline#read_only = ''
 let g:lightline#bufferline#show_number = 2
