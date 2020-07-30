@@ -13,7 +13,6 @@ Plug 'ap/vim-css-color', {'for': 'css'}
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'hashivim/vim-terraform', {'for': ['hcl', 'tf', 'terraform']}
-Plug 'artur-shaik/vim-javacomplete2'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'zchee/deoplete-jedi'
 Plug 'yuezk/vim-js'
