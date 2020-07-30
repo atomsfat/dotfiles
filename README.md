@@ -53,6 +53,47 @@ mklink /d ~/.nvim c:\Users\atoms\Workspace\github\dotfiles\nvim\
   ln -s ~/Workspace/github/dotfiles/tmux_darwing.conf ~/.tmux_darwin.conf
 ```
 
+```
+  pbcopy < ~/.ssh/id_rsa.pub
+  git clone git@github.com:atomsfat/dotfiles.git
+  brew install tmux
+  brew install zplug
+  brew install nvim
+  brew install reattach-to-user-namespace
+  ls -s ~/Work/dotfiles/tmux.conf ~/.tmux.conf
+  ln -s ~/Work/dotfiles/nvim .nvim
+  mkdir -p .config/nvim
+  ln -s ~/Work/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+  ln -s ~/Work/dotfiles/zshrc ~/.zshrc
+  ln -s ~/Work/dotfiles/zsh ~/.zsh
+  curl -s "https://get.sdkman.io" | bash
+  git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  cd /usr/local/share/
+  sudo chmod -R 755 zsh
+  sudo chown -R root:staff zsh
+  exit
+  ln -s ~/Work/dotfiles/tmux.conf .tmux.conf
+  ln -s ~/Work/dotfiles/tmux_darwin.conf .tmux_darwin.conf
+  ln -s ~/Work/dotfiles/tmux_theme.conf .tmux_theme.conf
+  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  brew install rbenv
+  brew install pyenv
+  sudo chown -R $(whoami) /usr/local/share/zsh /usr/local/share/zsh/site-functions
+  brew install pyenv
+  brew install rbenv
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.3/install.sh | bash
+  nvm install 12
+  npm install -g neovim
+  pyenv install 3.8.3
+  rbenv global 2.7.1
+  gem install neovim
+  pyenv global 3.8.3
+  pip install neovim
+  pip install --upgrade pip
+  sdk install java 14.0.1-zulu
+  sdk install gradle
+```
+
 ### To install linters
 ```bash
   npm install -g eslint
