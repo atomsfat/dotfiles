@@ -1,4 +1,5 @@
 " No need for ex mode
+
 nnoremap Q <nop>
 
 " Disable macros
@@ -16,39 +17,39 @@ tnoremap <C-q> <C-\><C-n>
 " tmap <esc> <c-\><c-n><esc><cr>
 
 " Compile things
-autocmd Filetype java set makeprg=javac\ %
-set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
-map <silent> <Leader>c :make<CR>:copen<CR>
-
-map <silent> <Leader>r :call CompileRun()<CR>
-func! CompileRun()
-  exec "w"
-  if &filetype == 'c'
-    exec "!gcc % -o %<"
-    exec "!time ./%<"
-  elseif &filetype == 'cpp'
-    exec "!g++ % -o %<"
-    exec "!time ./%<"
-  elseif &filetype == 'java'
-    exec "!javac %"
-    exec "!time java -cp %:p:h %:t:r"
-    set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
-  elseif &filetype == 'sh'
-    exec "!time bash %"
-  elseif &filetype == 'python'
-    exec "!time python %"
-  elseif &filetype == 'html'
-    exec "!firefox % &"
-  elseif &filetype == 'go'
-    exec "!go build %<"
-    exec "!time go run %"
-  elseif &filetype == 'mkd'
-    exec "!~/.vim/markdown.pl % > %.html &"
-    exec "!firefox %.html &"
-  elseif &filetype == 'ruby'
-    exec "!time ruby %"
-  endif
-endfunc
+" autocmd Filetype java set makeprg=javac\ %
+" set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+" map <silent> <Leader>c :make<CR>:copen<CR>
+"
+" map <silent> <Leader>r :call CompileRun()<CR>
+" func! CompileRun()
+"   exec "w"
+"   if &filetype == 'c'
+"     exec "!gcc % -o %<"
+"     exec "!time ./%<"
+"   elseif &filetype == 'cpp'
+"     exec "!g++ % -o %<"
+"     exec "!time ./%<"
+"   elseif &filetype == 'java'
+"     exec "!javac %"
+"     exec "!time java -cp %:p:h %:t:r"
+"     set errorformat=%A%f:%l:\ %m,%-Z%p^,%-C%.%#
+"   elseif &filetype == 'sh'
+"     exec "!time bash %"
+"   elseif &filetype == 'python'
+"     exec "!time python %"
+"   elseif &filetype == 'html'
+"     exec "!firefox % &"
+"   elseif &filetype == 'go'
+"     exec "!go build %<"
+"     exec "!time go run %"
+"   elseif &filetype == 'mkd'
+"     exec "!~/.vim/markdown.pl % > %.html &"
+"     exec "!firefox %.html &"
+"   elseif &filetype == 'ruby'
+"     exec "!time ruby %"
+"   endif
+" endfunc
 
 " Disable arrow keys
 inoremap  <Up>     <NOP>
@@ -136,3 +137,5 @@ nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 " remap arrow keys
 nnoremap <Left> :bprev<CR>
 nnoremap <Right> :bnext<CR>
+
+vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>

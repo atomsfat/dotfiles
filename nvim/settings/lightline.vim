@@ -19,7 +19,7 @@ let g:lightline = {
 
 let g:lightline.active = {
   \ 'left': [ [ 'paste' ],
-  \           [ 'readonly', 'filename', 'modified' ] ],
+  \           [ 'readonly', 'filename', 'modified', 'cocstatus' ] ],
   \ 'right': [ ['fugitive'], [ 'lineinfo' ],
   \            [ 'fileformat', 'fileencoding', 'filetype' ] ] }
 
@@ -33,6 +33,8 @@ let g:lightline.component_expand = {
 let g:lightline.component_type = {
     \ 'buffers': 'tabsel'}
 
+let g:lightline.component_function = {
+    \ 'cocstatus': 'coc#status'}
 function! MyFiletype()
     return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype . ' ' . WebDevIconsGetFileTypeSymbol() : 'no ft') : ''
   endfunction

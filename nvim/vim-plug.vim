@@ -3,7 +3,7 @@ call plug#begin(stdpath('data'))
 Plug 'tpope/vim-sensible'
 
 " Code 
-Plug 'neomake/neomake' 
+" Plug 'neomake/neomake' 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}

@@ -32,7 +32,7 @@ nmap <leader>L :action RecentLocations<cr>
 nmap <leader>[ :action Back<cr>
 nmap <leader>] :action Forward<cr>
 
-nmap <leader><tab> :action RecentChangedFiles<cr>
+nmap <leader><tab> :action RecentChangedFiles<cr><cr>
 " nmap <leader><tab> :action Switcher<cr>
 
 " Closing tabs

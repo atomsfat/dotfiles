@@ -2,8 +2,8 @@
 " This must be first, because it changes other options as a side effect.
 set nocompatible
 set encoding=utf-8
-let g:python_host_prog = system('echo -n $(brew --prefix)') . '/bin/python'
-let g:python3_host_prog = system('echo -n $(brew --prefix)') . '/bin/python3'
+" let g:python_host_prog = system('echo -n $(brew --prefix)') . '/bin/python'
+" let g:python3_host_prog = system('echo -n $(brew --prefix)') . '/bin/python3'
 
 " source ~/.nvimrc.before if it exists.
 if filereadable(expand("~/.nvimrc.before"))
@@ -70,7 +70,6 @@ if has('persistent_undo')
 endif
 
 " Indentation 
-
 set smartindent
 set shiftwidth=2
 set softtabstop=2
@@ -81,7 +80,6 @@ set nowrap       "Don't wrap lines
 set linebreak    "Wrap lines at convenient points
 
 " Folds
-
 set foldmethod=syntax   "fold based on syntax
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
