@@ -23,6 +23,7 @@ brew cask install font-hack-nerd-font
   curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   ln -s  ~/Workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+  ln -s ~/Work/dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
 ```
 Inside nvim :PlugInstall
 
@@ -64,6 +65,7 @@ mklink /d ~/.nvim c:\Users\atoms\Workspace\github\dotfiles\nvim\
   ln -s ~/Work/dotfiles/nvim .nvim
   mkdir -p .config/nvim
   ln -s ~/Work/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
+  ln -s ~/Work/dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
   ln -s ~/Work/dotfiles/zshrc ~/.zshrc
   ln -s ~/Work/dotfiles/zsh ~/.zsh
   curl -s "https://get.sdkman.io" | bash
