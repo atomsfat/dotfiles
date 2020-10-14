@@ -57,7 +57,8 @@ export NVM_DIR="$HOME/.nvm"
 # Alias
 alias vi=nvim
 if [[ "$(uname -a)" = *"microsoft"* ]]; then
-  export PATH=$PATH:/c/WINDOWS/system32:/c/WINDOWS:/c/WINDOWS/system32/Windows
+  export PATH=$PATH:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/
+
   alias pbcopy='xclip -selection clipboard'
   alias pbpaste='xclip -selection clipboard -o'
   # X server

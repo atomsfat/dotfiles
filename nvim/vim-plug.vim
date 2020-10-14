@@ -29,6 +29,8 @@ Plug 'mhinz/vim-startify'       " Start buffer
 Plug 'mbbill/undotree', {'on': 'UndotreeToggle'}
 Plug 'Raimondi/delimitMate'
 Plug 'MattesGroeger/vim-bookmarks'
+" Plug '/tpope/vim-surround'
+Plug  'machakann/vim-sandwich'
 Plug 'junegunn/vim-peekaboo'    " Display paste register
 Plug 'tmux-plugins/vim-tmux-focus-events' " Autoread working while inside tmux
 
