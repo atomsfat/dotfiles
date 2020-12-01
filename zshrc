@@ -70,6 +70,7 @@ alias top="vtop --theme=wizard"
 alias hs='history | grep'
 alias vi=nvim
 
+export BAT_THEME='OneHalfLight'
 export EDITOR='nvim'
 # NVM
 export NVM_DIR="$HOME/.nvm"

@@ -7,7 +7,7 @@
       "filetypes": ["go"]
     }
   },
-  "java.jdt.ls.vmargs": "-javaagent:/Users/atoms/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.12/48e4e5d60309ebd833bc528dcf77668eab3cd72c/lombok-1.18.12.jar",
+  "java.jdt.ls.vmargs": "-javaagent:/Users/tomas/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.12/48e4e5d60309ebd833bc528dcf77668eab3cd72c/lombok-1.18.12.jar",
   "java.import.maven.enabled": false,
   "java.import.gradle.enabled": false,
   "java.trace.server": "verbose",
@@ -17,5 +17,5 @@
   "diagnostic.warningSign": "",
   "diagnostic.infoSign": "i",
   "diagnostic.hintSign": "!",
-  "java.format.settings.url": "/Users/atoms/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
+  "java.format.settings.url": "/Users/tomas/.config/coc/extensions/node_modules/redhat.java/eclipse-formatter.xml"
 }

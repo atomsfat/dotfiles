@@ -44,6 +44,8 @@ nmap <leader>Q :action ReopenClosedTab<cr>
 nmap <leader>/  :action CommentByLineComment<cr>
 nmap <leader>f :action FindInPath<cr>
 nmap <leader>p :action FileStructurePopup<cr>
+nmap <leader>n :action GotoFile<cr>
+nmap <leader><leader> :action SearchEverywhere<cr>
 
 " Split
 nnoremap <leader>- :split<CR>
