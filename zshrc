@@ -66,7 +66,7 @@ if [[ "$(uname -a)" = *"microsoft"* ]]; then
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 fi
 
-alias top="vtop --theme=wizard"
+# alias top="vtop --theme=wizard"
 alias hs='history | grep'
 alias vi=nvim
 
@@ -83,3 +83,7 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 # java things
 source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true

@@ -19,7 +19,7 @@ zmodload zsh/zle
 autoload -U colors && colors
 
 # By default, we have insert mode shown on right hand side
-export RPROMPT="%{$fg[blue]%}-- INSERT --%{$reset_color%}"
+# export RPROMPT="%{$fg[blue]%}-- INSERT --%{$reset_color%}"
 #
 # # And also a beam as the cursor
 echo -ne '\e]12;maroon1\x7;\e[5 q'
@@ -30,21 +30,21 @@ function zle-keymap-select zle-line-init zle-line-finish () {
     if [ "$TERM" = "xterm-256color" ] || [ "$TERM" = "xterm-kitty" ] || [ "$TERM" = "screen-256color" ]; then
       case $KEYMAP in
           main|viins)
-              export RPROMPT="%{$fg[blue]%}-- INSERT --%{$reset_color%}"
+              # export RPROMPT="%{$fg[blue]%}-- INSERT --%{$reset_color%}"
               # Set beam cursor
               echo -ne '\e]12;maroon1\x7;\e[5 q'
               ;;
           vicmd)
-              export RPROMPT="%{$fg[green]%}-- NORMAL --%{$reset_color%}"
+              # export RPROMPT="%{$fg[green]%}-- NORMAL --%{$reset_color%}"
               # Set block cursor
               echo -ne '\e]12;deeppink1\x7;\e[1 q'
               ;;
-          vivis|vivli)
-              export RPROMPT="%{$fg[yellow]%}-- VISUAL --%{$reset_color%}"
-              ;;
-          *)
-              export RPROMPT="%{$fg[yellow]%}-- $KEYMAP --%{$reset_color%}"
-              ;;
+          # vivis|vivli)
+          #     export RPROMPT="%{$fg[yellow]%}-- VISUAL --%{$reset_color%}"
+          #     ;;
+          # *)
+          #     export RPROMPT="%{$fg[yellow]%}-- $KEYMAP --%{$reset_color%}"
+          #     ;;
       esac
       zle reset-prompt
     fi
