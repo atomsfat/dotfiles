@@ -27,6 +27,8 @@ setopt notify             # Immediately report changes in background job status 
 setopt equals             # = command the same as `which command`
 
 export EMOJI_CLI_KEYBIND="^e"
+export ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
+
 # Zplug 
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
@@ -37,6 +39,7 @@ zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
 zplug "b4b4r07/emoji-cli"
 zplug "zsh-users/zsh-autosuggestions"
+zplug "kutsan/zsh-system-clipboard"
 zplug "~/.zsh", from:local
 
 # Install plugins if there are plugins that have not been installed
