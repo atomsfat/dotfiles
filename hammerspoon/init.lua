@@ -118,22 +118,24 @@ end
 local shortcut2 = {"cmd", "ctrl", "alt", "shift"}
 local shortcut = {"cmd", "ctrl"}
 --- quick open applications
-hs.hotkey.bind(shortcut, "0", open("Mail"))
-hs.hotkey.bind(shortcut, "2", open("iTerm"))
-hs.hotkey.bind(shortcut, "3", open("IntelliJ IDEA"))
-hs.hotkey.bind(shortcut, "1", open("Firefox"))
-hs.hotkey.bind(shortcut, "4", open("Slack"))
-hs.hotkey.bind(shortcut, "5", open("Google Chrome"))
-hs.hotkey.bind(shortcut, "6", open("Visual Studio Code"))
-hs.hotkey.bind(shortcut, "7", open("Notion"))
-hs.hotkey.bind(shortcut, "8", open("Sublime Text"))
+hs.hotkey.bind(shortcut, "a", open("Slack"))
+hs.hotkey.bind(shortcut, "b", open("Google Chrome"))
+hs.hotkey.bind(shortcut, "c", open("Mail"))
+hs.hotkey.bind(shortcut, "d", open("Firefox"))
+
+hs.hotkey.bind(shortcut, "e", open("IntelliJ IDEA"))
+hs.hotkey.bind(shortcut, "f", open("iTerm"))
+hs.hotkey.bind(shortcut, "g", open("Visual Studio Code"))
+hs.hotkey.bind(shortcut, "h", open("Notion"))
+
+hs.hotkey.bind(shortcut, "i", open("Sublime Text"))
 
 
 
 
 local laptopScreen = "Color LCD"
 local windowLayout = {
-      {"SNafari",  nil,          laptopScreen, hs.layout.maximized,    nil, nil, visible=true},
+      {"Safari",  nil,          laptopScreen, hs.layout.maximized,    nil, nil, visible=true},
       {"Mail",    nil,          laptopScreen, hs.layout.maximized,   nil, nil},
   }
   hs.layout.apply(windowLayout)
