@@ -1,5 +1,9 @@
 let mapleader=" "
 
+set showmode
+
+" repmap ; to ;
+nnoremap ; :
 " Plugins
 set commentary
 
@@ -29,6 +33,7 @@ nmap <leader>j <c-w>j
 " Navigation
 nmap <leader>g :action GotoDeclaration<cr>
 nmap gi :action GotoImplementation<CR>
+nmap gf :action GotoImplementation<CR>
 nmap <leader>L :action RecentLocations<cr>
 nmap <leader>[ :action Back<cr>
 nmap <leader>] :action Forward<cr>
@@ -46,14 +51,16 @@ nmap <leader>/  :action CommentByLineComment<cr>
 nmap <leader>f :action FindInPath<cr>
 nmap <leader>p :action FileStructurePopup<cr>
 nmap <leader>n :action GotoFile<cr>
+nmap <leader>c :action GotoClass<cr>
 nmap <leader><leader> :action SearchEverywhere<cr>
 
 " Split
 nnoremap <leader>- :split<CR>
 nnoremap <leader>\| :vsplit<CR>
-
-" Terminal
 nmap <leader>T :action ActivateTerminalToolWindow<cr>
 
 set laststatus=2
 nnoremap <leader>h :nohlsearch<CR>
+
+" code refactoring
+nnoremap <leader>r :action RenameElement<cr>

@@ -67,17 +67,25 @@ fi
 alias hs='history | grep'
 alias vi=nvim
 
-export BAT_THEME='OneHalfLight'
+export BAT_THEME='ansi'
 export EDITOR='nvim'
+export BAT_PAGER="$(brew --prefix)/Cellar/less/563/bin/less"
+export LESS='eFRX --mouse --wheel-lines 2'
 # NVM
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
+# BAT diff
+batdiff() {
+  git diff --name-only --diff-filter=d | xargs bat --diff
+}
 
 # rbenv
 _evalcache rbenv init -
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-_evalcache pyenv init -
+# export PYENV_ROOT="$HOME/.pyenv"
+# _evalcache pyenv init -
 # java things
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
+
+[ -s "/Users/tomas/.web3j/source.sh" ] && source "/Users/tomas/.web3j/source.sh"
