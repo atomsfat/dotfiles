@@ -36,7 +36,7 @@ zplug "plugins/z",   from:oh-my-zsh
 zplug "lukechilds/zsh-nvm"
 zplug "mroth/evalcache"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "kutsan/zsh-system-clipboard"
+zplug "lib/clipboard",   from:oh-my-zsh
 zplug "~/.zsh", from:local
 
 # Install plugins if there are plugins that have not been installed
