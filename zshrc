@@ -37,6 +37,7 @@ zplug "lukechilds/zsh-nvm"
 zplug "mroth/evalcache"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "lib/clipboard",   from:oh-my-zsh
+zplug "b4b4r07/enhancd", use:init.sh
 zplug "~/.zsh", from:local
 
 # Install plugins if there are plugins that have not been installed
@@ -71,6 +72,7 @@ export BAT_THEME='ansi'
 export EDITOR='nvim'
 export BAT_PAGER="$(brew --prefix)/Cellar/less/563/bin/less"
 export LESS='eFRX --mouse --wheel-lines 2'
+export ENHANCD_FILTER=fzy:fzf
 # NVM
 export NVM_LAZY_LOAD=true
 export NVM_COMPLETION=true
