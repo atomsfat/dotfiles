@@ -1,10 +1,9 @@
-hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "w", function()
-  hs.alert.show("Hello World!")
-  -- hs.notify.new({title="Hammerspoon", informativeText="Hello World"}):send()
-end)
+local geometry = require("hs.geometry")
 
+local shortcut2 = {"cmd", "ctrl", "alt", "shift"}
+local shortcut = {"cmd", "ctrl"}
 
-hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "H", function()
+hs.hotkey.bind(shortcut2, "H", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -17,7 +16,7 @@ hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "H", function()
   win:setFrame(f)
 end)
 
-hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "L", function()
+hs.hotkey.bind(shortcut2, "L", function()
   local win = hs.window.focusedWindow()
   local f = win:frame()
   local screen = win:screen()
@@ -31,78 +30,11 @@ hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "L", function()
 end)
 
 
-hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "r", function()
+hs.hotkey.bind(shortcut2, "r", function()
   hs.notify.new({title="Hammerspoon", informativeText="Reload"}):send()
   hs.reload()
 end)
 
--- hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "Y", function()
---   local win = hs.window.focusedWindow()
---   local f = win:frame()
-
---   f.x = f.x - 10
---   f.y = f.y - 10
---   win:setFrame(f)
--- end)
-
--- hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "K", function()
---   local win = hs.window.focusedWindow()
---   local f = win:frame()
-
---   f.y = f.y - 10
---   win:setFrame(f)
--- end)
-
--- hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "U", function()
---   local win = hs.window.focusedWindow()
---   local f = win:frame()
-
---   f.x = f.x + 10
---   f.y = f.y - 10
---   win:setFrame(f)
--- end)
-
--- hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "H", function()
---   local win = hs.window.focusedWindow()
---   local f = win:frame()
-
---   f.x = f.x - 10
---   win:setFrame(f)
--- end)
-
--- hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "L", function()
---   local win = hs.window.focusedWindow()
---   local f = win:frame()
-
---   f.x = f.x + 10
---   win:setFrame(f)
--- end)
-
--- hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "B", function()
---   local win = hs.window.focusedWindow()
---   local f = win:frame()
-
---   f.x = f.x - 10
---   f.y = f.y + 10
---   win:setFrame(f)
--- end)
-
--- hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "J", function()
---   local win = hs.window.focusedWindow()
---   local f = win:frame()
-
---   f.y = f.y + 10
---   win:setFrame(f)
--- end)
-
--- hs.hotkey.bind({"cmd", "ctrl", "alt", "shift"}, "N", function()j
---   local win = hs.window.focusedWindow()
---   local f = win:frame()
-
---   f.x = f.x + 10
---   f.y = f.y + 10
---   win:setFrame(f)
--- end)
 
 --- A closure function
 function open(name)
@@ -115,39 +47,105 @@ function open(name)
 end
 
 
-local shortcut2 = {"cmd", "ctrl", "alt", "shift"}
-local shortcut = {"cmd", "ctrl"}
 --- quick open applications
-hs.hotkey.bind(shortcut, "0", open("Mail"))
-hs.hotkey.bind(shortcut, "2", open("iTerm"))
-hs.hotkey.bind(shortcut, "3", open("IntelliJ IDEA"))
-hs.hotkey.bind(shortcut, "1", open("Firefox"))
-hs.hotkey.bind(shortcut, "4", open("Slack"))
-hs.hotkey.bind(shortcut, "5", open("Google Chrome"))
-hs.hotkey.bind(shortcut, "6", open("Visual Studio Code"))
-hs.hotkey.bind(shortcut, "7", open("Notion"))
-hs.hotkey.bind(shortcut, "8", open("Sublime Text"))
+hs.hotkey.bind(shortcut2, "4", open("Slack"))
+hs.hotkey.bind(shortcut2, "3", open("Mail"))
+hs.hotkey.bind(shortcut2, "2", open("Safari"))
+
+
+hs.hotkey.bind(shortcut2, "r", open("IntelliJ IDEA"))
+hs.hotkey.bind(shortcut2, "s", open("Sublime Text"))
+hs.hotkey.bind(shortcut2, "f", open("Firefox"))
+
+hs.hotkey.bind(shortcut2, "d", open("Visual Studio Code"))
+hs.hotkey.bind(shortcut2, "w", open("Notion"))
+
+hs.hotkey.bind(shortcut2, "t", open("iTerm"))
+hs.hotkey.bind(shortcut2, "g", open("Google Chrome"))
+
+
+h1q3 = geometry.rect(0, 0, 0.333, 1)
+h1q3Above = geometry.rect(0, 0, 0.333, 0.5)
+h1q3Bottom = geometry.rect(0, 0.5, 0.333, 0.5)
+
+h1q3Above75 = geometry.rect(0, 0, 0.333, 0.75)
+h1q3Above25 = geometry.rect(0, 0, 0.333, 0.25)
+
+
+h2q3 = geometry.rect(0.333, 0, 0.333, 1)
+h2q3Above = geometry.rect(0.333, 0, 0.333, 0.5)
+h2q3Bottom = geometry.rect(0.333, 0.5, 0.333, 0.5)
+
+
+h3q3 = geometry.rect(0.666, 0, 0.333, 1)
+h3q3Above = geometry.rect(0.666, 0, 0.333, 0.5)
+h3q3Bottom = geometry.rect(0.666, 0.5, 0.333, 0.5)
+h3q3Above75 = geometry.rect(0.666, 0, 0.333, 0.75)
+h3q3Bottom25 = geometry.rect(0.666, 0.75, 0.333, 0.25)
 
 
 
-
-local laptopScreen = "Color LCD"
-local windowLayout = {
-      {"SNafari",  nil,          laptopScreen, hs.layout.maximized,    nil, nil, visible=true},
-      {"Mail",    nil,          laptopScreen, hs.layout.maximized,   nil, nil},
-  }
-  hs.layout.apply(windowLayout)
-
-
+local laptopScreen = "Built-in Retina Display"
 local acerScreen = "Acer XR342CKP"
-local workLayout= {
+
+
+ -- Two column layout
+local windowTwoColumLayout = {
+      {"Safari",  nil,          laptopScreen, hs.layout.maximized,    nil, nil, visible=true},
+      {"Mail",    nil,          laptopScreen, hs.layout.maximized,   nil, nil},
+      {"Slack",    nil,         laptopScreen, hs.layout.maximized,   nil, nil}
+  }
+
+
+
+local workTwoColumnLayout = {
       {"IntelliJ IDEA",  nil,          acerScreen, hs.layout.left50,    nil, nil, visible=true},
       {"iTerm2",    nil,               acerScreen, hs.layout.right50,   nil, nil, visible=true},
       {"Slack",    nil,                acerScreen, hs.layout.right50,   nil, nil},
-      {"Google Chrome",    nil,               acerScreen, hs.layout.right50,   nil, nil},
-      {"Code",    nil,   acerScreen, hs.layout.right50,   nil, nil},
+      {"Google Chrome",    nil,        acerScreen, hs.layout.right50,   nil, nil},
+      {"Code",    nil,                 acerScreen, hs.layout.right50,   nil, nil},
       {"Notion",    nil,               acerScreen, hs.layout.left50,   nil, nil},
-      {"Sublime Text",    nil,               acerScreen, hs.layout.right50,   nil, nil},
+      {"Sublime Text",    nil,         acerScreen, hs.layout.right50,   nil, nil}
   }
-hs.layout.apply(workLayout)
+ 
+
+ -- Three column layout
+local windowThreeColumnLayout = {
+      {"Google Chrome",  nil,          laptopScreen, hs.layout.maximized,    nil, nil, visible=true},
+      {"Mail",    nil,          laptopScreen, hs.layout.maximized,   nil, nil},
+      {"Slack",    nil,         laptopScreen, hs.layout.maximized,   nil, nil}
+  }
+
+
+local workThreeColumnLayout = {
+      {"IntelliJ IDEA",  nil,           acerScreen, h1q3,    nil, nil, visible=true},
+      {"Code",    nil,                  acerScreen, h1q3,   nil, nil},
+      
+
+      {"iTerm2",    nil,                acerScreen, h2q3,   nil, nil, visible=true},
+   
+      {"Safari",    nil,                acerScreen, h3q3Above75,   nil, nil},
+      {"Firefox",    nil,               acerScreen, h3q3Above75,   nil, nil},
+      {"Notion",    nil,                acerScreen, h3q3Above75,   nil, nil},
+      {"Sublime Text",    nil,          acerScreen, h3q3Bottom25,   nil, nil}
+
+     
+  }
+
+
+
+-- Two column caller
+hs.hotkey.bind(shortcut2, "q", function()
+  hs.layout.apply(windowTwoColumLayout)
+  hs.layout.apply(workTwoColumnLayout)
+end)
+
+-- Three column caller
+hs.hotkey.bind(shortcut2, "a", function()
+  hs.layout.apply(windowThreeColumnLayout)
+  hs.layout.apply(workThreeColumnLayout)
+end)
+
+hs.layout.apply(windowTwoColumLayout)
+hs.layout.apply(workTwoColumnLayout)
 

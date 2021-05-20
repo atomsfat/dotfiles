@@ -1,6 +1,5 @@
 # Resources:
 # https://github.com/rike422/dotfiles
-
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 if [[ "$(uname -a)" = *"microsoft"* ]]; then
   export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH" 
@@ -11,7 +10,6 @@ export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
 export KCODE=utf-8    # Set UTF-8 to KCODE
 export AUTOFEATURE
-
 
 bindkey -v 
 # Reduce latency when pressing <Esc>
@@ -26,9 +24,7 @@ setopt prompt_subst       # Handle variable substitution and command substitutio
 setopt notify             # Immediately report changes in background job status make 
 setopt equals             # = command the same as `which command`
 
-export EMOJI_CLI_KEYBIND="^e"
 export ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
-
 # Zplug 
 export ZPLUG_HOME=$(brew --prefix)/opt/zplug
 source $ZPLUG_HOME/init.zsh
@@ -37,9 +33,11 @@ zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
-zplug "b4b4r07/emoji-cli"
+zplug "lukechilds/zsh-nvm"
+zplug "mroth/evalcache"
 zplug "zsh-users/zsh-autosuggestions"
-zplug "kutsan/zsh-system-clipboard"
+zplug "lib/clipboard",   from:oh-my-zsh
+zplug "b4b4r07/enhancd", use:init.sh
 zplug "~/.zsh", from:local
 
 # Install plugins if there are plugins that have not been installed
@@ -51,19 +49,16 @@ if ! zplug check --verbose; then
 fi
 
 # Then, source plugins and add commands to $PATH
-zplug load --verbose
+# zplug load --verbose
+zplug load
 
-#NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completiona
 # Alias
 alias vi=nvim
 if [[ "$(uname -a)" = *"microsoft"* ]]; then
   export PATH=$PATH:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/
 
-  alias pbcopy='xclip -selection clipboard'
-  alias pbpaste='xclip -selection clipboard -o'
+  # alias pbcopy='xclip -selection clipboard'
+  # alias pbpaste='xclip -selection clipboard -o'
   # X server
   export LIBGL_ALWAYS_INDIRECT=1
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
@@ -73,21 +68,26 @@ fi
 alias hs='history | grep'
 alias vi=nvim
 
-export BAT_THEME='OneHalfLight'
+export BAT_THEME='ansi'
 export EDITOR='nvim'
+export BAT_PAGER="$(brew --prefix)/Cellar/less/563/bin/less"
+export LESS='eFRX --mouse --wheel-lines 2'
+export ENHANCD_FILTER=fzy:fzf
 # NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completiona
+export NVM_LAZY_LOAD=true
+export NVM_COMPLETION=true
+# BAT diff
+batdiff() {
+  git diff --name-only --diff-filter=d | xargs bat --diff
+}
 
 # rbenv
-eval "$(rbenv init -)"
+_evalcache rbenv init -
 # pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-eval "$(pyenv init -)"
+# export PYENV_ROOT="$HOME/.pyenv"
+# _evalcache pyenv init -
 # java things
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+[ -s "/Users/tomas/.web3j/source.sh" ] && source "/Users/tomas/.web3j/source.sh"

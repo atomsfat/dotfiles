@@ -8,6 +8,9 @@ Atoms custom dotfiles
   git clone https://github.com/seebi/dircolors-solarized.git
   brew install tmux
   brew install nvim
+  brew install fzf
+  brew install fzy
+  brew install bat
   brew install tmux-mem-cpu-load
   ln -s ~/Workspace/dotfiles/tmux.conf ~/.tmux.conf;
 ```
@@ -39,7 +42,7 @@ Edit `%AppData%/Roaming/wsltty/config` config font `Font=RobotoMono Nerd Font`
 Install Neovim for windows 'choco install neovim'
 ## Enable clipboard on windows
 ```
-   sudo ln -s /mnt/c/tools/neovim/Neovim/bin/win32yank.exe /usr/local/bin/win32yank.exe
+   sudo ln -s /mnt/c/tools/neovim/Neovim/bin/win32yank.exe ~/local/bin/win32yank
 ```
 ```
 Power shell
