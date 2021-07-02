@@ -1,0 +1,47 @@
+{
+  "logback_bit": {
+    "title": "Bit Logback log format",
+    "description": "Bit Log format used by spring-boot",
+    "url": "https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html#boot-features-logging-format",
+    "regex": {
+      "onestamp": {
+        "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(?:.\\d{3})?) \\[(?<thread>[\\w\\d -]+)\\] (?<level>\\w+)\\s+(?<logger>[^\\s]+)\\s-\\s(?<message>(.*)|(.*\\n)*)?"
+      }
+    },
+    "level": {
+      "error": "ERROR",
+      "warning": "WARN",
+      "info": "INFO",
+      "debug": "DEBUG",
+      "trace": "TRACE"
+    },
+    "value": {
+      "level": {
+        "kind": "string",
+        "identifier": true
+      },
+      "thread": {
+        "kind": "string",
+        "identifier": true
+      },
+      "logger": {
+        "kind": "string",
+        "identifier": true
+      },
+      "message": {
+        "kind": "string"
+      }
+    },
+    "sample": [
+      {
+        "line": "2021-06-21T01:38:16.505 [default-nioEventLoopGroup-1-2] INFO  c.b.signservice.http.HttpController - sign req=SignRequest(currency=dai, method=eth_erc20, withdrawalId=30502, tokenName=ethSharedToken"
+      },
+      {
+        "line": "2021-06-21T01:47:12.577 [default-nioEventLoopGroup-1-3] ERROR c.b.signservice.http.HttpController - errjava.nio.file.NoSuchFileException: storage  \n at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)"
+      },
+      {
+        "line": "2021-06-21T01:47:12.577 [default-nioEventLoopGroup-1-3] ERROR c.b.signservice.http.HttpController - error \n java.nio.file.NoSuchFileException: storage/ethSharedToken.sct \n at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92) \n at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)"
+      }
+    ]
+  }
+}
