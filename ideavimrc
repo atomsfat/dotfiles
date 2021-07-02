@@ -1,11 +1,17 @@
 let mapleader=" "
 
 set showmode
+set showcmd
+set ideastatusicon='gray'
+let g:EasyMotion_override_acejump = 0
 
 " repmap ; to ;
 nnoremap ; :
 " Plugins
 set commentary
+set easymotion
+set NERDTree
+set multiple-cursors
 
 set ignorecase
 set smartcase
@@ -15,6 +21,8 @@ set clipboard+=unnamed
 
 " Use Idea to join lines smartly
 set ideajoin
+" Use Idea bookmarks
+set ideamarks
 
 " highlight search matches
 :set hlsearch
@@ -33,13 +41,10 @@ nmap <leader>j <c-w>j
 " Navigation
 nmap <leader>g :action GotoDeclaration<cr>
 nmap gi :action GotoImplementation<CR>
-nmap gf :action GotoImplementation<CR>
 nmap <leader>L :action RecentLocations<cr>
 nmap <leader>[ :action Back<cr>
 nmap <leader>] :action Forward<cr>
 
-nmap <leader><tab> :action RecentChangedFiles<cr><cr>
-" nmap <leader><tab> :action Switcher<cr>
 
 " Closing tabs
 nmap <leader>q :action CloseContent<cr>
@@ -47,13 +52,17 @@ nmap <leader>Q :action ReopenClosedTab<cr>
 
 " Search
 " nmap <leader>/ :action Find<cr>
-nmap <leader>/  :action CommentByLineComment<cr>
+" nmap <leader>/  :action CommentByLineComment<cr>
 nmap <leader>f :action FindInPath<cr>
 nmap <leader>p :action FileStructurePopup<cr>
-nmap <leader>n :action GotoFile<cr>
-nmap <leader>c :action GotoClass<cr>
-nmap <leader><leader> :action SearchEverywhere<cr>
-
+nmap <leader>t :action GotoFile<cr>
+nmap <leader>o :action GotoClass<cr>
+nmap <leader>\ :action SearchEverywhere<cr>
+nmap <leader><tab> :action Switcher<cr>
+nmap <leader><e> :action RecentChangedFiles<cr>
+nmap <leader><a> :action GotoAction<cr>
+" Map \r to the Reformat Code action
+:map <leader> <Action>(ReformatCode)
 " Split
 nnoremap <leader>- :split<CR>
 nnoremap <leader>\| :vsplit<CR>
@@ -64,3 +73,22 @@ nnoremap <leader>h :nohlsearch<CR>
 
 " code refactoring
 nnoremap <leader>r :action RenameElement<cr>
+
+" Nerdtree
+nnoremap <leader>n :NERDTreeToggle<cr>
+
+" Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
+nmap <C-n> <Plug>NextWholeOccurrence
+xmap <C-n> <Plug>NextWholeOccurrence
+nmap g<C-n> <Plug>NextOccurrence
+xmap g<C-n> <Plug>NextOccurrence
+nmap <C-x> <Plug>SkipOccurrence
+xmap <C-x> <Plug>SkipOccurrence
+nmap <C-p> <Plug>RemoveOccurrence
+xmap <C-p> <Plug>RemoveOccurrence
+" Note that the default <A-n> and g<A-n> shortcuts don't work on Mac due to dead keys.
+" <A-n> is used to enter accented text e.g. ñ
+nmap <S-C-n> <Plug>AllWholeOccurrences
+xmap <S-C-n> <Plug>AllWholeOccurrences
+nmap g<S-C-n> <Plug>AllOccurrences
+xmap g<S-C-n> <Plug>AllOccurrences
