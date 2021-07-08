@@ -23,6 +23,7 @@ setopt magic_equal_subst  # = (--prefix = / usr etc.)
 setopt prompt_subst       # Handle variable substitution and command substitution within prompt definitions
 setopt notify             # Immediately report changes in background job status make 
 setopt equals             # = command the same as `which command`
+set -o ignoreeof          # Ignre C_D to exit shell
 
 export ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
 # Zplug 
@@ -52,8 +53,6 @@ fi
 # zplug load --verbose
 zplug load
 
-# Alias
-alias vi=nvim
 if [[ "$(uname -a)" = *"microsoft"* ]]; then
   export PATH=$PATH:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/
 
@@ -64,9 +63,12 @@ if [[ "$(uname -a)" = *"microsoft"* ]]; then
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 fi
 
+# Alias
+alias vi=nvim
 # alias top="vtop --theme=wizard"
 alias hs='history | grep'
 alias vi=nvim
+alias ag="ag --color-path 35 --color-match '1;46' --color-line-number 32"
 
 export BAT_THEME='ansi'
 export EDITOR='nvim'
@@ -91,3 +93,12 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
 [ -s "/Users/tomas/.web3j/source.sh" ] && source "/Users/tomas/.web3j/source.sh"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+popup-tmux-search() {
+  tmux display-popup -w 10% -h 10% -E "~/.zsh/tmux-search-popup.sh"
+}
+zle     -N  popup-tmux-search 
+bindkey '^F' popup-tmux-search 
+#
