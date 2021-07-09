@@ -72,7 +72,7 @@ alias ag="ag --color-path 35 --color-match '1;46' --color-line-number 32"
 
 export BAT_THEME='ansi'
 export EDITOR='nvim'
-export BAT_PAGER="$(brew --prefix)/Cellar/less/563/bin/less"
+export BAT_PAGER="$(brew --prefix)/bin/less"
 export LESS='eFRX --mouse --wheel-lines 2'
 export ENHANCD_FILTER=fzy:fzf
 # NVM
