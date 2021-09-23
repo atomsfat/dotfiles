@@ -59,8 +59,8 @@ nmap <leader>t :action GotoFile<cr>
 nmap <leader>o :action GotoClass<cr>
 nmap <leader>\ :action SearchEverywhere<cr>
 nmap <leader><tab> :action Switcher<cr>
-nmap <leader><e> :action RecentChangedFiles<cr>
-nmap <leader><a> :action GotoAction<cr>
+nnoremap <leader><e> :action RecentChangedFiles<cr>
+nnoremap <leader><a> :action GotoAction<cr>
 " Map \r to the Reformat Code action
 :map <leader> <Action>(ReformatCode)
 " Split
