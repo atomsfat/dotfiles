@@ -101,4 +101,7 @@ popup-tmux-search() {
 }
 zle     -N  popup-tmux-search 
 bindkey '^F' popup-tmux-search 
+source "$HOME/env.sh"
+zstyle :prompt:pure:path color 051
+zstyle :prompt:pure:git:stash show yes
 #
