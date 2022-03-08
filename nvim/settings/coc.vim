@@ -1,3 +1,6 @@
+" Start up coc on demand CocStart
+let g:coc_start_at_startup=0
+
 " TextEdit might fail if hidden is not set.
 set hidden
 
