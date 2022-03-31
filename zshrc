@@ -35,9 +35,9 @@ zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 zplug "plugins/git",   from:oh-my-zsh
 zplug "plugins/z",   from:oh-my-zsh
 zplug "lukechilds/zsh-nvm"
-zplug "mroth/evalcache"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "lib/clipboard",   from:oh-my-zsh
+zplug "plugins/brew",   from:oh-my-zsh
 zplug "b4b4r07/enhancd", use:init.sh
 zplug "~/.zsh", from:local
 
@@ -83,22 +83,18 @@ batdiff() {
   git diff --name-only --diff-filter=d | xargs bat --diff
 }
 
-# rbenv
-_evalcache rbenv init -
-# pyenv
-# export PYENV_ROOT="$HOME/.pyenv"
-# _evalcache pyenv init -
 # java things
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
-[ -s "/Users/tomas/.web3j/source.sh" ] && source "/Users/tomas/.web3j/source.sh"
+[ -s "~/.web3j/source.sh" ] && source "~/.web3j/source.sh"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 popup-tmux-search() {
   tmux display-popup -w 10% -h 10% -E "~/.zsh/tmux-search-popup.sh"
 }
+
 zle     -N  popup-tmux-search 
 bindkey '^F' popup-tmux-search 
 source "$HOME/env.sh"
