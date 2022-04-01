@@ -7,7 +7,6 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
 " Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-denite'
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'ap/vim-css-color', {'for': 'css'}
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
@@ -22,7 +21,6 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'tomtom/tcomment_vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'andymass/vim-matchup'     " highlight sets of matching words
-Plug 'wsdjeg/FlyGrep.vim'
 Plug 'Yggdroot/indentLine'      " Display lines on indent
 Plug 'elzr/vim-json'
 Plug 'mhinz/vim-startify'       " Start buffer
@@ -45,16 +43,17 @@ Plug 'rakr/vim-one'
 Plug 'machakann/vim-highlightedyank'
 
 " File 
-Plug 'Shougo/denite.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
+"  FZF  remote plugin
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 
 " Git 
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/gv.vim'
-Plug 'neoclide/denite-git'
 
 " Tool
 Plug 'edkolev/tmuxline.vim'

@@ -64,10 +64,6 @@ noremap   <Right>  <NOP>
 " Emmet leader
 let g:user_emmet_leader_key='<C-x>'
 
-" FlyGrep
-let g:spacevim_data_dir = '~/.cache'
-nnoremap <Leader>F :FlyGrep<cr>
-
 " Undotree
 nnoremap <F5> :UndotreeToggle<cr>
 
@@ -98,17 +94,6 @@ nmap <leader>l <C-w>l
 " Filetree
 nnoremap <silent> <F3> :Defx<Cr>  
 nnoremap <silent> <leader>n :Defx `expand('%:p:h')` -search=`expand('%:p')` -columns=mark:indent:icon:icons:filename:type<cr>
-
-" Denite
-nnoremap <leader>p :<C-u>Denite file/rec -start-filter<CR>
-nnoremap <leader>s :<C-u>Denite buffer<CR>
-nnoremap <leader>8 :<C-u>DeniteCursorWord grep:.<CR>
-nnoremap <leader>f :<C-u>Denite -start-filter grep:::!<CR>
-nnoremap <leader><Space>/ :<C-u>DeniteBufferDir -start-filter grep:::!<CR>
-nnoremap <leader>d :<C-u>DeniteBufferDir file/rec -start-filter<CR>
-nnoremap <leader><Space>r :<C-u>Denite -resume -cursor-pos=+1<CR>
-nnoremap <leader><C-r> :<C-u>Denite register:.<CR>
-nnoremap <leader>g :<C-u>Denite gitstatus<CR>
 
 " Move bewteen buffer
 " https://vi.stackexchange.com/questions/4919/exit-from-terminal-mode-in-neovim
