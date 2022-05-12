@@ -92,12 +92,11 @@ source "$HOME/.sdkman/bin/sdkman-init.sh"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 popup-tmux-search() {
-  tmux display-popup -w 10% -h 10% -E "~/.zsh/tmux-search-popup.sh"
+  tmux display-popup -w 40 -h 20 -E "~/.zsh/tmux-search-popup.sh"
 }
 
 zle     -N  popup-tmux-search 
 bindkey '^F' popup-tmux-search 
 source "$HOME/env.sh"
-zstyle :prompt:pure:path color 051
+zstyle :prompt:pure:path color 027
 zstyle :prompt:pure:git:stash show yes
-#

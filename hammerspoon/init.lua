@@ -1,7 +1,8 @@
+
+
 local geometry = require("hs.geometry")
 
 local shortcut2 = {"cmd", "ctrl", "alt", "shift"}
-local shortcut = {"cmd", "ctrl"}
 
 hs.hotkey.bind(shortcut2, "H", function()
   local win = hs.window.focusedWindow()
@@ -30,7 +31,7 @@ hs.hotkey.bind(shortcut2, "L", function()
 end)
 
 
-hs.hotkey.bind(shortcut2, "r", function()
+hs.hotkey.bind(shortcut2, "6", function()
   hs.notify.new({title="Hammerspoon", informativeText="Reload"}):send()
   hs.reload()
 end)
@@ -48,20 +49,22 @@ end
 
 
 --- quick open applications
+hs.hotkey.bind(shortcut2, "1", open("IntelliJ IDEA"))
+hs.hotkey.bind(shortcut2, "2", open("iTerm"))
+hs.hotkey.bind(shortcut2, "3", open("Safari"))
 hs.hotkey.bind(shortcut2, "4", open("Slack"))
-hs.hotkey.bind(shortcut2, "3", open("Mail"))
-hs.hotkey.bind(shortcut2, "2", open("Safari"))
+hs.hotkey.bind(shortcut2, "5", open("Mail"))
 
 
-hs.hotkey.bind(shortcut2, "r", open("IntelliJ IDEA"))
+hs.hotkey.bind(shortcut2, "q", open("Visual Studio Code"))
+hs.hotkey.bind(shortcut2, "w", open("Evernote"))
+hs.hotkey.bind(shortcut2, "e", open("Google Chrome"))
+hs.hotkey.bind(shortcut2, "r", open("Mail"))
+hs.hotkey.bind(shortcut2, "t", open("Mail"))
+
+
 hs.hotkey.bind(shortcut2, "s", open("Sublime Text"))
-hs.hotkey.bind(shortcut2, "f", open("Firefox"))
-
-hs.hotkey.bind(shortcut2, "d", open("Visual Studio Code"))
-hs.hotkey.bind(shortcut2, "w", open("Notion"))
-
-hs.hotkey.bind(shortcut2, "t", open("iTerm"))
-hs.hotkey.bind(shortcut2, "g", open("Google Chrome"))
+hs.hotkey.bind(shortcut2, "d", open("Firefox"))
 
 
 h1q3 = geometry.rect(0, 0, 0.333, 1)
@@ -135,13 +138,13 @@ local workThreeColumnLayout = {
 
 
 -- Two column caller
-hs.hotkey.bind(shortcut2, "q", function()
+hs.hotkey.bind(shortcut2, "7", function()
   hs.layout.apply(windowTwoColumLayout)
   hs.layout.apply(workTwoColumnLayout)
 end)
 
 -- Three column caller
-hs.hotkey.bind(shortcut2, "a", function()
+hs.hotkey.bind(shortcut2, "8", function()
   hs.layout.apply(windowThreeColumnLayout)
   hs.layout.apply(workThreeColumnLayout)
 end)
