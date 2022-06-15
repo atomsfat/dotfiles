@@ -100,3 +100,4 @@ bindkey '^F' popup-tmux-search
 source "$HOME/env.sh"
 zstyle :prompt:pure:path color 027
 zstyle :prompt:pure:git:stash show yes
+export PATH="/usr/local/sbin:$PATH"
