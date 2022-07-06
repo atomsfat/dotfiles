@@ -68,8 +68,8 @@ let g:user_emmet_leader_key='<C-x>'
 nnoremap <F5> :UndotreeToggle<cr>
 
 " Split
-nnoremap <leader>- :split<CR>
-nnoremap <leader>\| :vsplit<CR>
+nnoremap <leader>- :split<CR>/q
+nnoremap <leader>\\ :vsplit<CR>
 
 " Change next selected cgn
 nnoremap <Leader>x /\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgn

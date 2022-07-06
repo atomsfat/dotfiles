@@ -5,6 +5,8 @@ if [[ "$(uname -a)" = *"microsoft"* ]]; then
   export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH" 
 fi
 
+export PATH="$PATH:/Users/atoms/Library/Python/3.8/bin"
+
 export EDITOR=vim     # Set editor to vim
 export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
@@ -101,3 +103,5 @@ source "$HOME/env.sh"
 zstyle :prompt:pure:path color 027
 zstyle :prompt:pure:git:stash show yes
 export PATH="/usr/local/sbin:$PATH"
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
