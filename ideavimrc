@@ -5,6 +5,10 @@ set showcmd
 set ideastatusicon='gray'
 let g:EasyMotion_override_acejump = 0
 
+" Disable macros
+nnoremap Q <nop>
+map q <Nop>
+
 " repmap ; to ;
 nnoremap ; :
 " Plugins
@@ -16,11 +20,21 @@ set multiple-cursors
 set ignorecase
 set smartcase
 
+" Reload
+nnoremap \e :e ~/.ideavimrc<CR>
+nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
+
 " Copy to system clipboard as well
 set clipboard+=unnamed
+set clipboard+=ideaput
+
+""" Distraction Free Mode
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 
 " Use Idea to join lines smartly
 set ideajoin
+set idearefactormode=keep
+
 " Use Idea bookmarks
 set ideamarks
 
@@ -33,46 +47,76 @@ nmap zk O<Esc>j
 
 " key bindings for quickly moving between windows
 " h left, l right, k up, j down
-nmap <leader>h <c-w>h
-nmap <leader>l <c-w>l
-nmap <leader>k <c-w>k
-nmap <leader>j <c-w>j
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
 
 " Navigation
-nmap <leader>g :action GotoDeclaration<cr>
-nmap gi :action GotoImplementation<CR>
-nmap <leader>L :action RecentLocations<cr>
-nmap <leader>[ :action Back<cr>
-nmap <leader>] :action Forward<cr>
-
+nnoremap <Leader>en :action EditSourceInNewWindow<CR>
+nnoremap <Leader>n :action NextWindow<CR>
+nnoremap <TAB> :action PreviousTab<CR>
+nnoremap <s-TAB> :action NextTab<CR>
 
 " Closing tabs
-nmap <leader>q :action CloseContent<cr>
-nmap <leader>Q :action ReopenClosedTab<cr>
+nnoremap q :action CloseContent<cr>
+nnoremap Q :action ReopenClosedTab<cr>
 
-" Search
+" Searching and Source Code Navigation
+set incsearch
+
+nnoremap <leader>u :action FindUsages<CR>
+
+nnoremap <leader>s :action GotoRelated<CR>
+nnoremap <leader>h :action CallHierarchy<CR>
+nnoremap <leader>b :action ShowNavBar<CR>
+
+nnoremap go :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotToDeclaration<CR>
+nnoremap gp :action GotToSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gf :action GotoFile<CR>
+nnoremap ga :action GotoAction<CR>
+nnoremap gs :action GotoSymbol<CR>
+nnoremap gj :action SearchEverywhere<cr>
+nnoremap gr :action RecentChangedFiles<cr>
+nnoremap g<tab> :action Switcher<cr>
+
+nnoremap gl :action RecentLocations<cr>
+nnoremap g[ :action Back<cr>
+nnoremap g] :action Forward<cr>
+
 " nmap <leader>/ :action Find<cr>
 " nmap <leader>/  :action CommentByLineComment<cr>
-nmap <leader>f :action FindInPath<cr>
-nmap <leader>p :action FileStructurePopup<cr>
-nmap <leader>t :action GotoFile<cr>
-nmap <leader>o :action GotoClass<cr>
-nmap <leader>\ :action SearchEverywhere<cr>
-nmap <leader><tab> :action Switcher<cr>
-nnoremap <leader><e> :action RecentChangedFiles<cr>
-nnoremap <leader><a> :action GotoAction<cr>
-" Map \r to the Reformat Code action
-:map <leader> <Action>(ReformatCode)
+nnoremap <leader>f :action FindInPath<cr>
+nnoremap <leader>p :action FileStructurePopup<cr>
+nnoremap <leader>t :action GotoFile<cr>
+" nnoremap <leader>o :action GotoClass<cr>
+nnoremap <leader><tab> :action Switcher<cr>
+nnoremap <leader>e :action RecentChangedFiles<cr>
+nnoremap <leader>a :action GotoAction<cr>
+
+nnoremap <c-r> :action RecentFiles<CR>
+nnoremap <leader>l :action RecentLocations<CR>
+nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+
 " Split
-nnoremap <leader>- :split<CR>
-nnoremap <leader>\| :vsplit<CR>
-nmap <leader>T :action ActivateTerminalToolWindow<cr>
+nnoremap <leader>\ :action SplitVertically<CR>
+nnoremap <leader>- :action SplitHorizontally<CR>
+nnoremap <c-=> :action Unsplit<CR>
+nnoremap <c-m> :action MoveEditorToOppositeTabGroup<CR>
+
+" Terminal
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 
 set laststatus=2
 nnoremap <leader>h :nohlsearch<CR>
-
-" code refactoring
-nnoremap <leader>r :action RenameElement<cr>
 
 " Nerdtree
 nnoremap <leader>n :NERDTreeToggle<cr>
@@ -92,3 +136,38 @@ nmap <S-C-n> <Plug>AllWholeOccurrences
 xmap <S-C-n> <Plug>AllWholeOccurrences
 nmap g<S-C-n> <Plug>AllOccurrences
 xmap g<S-C-n> <Plug>AllOccurrences
+
+" Editing source code
+vnoremap < <gv
+vnoremap > >gv
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+
+nnoremap U <C-R>
+
+
+" Code refactoring
+" nnoremap <leader>c :action CommentByLineComment<CR>
+nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
+nnoremap <Leader>=  :action ReformatCode<CR>
+nnoremap <leader>o :action OptimizeImports<CR>
+
+" Tool windows
+nnoremap <c-p> :action JumpToLastWindow<CR>
+nnoremap <c-x> :action HideAllWindows<CR>
+
+" Running and Debugging
+nnoremap ,r :action ContextRun<CR>
+nnoremap ,c :action RunClass<CR>
+nnoremap ,f :action ChooseRunConfiguration<CR>
+nnoremap ,t :action ActivateRunToolWindow<CR>
+nnoremap ,u :action Rerun<CR>
+nnoremap ,f :action RerunFailedTests<CR>
+nnoremap ,b :action ToggleLineBreakpoint<CR>
+nnoremap ,d :action ContextDebug<CR>
+nnoremap ,n :action ActivateDebugToolWindow<CR>
