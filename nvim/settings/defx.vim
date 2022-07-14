@@ -1,10 +1,12 @@
+" Filetree
+nnoremap <silent> <leader>n :Defx `expand('%:p:h')` -search=`expand('%:p')` -columns=mark:indent:icon:icons:filename:type<cr>
+
 call defx#custom#option('_', {
-      \ 'split': 'vertical',
-      \ 'direction': 'rightbelow',
-      \ 'winwidth':  30,
+      \ 'split': 'floating',
       \ 'buffer_name': 'explorer',
       \ 'toggle': 1,
       \ 'resume': 1,
+      \ 'winborder': 1,
       \ 'columns': 'indent:git:icons:filename:mark'
       \ })
 
@@ -19,9 +21,9 @@ call defx#custom#column('icon', {
       \ 'root_icon': ' ',
       \ })
 
-call defx#custom#column('filename', {
-      \ 'max_width': -90,
-      \ })
+" call defx#custom#column('filename', {
+"       \ 'max_width': -90,
+"       \ })
 
 call defx#custom#column('git', 'indicators', {
   \ 'Modified'  : '✹',

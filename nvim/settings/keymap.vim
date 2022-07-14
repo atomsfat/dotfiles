@@ -12,6 +12,8 @@ nnoremap ; :
 exe 'map <Leader>/ :TComment<CR>'
 exe 'imap <Leader>/ <Esc>:TComment<CR>i'
 
+nnoremap <leader>h :nohlsearch<CR>
+
 " Terminal
 tnoremap <C-q> <C-\><C-n> 
 " tmap <esc> <c-\><c-n><esc><cr>
@@ -91,9 +93,6 @@ nmap <leader>j <C-w>j
 nmap <leader>k <C-w>k
 nmap <leader>l <C-w>l
 
-" Filetree
-nnoremap <silent> <F3> :Defx<Cr>  
-nnoremap <silent> <leader>n :Defx `expand('%:p:h')` -search=`expand('%:p')` -columns=mark:indent:icon:icons:filename:type<cr>
 
 " Move bewteen buffer
 " https://vi.stackexchange.com/questions/4919/exit-from-terminal-mode-in-neovim
@@ -120,7 +119,21 @@ nmap <Leader>9 <Plug>lightline#bufferline#go(9)
 nmap <Leader>0 <Plug>lightline#bufferline#go(10)
 
 " remap arrow keys
-nnoremap <Left> :bprev<CR>
-nnoremap <Right> :bnext<CR>
+" nnoremap <Left> :bprev<CR>
+" nnoremap <Right> :bnext<CR>
 
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
+
+
+" resize current buffer by +/- 5
+noremap <A-left> :vertical resize +5<cr>
+noremap <A-down> :resize -5<cr>
+noremap <A-up> :resize +5<cr>
+noremap <A-right> :vertical resize -5<cr>
+
+"  Search in files
+nnoremap <leader>f :Rg<Cr>
+
+" Redo
+nnoremap U <C-R> 
+

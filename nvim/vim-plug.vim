@@ -5,15 +5,12 @@ Plug 'tpope/vim-sensible'
 " Code 
 " Plug 'neomake/neomake' 
 Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'ap/vim-css-color', {'for': 'css'}
 Plug 'kchmck/vim-coffee-script', { 'for': 'coffee' }
 Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'hashivim/vim-terraform', {'for': ['hcl', 'tf', 'terraform']}
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'zchee/deoplete-jedi'
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
 
@@ -31,6 +28,7 @@ Plug 'MattesGroeger/vim-bookmarks'
 Plug  'machakann/vim-sandwich'
 Plug 'junegunn/vim-peekaboo'    " Display paste register
 Plug 'tmux-plugins/vim-tmux-focus-events' " Autoread working while inside tmux
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}   "Multiple cursors
 
 " Appearance 
 Plug 'ryanoasis/vim-devicons'   
@@ -47,8 +45,10 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'kristijanhusak/defx-git'
 Plug 'kristijanhusak/defx-icons'
+
 "  FZF  remote plugin
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/remote', 'do': ':UpdateRemotePlugins' }
 
 " Git 

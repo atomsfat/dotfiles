@@ -148,6 +148,7 @@ nnoremap zo :action ExpandRegion<CR>
 nnoremap <leader>zc :action CollapseAllRegions<CR>
 nnoremap <leader>zo :action ExpandAllRegions<CR>
 
+" Redo
 nnoremap U <C-R>
 
 
@@ -167,7 +168,13 @@ nnoremap ,c :action RunClass<CR>
 nnoremap ,f :action ChooseRunConfiguration<CR>
 nnoremap ,t :action ActivateRunToolWindow<CR>
 nnoremap ,u :action Rerun<CR>
+nnoremap ,e :action Run<CR>
 nnoremap ,f :action RerunFailedTests<CR>
 nnoremap ,b :action ToggleLineBreakpoint<CR>
 nnoremap ,d :action ContextDebug<CR>
 nnoremap ,n :action ActivateDebugToolWindow<CR>
+
+noremap <A-left> :vertical resize +5<cr>
+noremap <A-down> :resize -5<cr>
+noremap <A-up> :resize +5<cr>
+noremap <A-right> :vertical resize -5<cr>

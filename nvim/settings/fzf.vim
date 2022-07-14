@@ -1,5 +1,5 @@
-nmap <Leader>f [fzf-p]
-xmap <Leader>f [fzf-p]
+nmap <Leader>g [fzf-p]
+xmap <Leader>g [fzf-p]
 
 nnoremap <leader>p :<C-u>FzfPreviewProjectFiles<CR>
 
@@ -12,6 +12,7 @@ nnoremap <silent> [fzf-p]o     :<C-u>FzfPreviewFromResources buffer project_mru<
 nnoremap <silent> [fzf-p]<C-o> :<C-u>FzfPreviewJumps<CR>
 nnoremap <silent> [fzf-p]g;    :<C-u>FzfPreviewChanges<CR>
 nnoremap <silent> [fzf-p]?     :<C-u>FzfPreviewLines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
+nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
 nnoremap <silent> [fzf-p]8     :<C-u>FzfPreviewProjectGrep "<C-r>=expand('<cword>')<CR>"<CR>
 nnoremap          [fzf-p]gr    :<C-u>FzfPreviewProjectGrep<Space>
 xnoremap          [fzf-p]gr    "sy:FzfPreviewProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
@@ -22,5 +23,8 @@ nnoremap <silent> [fzf-p]l     :<C-u>FzfPreviewLocationList<CR>
 " Use vim-devicons
 let g:fzf_preview_use_dev_icons = 1
 
+
 " The theme used in the bat preview
-let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'ansi'
+let $BAT_THEME='Monokai Extended Light'
+let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'Monokai Extended Light'
+let $FZF_PREVIEW_COMMAND="COLORTERM=truecolor bat --style=numbers --color=always {}"
