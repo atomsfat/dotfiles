@@ -79,6 +79,7 @@ nnoremap <Leader>X ?\<<C-R>=expand('<cword>')<CR>\>\C<CR>``cgN
 xnoremap <Leader>x "sy:let @/=@s<CR>cgn
 
 
+" Change to current file
 nnoremap <leader>cd :cd %:p:h<CR>
 
 " Quit buffer
@@ -136,4 +137,7 @@ nnoremap <leader>f :Rg<Cr>
 
 " Redo
 nnoremap U <C-R> 
+
+
+" https://github.com/mg979/vim-visual-multi/wiki/Mappings
 

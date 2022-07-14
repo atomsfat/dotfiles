@@ -1,5 +1,8 @@
 " Filetree
-nnoremap <silent> <leader>n :Defx `expand('%:p:h')` -search=`expand('%:p')` -columns=mark:indent:icon:icons:filename:type<cr>
+" nnoremap <silent> <leader>n :Defx `expand('%:p:h')` -search=`expand('%:p')` -columns=mark:indent:icon:icons:filename:type<cr>
+nnoremap <silent> <leader>n :Defx `expand(getcwd())` -search_recursive=`expand('%:p')` -columns=mark:indent:icon:icons:filename:type<cr>
+
+" nnoremap <silent> <Leader>e :<C-U>:Defx -resume -buffer_name=explorer -split=floating -vertical_preview  -search=`expand('%:p')` <CR>
 
 call defx#custom#option('_', {
       \ 'split': 'floating',

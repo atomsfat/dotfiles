@@ -96,7 +96,7 @@ nnoremap <leader>p :action FileStructurePopup<cr>
 nnoremap <leader>t :action GotoFile<cr>
 " nnoremap <leader>o :action GotoClass<cr>
 nnoremap <leader><tab> :action Switcher<cr>
-nnoremap <leader>e :action RecentChangedFiles<cr>
+" nnoremap <leader>e :action RecentChangedFiles<cr>
 nnoremap <leader>a :action GotoAction<cr>
 
 nnoremap <c-r> :action RecentFiles<CR>
@@ -120,6 +120,7 @@ nnoremap <leader>h :nohlsearch<CR>
 
 " Nerdtree
 nnoremap <leader>n :NERDTreeToggle<cr>
+nnoremap <leader>e :NERDTreeFocus<cr>
 
 " Remap multiple-cursors shortcuts to match terryma/vim-multiple-cursors
 nmap <C-n> <Plug>NextWholeOccurrence

@@ -1,3 +1,7 @@
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'cat {}']}, <bang>0)
+
+
 nmap <Leader>g [fzf-p]
 xmap <Leader>g [fzf-p]
 
@@ -26,5 +30,5 @@ let g:fzf_preview_use_dev_icons = 1
 
 " The theme used in the bat preview
 let $BAT_THEME='Monokai Extended Light'
-let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'Monokai Extended Light'
+let $FZF_PREVIEW_PREVIEW_BAT_THEME = 'Monokai\ Extended\ Light'
 let $FZF_PREVIEW_COMMAND="COLORTERM=truecolor bat --style=numbers --color=always {}"
