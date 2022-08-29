@@ -13,6 +13,7 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'hashivim/vim-terraform', {'for': ['hcl', 'tf', 'terraform']}
 Plug 'yuezk/vim-js'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'TovarishFin/vim-solidity'
 
 " Editor 
 Plug 'tomtom/tcomment_vim'

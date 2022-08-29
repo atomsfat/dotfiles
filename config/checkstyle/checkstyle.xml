@@ -181,9 +181,17 @@
     <!-- Miscellaneous other checks.                   -->
     <!-- See http://checkstyle.sf.net/config_misc.html -->
     <module name="ArrayTypeStyle"/>
-    <module name="FinalParameters"/>
+    <module name="FinalParameters">
+      <property name="ignorePrimitiveTypes" value="true"/>
+    </module>
     <module name="TodoComment"/>
     <module name="UpperEll"/>
+
+    <!-- Metrics checks.                   -->
+    <!-- https://checkstyle.sourceforge.io/config_metrics.html -->
+    <module name="CyclomaticComplexity"/>
+    <module name="NPathComplexity"/>
+
 
   </module>
 
