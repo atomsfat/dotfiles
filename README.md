@@ -4,13 +4,18 @@ Atoms custom dotfiles
 # Setting up
 
 ### General setup
+Install brew
 ```bash
-  git clone https://github.com/seebi/dircolors-solarized.git
-  brew install tmux
-  brew install nvim
-  brew install fzy
-  brew install bat
-  ln -s ~/Workspace/dotfiles/tmux.conf ~/.tmux.conf;
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+```bash
+brew bundle
+```
+```bash
+brew bundle
+```
+
+x ~/Workspace/dotfiles/tmux.conf ~/.tmux.conf;
 ```
 [https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts](nerd-fonts)
 ```
