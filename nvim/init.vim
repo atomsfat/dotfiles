@@ -7,7 +7,7 @@ set encoding=utf-8
 
 " source ~/.nvimrc.before if it exists.
 if filereadable(expand("~/.nvimrc.before"))
-  source ~/.nvimrc.before
+  source ~/.config/nvim/.nvimrc.before
 endif
 
 " Autosave
@@ -30,6 +30,7 @@ set guicursor=n-v-c:block,i-ci-ve:ver40,r-cr:hor20,o:hor50
   \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
   \,sm:block-blinkwait175-blinkoff150-blinkon175
 set clipboard+=unnamedplus
+xnoremap <silent> p p:let @+=@0<CR>
 set nopaste
 
 set number                      "Line numbers are good
@@ -53,7 +54,7 @@ syntax on
 let mapleader=' '
 
 "  Plug init Initialization 
-source ~/.nvim/vim-plug.vim
+source ~/.config/nvim/vim-plug.vim
 
 " Turn Off Swap Files 
 set noswapfile
@@ -85,7 +86,7 @@ set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
 
 " Custom Settings 
-for fpath in split(globpath('~/.nvim/settings', '*.vim'), '\n')
+for fpath in split(globpath('~/.config/nvim/settings', '*.vim'), '\n')
   exe 'source' fpath
 endfor
 

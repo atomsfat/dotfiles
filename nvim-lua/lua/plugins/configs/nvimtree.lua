@@ -1,0 +1,76 @@
+local present, nvimtree = pcall(require, "nvim-tree")
+
+if not present then
+  return
+end
+
+
+local ui = vim.api.nvim_list_uis()[1]
+local width = 60
+local height = 30
+
+local options = {
+  disable_netrw = true,
+  hijack_netrw = true,
+  view = {
+    number = true,
+    relativenumber = false,
+    float = {
+      enable = true,
+      open_win_config = {
+          relative = "editor",
+          border = "rounded",
+          width = width,
+          height = height,
+          col = (ui.width/2) - (width/2),
+          row = (ui.height/2) - (height/2),
+        },
+    },
+  },
+  filters = {
+    custom = { ".git" },
+  },
+ renderer = {
+    highlight_git = false,
+    highlight_opened_files = "none",
+
+    indent_markers = {
+      enable = false,
+    },
+
+    icons = {
+      show = {
+        file = true,
+        folder = true,
+        folder_arrow = true,
+        git = true,
+      },
+
+      glyphs = {
+        default = "",
+        symlink = "",
+        folder = {
+          default = "",
+          empty = "",
+          empty_open = "",
+          open = "",
+          symlink = "",
+          symlink_open = "",
+          arrow_open = "",
+          arrow_closed = "",
+        },
+        git = {
+          unstaged = "✗",
+          staged = "✓",
+          unmerged = "",
+          renamed = "➜",
+          untracked = "★",
+          deleted = "",
+          ignored = "◌",
+        },
+      },
+    },
+  },
+}
+
+nvimtree.setup(options)
