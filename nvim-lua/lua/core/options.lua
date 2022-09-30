@@ -21,7 +21,12 @@ opt.signcolumn = "yes" -- Always show sign column
 opt.clipboard = "unnamedplus" -- Access system clipboard
 opt.writebackup = false
 opt.fileencoding = "utf-8" 
-opt.swapfile = false 
+opt.swapfile = false
+
+-- Treesitter based folding
+opt.foldlevel = 20
+opt.foldmethod = "expr"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 
 
 -- Highlight on yank

@@ -4,7 +4,6 @@ if not present then
   return
 end
 
-
 local ui = vim.api.nvim_list_uis()[1]
 local width = 60
 local height = 30

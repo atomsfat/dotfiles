@@ -6,7 +6,7 @@ end
 
 local options ={
   -- Add languages to be installed here that you want installed for treesitter
-  ensure_installed = { 'c', 'cpp', 'java', 'go', 'lua', 'python', 'rust', 'typescript' },
+  ensure_installed = { 'c', 'cpp', 'java', 'go', 'lua', 'python', 'rust', 'typescript', 'javascript' },
 
   highlight = { enable = true, use_languagetree = true },
   indent = { enable = true },

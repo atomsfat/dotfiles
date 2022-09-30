@@ -47,7 +47,10 @@ return packer.startup(function(use)
 
   -- Highlight, edit, and navigate code
   use {
-    'nvim-treesitter/nvim-treesitter'
+    'nvim-treesitter/nvim-treesitter',
+    config = function()
+      require "plugins.configs.treesitter"
+    end,
   }
 
   -- Additional textobjects for treesitter
@@ -152,7 +155,7 @@ return packer.startup(function(use)
       local servers = require("custom.lsp").servers
 
       local lspconfig = require "lspconfig"
-      print(vim.inspect(servers))
+      -- print(vim.inspect(servers))
 
       for _, lsp in ipairs(servers) do
         lspconfig[lsp].setup {

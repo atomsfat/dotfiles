@@ -31,18 +31,9 @@ M.general = {
     ["<C-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
 
     -- line numbers
-    ["<leader>n"] = { "<cmd> set nu! <CR>", "toggle line number" },
-    ["<leader>rn"] = { "<cmd> set rnu! <CR>", "toggle relative number" },
+    -- ["<leader>n"] = { "<cmd> set nu! <CR>", "toggle line number" },
+    -- ["<leader>rn"] = { "<cmd> set rnu! <CR>", "toggle relative number" },
 
-    -- update nvchad
-    ["<leader>uu"] = { "<cmd> :NvChadUpdate <CR>", "update nvchad" },
-
-    ["<leader>tt"] = {
-      function()
-        require("base46").toggle_theme()
-      end,
-      "toggle theme",
-    },
 
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
@@ -59,6 +50,18 @@ M.general = {
     -- split 
     ["<leader>-"] = { ":split<CR>", "horizontal split" },
     ["<leader>\\"] = { ":vsplit<CR>", "vertical split" },
+
+    -- close buffer
+    ["q"] = { ":bd<CR>", "close buffer" },
+    -- redo
+    ["U"] = { ":<C-R>", "redo" },
+    -- buffer switching
+    ["<leader>."] = { ":bnext", "next buffer" },
+    ["<leader>,"] = { ":bprevious", "previous buffer" },
+    ["<leader><tab>"] = { ":b#", "switch last buffer" },
+    --  repmap ; to ;
+    [";"] = { ":", "remap ; :" },
+
   },
 
 
@@ -208,10 +211,10 @@ M.nvimtree = {
 
   n = {
     -- toggle
-    ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+    ["<leader>n"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
 
     -- focus
-    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
+    ["<leader>e"] = { "<cmd> NvimTreeFindFile <CR>", "locate file nvimtree" },
   },
 }
 
@@ -222,7 +225,7 @@ M.telescope = {
     -- find
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
-    ["<leader>fw"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
+    ["<leader>fg"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
     ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "help page" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
