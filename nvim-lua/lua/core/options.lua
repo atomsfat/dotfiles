@@ -37,5 +37,13 @@ vim.cmd [[
   augroup end
 ]]
 
+-- Autosave
+vim.cmd [[
+  augroup AutoSave 
+    autocmd!
+    au FocusLost * silent! wa
+  augroup end
+]]
+
 -- Set colorscheme
 vim.cmd [[colorscheme tokyonight]]

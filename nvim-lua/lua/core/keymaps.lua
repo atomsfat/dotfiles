@@ -56,9 +56,9 @@ M.general = {
     -- redo
     ["U"] = { ":<C-R>", "redo" },
     -- buffer switching
-    ["<leader>."] = { ":bnext", "next buffer" },
-    ["<leader>,"] = { ":bprevious", "previous buffer" },
-    ["<leader><tab>"] = { ":b#", "switch last buffer" },
+    ["<leader>."] = { ":bnext<CR>", "next buffer" },
+    ["<leader>,"] = { ":bprevious<CR>", "previous buffer" },
+    ["<leader><tab>"] = { ":b#<CR>", "switch last buffer" },
     --  repmap ; to ;
     [";"] = { ":", "remap ; :" },
 

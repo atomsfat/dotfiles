@@ -91,7 +91,7 @@ nnoremap g] :action Forward<cr>
 
 " nmap <leader>/ :action Find<cr>
 " nmap <leader>/  :action CommentByLineComment<cr>
-nnoremap <leader>f :action FindInPath<cr>
+nnoremap <leader>ff :action FindInPath<cr>
 nnoremap <leader>p :action FileStructurePopup<cr>
 nnoremap <leader>t :action GotoFile<cr>
 " nnoremap <leader>o :action GotoClass<cr>
