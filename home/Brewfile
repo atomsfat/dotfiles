@@ -2,7 +2,7 @@ brew 'jq'
 brew 'fzf'
 brew 'httpie'
 brew 'rg'
-brew 'z'
+brew 'zplug'
 brew 'luajit', args:['HEAD']
 brew 'stow'
 brew 'git-extras'
