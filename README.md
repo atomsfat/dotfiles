@@ -9,29 +9,20 @@ Install brew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 ```bash
+brew install stow
+stow --target=~ home
 brew bundle
 ```
 ```bash
-brew bundle
+stow --target=~ tmux
 ```
 
-x ~/Workspace/dotfiles/tmux.conf ~/.tmux.conf;
 ```
 [https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts](nerd-fonts)
 ```
 brew tap caskroom/fonts
 brew cask install font-hack-nerd-font
 ```
-
-#### For brew nvim
-```bash
-  ln -s ~/Workspace/dotfiles/nvim ~/.nvim
-  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  ln -s  ~/Workspace/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
-  ln -s ~/Work/dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
-```
-Inside nvim :PlugInstall
 
 
 ### Win 10
@@ -93,12 +84,7 @@ mklink /d ~/.nvim c:\Users\atoms\Workspace\github\dotfiles\nvim\
   npm install -g eslint
 ```
 
-
-
 https://user-images.githubusercontent.com/140008/125012390-b8983680-e02f-11eb-980a-da36f169cb4b.mov
-
-
-
 
 
 Some ideas from:
