@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 NVIM=~/.config/nvim
 rm -rf $NVIM
 

@@ -12,12 +12,16 @@ Install brew
 brew install stow
 stow --target=~ home
 brew bundle
-```
-```bash
-stow --target=~ tmux
+./link.sh
 ```
 
+### Setup nvim lua(inside dotfiles/nvim-lua)
 ```
+./install.sh
+```
+
+### Install nerd fonts
+
 [https://github.com/ryanoasis/nerd-fonts#option-4-homebrew-fonts](nerd-fonts)
 ```
 brew tap caskroom/fonts
