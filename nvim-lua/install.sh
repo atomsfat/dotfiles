@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/sh
 
 NVIM_LUA=~/.config/nvim-lua
 export NVIM_LUA
