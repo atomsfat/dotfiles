@@ -6,7 +6,14 @@ function M.setup()
     return
   end
 
-  require'alpha'.setup(require'alpha.themes.startify'.config)
+  local dashboard = require'alpha.themes.startify'
+  local handle = io.popen('fortune')
+  local fortune = handle:read("*a")
+  handle:close()
+
+  dashboard.section.header.val = fortune
+
+  require'alpha'.setup(dashboard.config)
 
 end
 

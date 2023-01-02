@@ -68,6 +68,8 @@ M.general = {
   v = {
     ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
+    ["J"] = { ":m '>+1<CR>gv=gv'"},
+    ["K"] = { ":m '<-2<CR>gv=gv'"},
   },
 
   x = {
@@ -99,7 +101,7 @@ M.lspconfig = {
       "lsp definition",
     },
 
-    ["K"] = {
+    ["H"] = {
       function()
         vim.lsp.buf.hover()
       end,
@@ -120,16 +122,16 @@ M.lspconfig = {
       "lsp signature_help",
     },
 
-    ["<leader>D"] = {
+    ["<leader>gi"] = {
       function()
         vim.lsp.buf.type_definition()
       end,
       "lsp definition type",
     },
 
-    ["<leader>ra"] = {
+    ["<leader>rn"] = {
       function()
-        require("nvchad_ui.renamer").open()
+        vim.lsp.buf.rename()
       end,
       "lsp rename",
     },
@@ -155,14 +157,14 @@ M.lspconfig = {
       "floating diagnostic",
     },
 
-    ["[g"] = {
+    ["g["] = {
       function()
         vim.diagnostic.goto_prev()
       end,
       "goto prev",
     },
 
-    ["]g"] = {
+    ["g]"] = {
       function()
         vim.diagnostic.goto_next()
       end,
@@ -178,7 +180,7 @@ M.lspconfig = {
 
     ["<leader>fm"] = {
       function()
-        vim.lsp.buf.formatting {}
+        vim.lsp.buf.format { async = true}
       end,
       "lsp formatting",
     },
@@ -223,6 +225,13 @@ M.telescope = {
 
   n = {
     -- find
+    -- Telescope actions
+    ["ga"] = { "<cmd> Telescope commands <CR>", "list of available commands and runs them" },
+    ["gp"] = { "<cmd> Telescope registers <CR>", "list vim register" },
+    ["g<tab>"] = { "<cmd> Telescope buffers <CR>", "list open buffers" },
+    ["gf"] = { "<cmd> Telescope find_files <CR>", "find files" },
+    ["gm"] = { "<cmd> Telescope marks <CR>", "find marks" },
+
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
     ["<leader>fg"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
@@ -237,6 +246,19 @@ M.telescope = {
 
     -- pick a hidden term
     ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "pick hidden term" },
+
+  },
+}
+
+M.fugitive = {
+  plugin = true,
+
+  n = {
+    -- Git
+    ["<leader>gs"] = { "<cmd> Git <CR>", "Git status" },
+    ["<leader>gw"] = { "<cmd> Gwritte <CR>", "Git add" },
+    ["<leader>gd"] = { "<cmd> Gdiffsplit <CR>", "Git diff" },
+    ["<leader>gc"] = { "<cmd> Git commit <CR>", "Git commit" },
 
   },
 }

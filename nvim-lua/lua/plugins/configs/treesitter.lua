@@ -16,9 +16,16 @@ local options ={
     'rust',
     'typescript',
     'clojure',
+    'org',
   },
 
-  highlight = { enable = true, use_languagetree = true },
+  highlight = { 
+    enable = true, 
+    use_languagetree = true,
+    additional_vim_regex_highlighting = {
+      "org"
+    }
+  },
   indent = { enable = true },
   incremental_selection = {
     enable = true,

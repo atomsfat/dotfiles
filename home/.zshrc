@@ -104,3 +104,11 @@ zstyle :prompt:pure:git:stash show yes
 export PATH="/usr/local/sbin:$PATH"
 
 . $(brew --prefix)/opt/asdf/libexec/asdf.sh
+
+source ~/work/dotfiles/nvim-lua/nvl.sh
+
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

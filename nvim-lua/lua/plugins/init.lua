@@ -58,13 +58,18 @@ return packer.startup(function(use)
     after = { 'nvim-treesitter' }
   }
 
-  use {
-    "goolord/alpha-nvim",
-    config = function()
-      require("plugins.configs.alpha").setup()
-    end,
-    wants = "nvim-web-devicons",
-  }
+  -- Startup screen
+  -- use {
+  --     "mhinz/vim-startify"
+  -- }
+  -- use {
+  --   "goolord/alpha-nvim",
+  --   config = function()
+  --     require("plugins.configs.alpha").setup()
+  --   end,
+  --   wants = "nvim-web-devicons",
+  -- }
+
   use {
     "kyazdani42/nvim-web-devicons",
     module = "nvim-web-devicons",
@@ -73,11 +78,106 @@ return packer.startup(function(use)
     end,
   }
 
+  -- Colorschemas
+  use 'folke/tokyonight.nvim'
+  use "rebelot/kanagawa.nvim"
+  use {
+    "catppuccin/nvim",
+    as = "catppuccin",
+    config = function()
+      vim.g.catppuccin_flavour = "latte" -- latte, frappe, macchiato, mocha
+      require("catppuccin").setup(
+        {
+          integrations = {
+            treesitter = true,
+            telescope = true,
+            nvimtree = true,
+            cmp = true,
+            gitsigns = true,
+          },
+        }
+      )
+      vim.api.nvim_command "colorscheme catppuccin"
+    end
+  }
+  -- Undotree 
+  use {
+    "mbbill/undotree",
+  }
+
+
+  -- org mode
+  use {
+    "nvim-neorg/neorg",
+    run = ":Neorg sync-parsers",
+    config = function()
+        require('neorg').setup {
+          load = {
+                  ["core.defaults"] = {},
+                  ["core.integrations.telescope"] = {},
+                  ["core.norg.concealer"] = {},
+                  ["core.norg.completion"] = {
+                    config = { engine = "nvim-cmp" }
+
+                  },
+                  ["core.norg.dirman"] = {
+                       config = {
+                          workspaces = {
+                              work = "~/neorg_notes/work",
+                              home = "~/neorg_notes/home",
+                          }
+                      }
+                  },
+                  ["core.export"] = {},
+                  ["core.export.markdown"] = {
+                    config = {
+                        extensions = "all",
+                    },
+                },
+              }
+        }
+    end,
+    requires = {
+      "nvim-lua/plenary.nvim",
+      "nvim-neorg/neorg-telescope"
+    },
+  }
+  use {'nvim-orgmode/orgmode', config = function()
+    require('orgmode').setup_ts_grammar()
+    require('orgmode').setup{
+      org_agenda_files = {'~/org_notes/*', },
+      org_default_notes_file = '~/org_notes/refile.org',
+      org_capture_templates = {
+        r = {
+        description = "Repo",
+        template = "* [[%x][%(return string.match('%x', '([^/]+)$'))]]%?",
+        target = "~/org_notes/repos.org",
+        },
+        e =  'Event',
+          er = {
+            description = 'recurring',
+            template = '** %?\n %T',
+            target = '~/org_notes/calendar.org',
+            headline = 'recurring'
+          },
+          eo = {
+            description = 'one-time',
+            template = '** %?\n %T',
+            target = '~/org_notes/calendar.org',
+            headline = 'one-time'
+          }
+      }
+
+    }
+    end
+  }
+
+  -- File explorer
   use {
     "kyazdani42/nvim-tree.lua",
     ft = "alpha",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
-    requires = {  "kyazdani42/nvim-web-devicons",},
+    requires = { "kyazdani42/nvim-web-devicons", "catppuccin" },
     config = function()
       require "plugins.configs.nvimtree"
     end,
@@ -86,24 +186,23 @@ return packer.startup(function(use)
     end,
   }
 
-  use 'folke/tokyonight.nvim'
-
+  -- Status line and winbar
   use {
     'nvim-lualine/lualine.nvim',
+    requires = { "catppuccin", "nvim-web-devicons", },
     config = function()
       require "plugins.configs.lualine"
     end,
-    requires = {"nvim-web-devicons",},
   }
 
-  use {
-    "akinsho/nvim-bufferline.lua",
-    event = "BufReadPre",
-    wants = "nvim-web-devicons",
-    config = function()
-      require "plugins.configs.bufferline"
-    end,
-  }
+  -- use {
+  --   "akinsho/nvim-bufferline.lua",
+  --   event = "BufReadPre",
+  --   wants = "nvim-web-devicons",
+  --   config = function()
+  --     require "plugins.configs.bufferline"
+  --   end,
+  -- }
 
 
   use {
@@ -114,9 +213,13 @@ return packer.startup(function(use)
     end,
   }
 
+  -- Clojure 
+  --
+  use 'Olical/conjure'
+
   use {
     "nvim-telescope/telescope.nvim",
-    cmd = "Telescope",
+    -- cmd = "Telescope",
     config = function()
       require "plugins.configs.telescope"
     end,
@@ -175,13 +278,29 @@ return packer.startup(function(use)
     end,
   }
 
+  use { "hrsh7th/cmp-path", after = "nvim-cmp" }
+
   -- Snippet Engine and Snippet Expansion
-  use {
-    'L3MON4D3/LuaSnip',
+  use { 'L3MON4D3/LuaSnip',
     requires = { 'saadparwaiz1/cmp_luasnip' },
     after = "nvim-cmp",
     config = function()
       require("plugins.configs.others").luasnip()
+    end,
+  }
+
+  -- Git integrations
+  use {
+    "tpope/vim-fugitive",
+    setup = function()
+      require("core.utils").load_mappings "fugitive"
+    end,
+  }
+
+  use {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("plugins.configs.others").gitsigns()
     end,
   }
 
@@ -201,6 +320,16 @@ return packer.startup(function(use)
       require('Comment').setup()
     end
   }
+
+  use {
+    'ggandor/leap.nvim',
+    config = function()
+      require('leap').add_default_mappings() 
+    end
+  }
+
+  -- Display registers
+  use { 'junegunn/vim-peekaboo'}
 
   -- Detect tabstop and shiftwidth automatically
   use 'tpope/vim-sleuth'

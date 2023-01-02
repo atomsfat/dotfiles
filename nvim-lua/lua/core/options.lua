@@ -20,7 +20,7 @@ opt.updatetime = 250 --Decrease update time
 opt.signcolumn = "yes" -- Always show sign column
 opt.clipboard = "unnamedplus" -- Access system clipboard
 opt.writebackup = false
-opt.fileencoding = "utf-8" 
+opt.fileencoding = "utf-8"
 opt.swapfile = false
 
 -- Treesitter based folding
@@ -46,4 +46,11 @@ vim.cmd [[
 ]]
 
 -- Set colorscheme
-vim.cmd [[colorscheme tokyonight]]
+-- vim.cmd [[
+--   try
+--     colorscheme tokyonight
+--   catch /^Vim\%((\a\+)\)\=:E185/
+--     colorscheme default
+--     set background=dark
+--   endtry
+-- ]]

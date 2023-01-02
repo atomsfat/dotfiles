@@ -54,10 +54,13 @@ local options = {
     },
   },
   pickers = {
-        buffers = {
-            ignore_current_buffer = true,
-            sort_lastused = true,
-        },
+    buffers = {
+        ignore_current_buffer = true,
+        sort_lastused = true,
+    },
+    colorscheme = {
+      enable_preview = true
+    },
   },
 
   -- extensions_list = { "themes", "terms" },
