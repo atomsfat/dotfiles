@@ -8,7 +8,7 @@ M.servers = {
   'rust_analyzer', 
   'pyright', 
   'tsserver', 
-  'sumneko_lua',
+  'lua_ls',
   'clojure_lsp',
   'jdtls',
 }
