@@ -7,9 +7,6 @@ rm -rf $NVIM
 mkdir -p $NVIM/share
 mkdir -p $NVIM/nvim
 
-
-
-stow -t ~ tmux
 stow -t ~ home
 stow -t $NVIM nvim
 

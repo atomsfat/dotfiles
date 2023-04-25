@@ -6,6 +6,7 @@ brew 'zplug'
 brew 'luajit', args:['HEAD']
 brew 'stow'
 brew 'git-extras'
+brew 'git-delta'
 brew 'bat'
 brew 'git-delta'
 brew 'ipcalc'
