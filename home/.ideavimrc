@@ -83,6 +83,7 @@ nnoremap gf :action GotoFile<CR>
 nnoremap ga :action GotoAction<CR>
 nnoremap gs :action GotoSymbol<CR>
 nnoremap gj :action SearchEverywhere<cr>
+
 nnoremap gr :action RecentChangedFiles<cr>
 nnoremap g<tab> :action Switcher<cr>
 

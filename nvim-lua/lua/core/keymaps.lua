@@ -229,7 +229,7 @@ M.telescope = {
     ["ga"] = { "<cmd> Telescope commands <CR>", "list of available commands and runs them" },
     ["gp"] = { "<cmd> Telescope registers <CR>", "list vim register" },
     ["g<tab>"] = { "<cmd> Telescope buffers <CR>", "list open buffers" },
-    ["gf"] = { "<cmd> Telescope find_files <CR>", "find files" },
+    -- ["gf"] = { "<cmd> Telescope find_files <CR>", "find files" },
     ["gm"] = { "<cmd> Telescope marks <CR>", "find marks" },
 
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },

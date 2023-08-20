@@ -4,6 +4,7 @@ local opt = vim.opt
 
 -- Remap leader and local leader to <Space>
 api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
+api.nvim_command "setlocal sloc=statusline"
 g.mapleader = " "
 g.maplocalleader = " "
 
@@ -23,7 +24,7 @@ opt.writebackup = false
 opt.fileencoding = "utf-8"
 opt.swapfile = false
 
--- Treesitter based folding
+-- Treesitter based foldinc
 opt.foldlevel = 20
 opt.foldmethod = "expr"
 opt.foldexpr = "nvim_treesitter#foldexpr()"

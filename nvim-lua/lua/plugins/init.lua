@@ -115,12 +115,12 @@ return packer.startup(function(use)
           load = {
                   ["core.defaults"] = {},
                   ["core.integrations.telescope"] = {},
-                  ["core.norg.concealer"] = {},
-                  ["core.norg.completion"] = {
+                  ["core.concealer"] = {},
+                  ["core.completion"] = {
                     config = { engine = "nvim-cmp" }
 
                   },
-                  ["core.norg.dirman"] = {
+                  ["core.dirman"] = {
                        config = {
                           workspaces = {
                               work = "~/neorg_notes/work",
@@ -215,7 +215,10 @@ return packer.startup(function(use)
 
   -- Clojure 
   --
-  use 'Olical/conjure'
+  use {
+    "Olical/conjure",
+    tag = ""
+  }
 
   use {
     "nvim-telescope/telescope.nvim",
@@ -239,7 +242,10 @@ return packer.startup(function(use)
   -- Automatically install language servers to st:dpath
   use {
     'williamboman/mason-lspconfig.nvim',
-    requires = {  "williamboman/mason-lspconfig.nvim",},
+    requires = {
+      'williamboman/mason.nvim',
+      "williamboman/mason-lspconfig.nvim",
+    },
     config = function()
       local servers = require("custom.lsp").servers
       require('mason-lspconfig').setup {

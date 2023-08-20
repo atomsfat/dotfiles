@@ -107,8 +107,11 @@ export PATH="/usr/local/sbin:$PATH"
 
 source ~/.config/nvim-lua/nvim/nvl.sh
 
+#PYENV
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+
