@@ -45,7 +45,7 @@ M.general = {
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
 
     -- new buffer
-    ["<leader>b"] = { "<cmd> enew <CR>", "new buffer" },
+    -- ["<leader>b"] = { "<cmd> enew <CR>", "new buffer" },
 
     -- split 
     ["<leader>-"] = { ":split<CR>", "horizontal split" },
@@ -150,7 +150,7 @@ M.lspconfig = {
       "lsp references",
     },
 
-    ["<leader>f"] = {
+    ["<leader>sw"] = {
       function()
         vim.diagnostic.open_float()
       end,
@@ -226,23 +226,22 @@ M.telescope = {
   n = {
     -- find
     -- Telescope actions
-    ["ga"] = { "<cmd> Telescope commands <CR>", "list of available commands and runs them" },
-    ["gp"] = { "<cmd> Telescope registers <CR>", "list vim register" },
-    ["g<tab>"] = { "<cmd> Telescope buffers <CR>", "list open buffers" },
+    ["<leader>a"] = { "<cmd> Telescope commands <CR>", "list of available commands and runs them" },
+    ["<leader>p"] = { "<cmd> Telescope registers <CR>", "list vim register" },
+    ["<leader><tab>"] = { "<cmd> Telescope buffers <CR>", "list open buffers" },
     -- ["gf"] = { "<cmd> Telescope find_files <CR>", "find files" },
-    ["gm"] = { "<cmd> Telescope marks <CR>", "find marks" },
+    ["<leader>m"] = { "<cmd> Telescope marks <CR>", "find marks" },
 
-    ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
+    ["<leader>f"] = { "<cmd> Telescope find_files <CR>", "find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
-    ["<leader>fg"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
-    ["<leader>fb"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
-    ["<leader>fh"] = { "<cmd> Telescope help_tags <CR>", "help page" },
-    ["<leader>fo"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
-    ["<leader>tk"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
+    ["<leader>g"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
+    ["<leader>h"] = { "<cmd> Telescope help_tags <CR>", "help page" },
+    ["<leader>r"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
+    ["<leader>t"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
 
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "git commits" },
-    ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "git status" },
+    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "git status" },
 
     -- pick a hidden term
     ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "pick hidden term" },

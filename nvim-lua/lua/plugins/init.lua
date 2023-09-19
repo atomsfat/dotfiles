@@ -244,7 +244,6 @@ return packer.startup(function(use)
     'williamboman/mason-lspconfig.nvim',
     requires = {
       'williamboman/mason.nvim',
-      "williamboman/mason-lspconfig.nvim",
     },
     config = function()
       local servers = require("custom.lsp").servers
