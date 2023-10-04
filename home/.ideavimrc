@@ -4,6 +4,7 @@ set showmode
 set showcmd
 set ideastatusicon='gray'
 let g:EasyMotion_override_acejump = 0
+set ideavimsupport=
 
 " Disable macros
 nnoremap Q <nop>
@@ -73,39 +74,29 @@ nnoremap <leader>s :action GotoRelated<CR>
 nnoremap <leader>h :action CallHierarchy<CR>
 nnoremap <leader>b :action ShowNavBar<CR>
 
-" Intellij actions
-nnoremap go :action GotoClass<CR>
-nnoremap gi :action GotoImplementation<CR>
-nnoremap gd :action GotoDeclaration<CR>
-nnoremap gp :action GotoSuperMethod<CR>
-nnoremap gt :action GotoTest<CR>
-nnoremap gf :action GotoFile<CR>
-nnoremap ga :action GotoAction<CR>
-nnoremap gs :action GotoSymbol<CR>
-nnoremap gj :action SearchEverywhere<cr>
 
-nnoremap gr :action RecentChangedFiles<cr>
-nnoremap g<tab> :action Switcher<cr>
+nnoremap <leader>o :action GotoClass<CR>
+nnoremap <leader>i :action GotoImplementation<CR>
+nnoremap <leader>d :action GotoDeclaration<CR>
+nnoremap <leader>p :action GotoSuperMethod<CR>
+nnoremap <leader>t :action GotoTest<CR>
+nnoremap <leader>f :action GotoFile<CR>
+nnoremap <leader>a :action GotoAction<CR>
+nnoremap <leader>s :action GotoSymbol<CR>
+nnoremap <leader>j :action SearchEverywhere<cr>
+nnoremap <leader>r :action RecentChangedFiles<cr>
+nnoremap <leader>l :action RecentLocations<CR>
+nnoremap <leader>g :action FindInPath<cr>
+nnoremap <leader><tab> :action Switcher<cr>
+nnoremap <leader>e :action GotoNextError<CR>
+nnoremap <leader>E :action GotoPreviousError<CR>
 
-nnoremap gl :action RecentLocations<cr>
+
 nnoremap g[ :action Back<cr>
 nnoremap g] :action Forward<cr>
 
-" nmap <leader>/ :action Find<cr>
-" nmap <leader>/  :action CommentByLineComment<cr>
-nnoremap <leader>ff :action FindInPath<cr>
-nnoremap <leader>p :action FileStructurePopup<cr>
-nnoremap <leader>t :action GotoFile<cr>
-" nnoremap <leader>o :action GotoClass<cr>
-nnoremap <leader><tab> :action Switcher<cr>
-" nnoremap <leader>e :action RecentChangedFiles<cr>
-nnoremap <leader>a :action GotoAction<cr>
 
-nnoremap <c-r> :action RecentFiles<CR>
-nnoremap <leader>l :action RecentLocations<CR>
-nnoremap <leader>h  :action LocalHistory.ShowHistory<CR>
-nnoremap ge :action GotoNextError<CR>
-nnoremap gE :action GotoPreviousError<CR>
+" nmap <leader>/  :action CommentByLineComment<cr>
 
 " Split
 nnoremap <leader>\ :action SplitVertically<CR>
@@ -118,7 +109,7 @@ nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
 nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
 
 set laststatus=2
-nnoremap <leader>h :nohlsearch<CR>
+" nnoremap <esc> :noh<CR>
 
 " Nerdtree
 nnoremap <leader>n :NERDTreeToggle<cr>
@@ -157,7 +148,7 @@ nnoremap U <C-R>
 
 " Code refactoring
 " nnoremap <leader>c :action CommentByLineComment<CR>
-nnoremap <leader>r :action Refactorings.QuickListPopupAction<CR>
+nnoremap <leader>re :action Refactorings.QuickListPopupAction<CR>
 nnoremap <Leader>=  :action ReformatCode<CR>
 nnoremap <leader>o :action OptimizeImports<CR>
 
