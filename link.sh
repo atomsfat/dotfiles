@@ -2,7 +2,6 @@
 NVIM=~/.config/nvim
 rm -rf $NVIM
 
-rm -rf $NVIM
 
 mkdir -p $NVIM/share
 mkdir -p $NVIM/nvim

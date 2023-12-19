@@ -1,6 +1,6 @@
 #!/bin/sh
 
-NVIM_LUA=~/.config/nvim-lua-lazy
+NVIM_LUA=~/.config/nvim-lua-packer
 export NVIM_LUA
 
 rm -rf $NVIM_LUA
