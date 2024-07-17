@@ -1,4 +1,3 @@
-local M = {}
 local merge_tb = vim.tbl_deep_extend
 
 return function(section, mapping_opt)
@@ -24,12 +23,10 @@ return function(section, mapping_opt)
 
   local mappings = require "core.keymaps"
 
-
   if type(section) == "string" then
     mappings[section]["plugin"] = nil
     mappings = { mappings[section] }
   end
-
 
   for _, sect in pairs(mappings) do
     set_section_map(sect)

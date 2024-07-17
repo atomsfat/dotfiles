@@ -34,7 +34,6 @@ M.general = {
     -- ["<leader>n"] = { "<cmd> set nu! <CR>", "toggle line number" },
     -- ["<leader>rn"] = { "<cmd> set rnu! <CR>", "toggle relative number" },
 
-
     -- Allow moving the cursor through wrapped lines with j, k, <Up> and <Down>
     -- http://www.reddit.com/r/vim/comments/2k4cbr/problem_with_gj_and_gk/
     -- empty mode is same as using <cmd> :map
@@ -47,7 +46,7 @@ M.general = {
     -- new buffer
     -- ["<leader>b"] = { "<cmd> enew <CR>", "new buffer" },
 
-    -- split 
+    -- split
     ["<leader>-"] = { ":split<CR>", "horizontal split" },
     ["<leader>\\"] = { ":vsplit<CR>", "vertical split" },
 
@@ -61,15 +60,13 @@ M.general = {
     ["<leader><tab>"] = { ":b#<CR>", "switch last buffer" },
     --  repmap ; to ;
     [";"] = { ":", "remap ; :" },
-
   },
-
 
   v = {
     ["<Up>"] = { 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', opts = { expr = true } },
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', opts = { expr = true } },
-    ["J"] = { ":m '>+1<CR>gv=gv'"},
-    ["K"] = { ":m '<-2<CR>gv=gv'"},
+    ["J"] = { ":m '>+1<CR>gv=gv'" },
+    ["K"] = { ":m '<-2<CR>gv=gv'" },
   },
 
   x = {
@@ -91,14 +88,14 @@ M.lspconfig = {
       function()
         vim.lsp.buf.declaration()
       end,
-      "lsp declaration",
+      "Goto declaration",
     },
 
     ["gd"] = {
       function()
-        vim.lsp.buf.definition()
+        require("telescope.builtin").lsp_definitions { reuse_win = true }
       end,
-      "lsp definition",
+      "Goto definition",
     },
 
     ["H"] = {
@@ -110,23 +107,25 @@ M.lspconfig = {
 
     ["gi"] = {
       function()
-        vim.lsp.buf.implementation()
+        require("telescope.builtin").lsp_implementations { reuse_win = true }
+        -- vim.lsp.buf.implementation()
       end,
-      "lsp implementation",
+      "Goto implementation",
     },
 
-    ["<leader>ls"] = {
+    ["gk"] = {
       function()
         vim.lsp.buf.signature_help()
       end,
       "lsp signature_help",
     },
 
-    ["<leader>gi"] = {
+    ["gy"] = {
       function()
-        vim.lsp.buf.type_definition()
+        require("telescope.builtin").lsp_type_definitions { reuse_win = true }
+        -- vim.lsp.buf.type_definition()
       end,
-      "lsp definition type",
+      "Goto T[y]pe definition",
     },
 
     ["<leader>rn"] = {
@@ -180,7 +179,7 @@ M.lspconfig = {
 
     ["<leader>fm"] = {
       function()
-        vim.lsp.buf.format { async = true}
+        vim.lsp.buf.format { async = true }
       end,
       "lsp formatting",
     },
@@ -235,6 +234,7 @@ M.telescope = {
     ["<leader>f"] = { "<cmd> Telescope find_files <CR>", "find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
     ["<leader>g"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
+    ["<leader>b"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>h"] = { "<cmd> Telescope help_tags <CR>", "help page" },
     ["<leader>r"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
     ["<leader>t"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
@@ -245,7 +245,6 @@ M.telescope = {
 
     -- pick a hidden term
     ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "pick hidden term" },
-
   },
 }
 
@@ -258,7 +257,6 @@ M.fugitive = {
     ["<leader>gw"] = { "<cmd> Gwritte <CR>", "Git add" },
     ["<leader>gd"] = { "<cmd> Gdiffsplit <CR>", "Git diff" },
     ["<leader>gc"] = { "<cmd> Git commit <CR>", "Git commit" },
-
   },
 }
 

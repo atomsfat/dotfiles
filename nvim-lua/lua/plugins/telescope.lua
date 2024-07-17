@@ -1,13 +1,14 @@
-return  {
+return {
 
   {
-    "nvim-telescope/telescope.nvim", tag = '0.1.3',
+    "nvim-telescope/telescope.nvim",
+    tag = "0.1.5",
     dependencies = { "nvim-treesitter/nvim-treesitter", { "nvim-telescope/telescope-fzf-native.nvim", build = "make" } },
     cmd = "Telescope",
     init = function()
-      require("core.load_mappings")("telescope")
+      require "core.load_mappings" "telescope"
     end,
-    opts = function() 
+    opts = function()
       local options = {
         defaults = {
           vimgrep_arguments = {
@@ -59,11 +60,11 @@ return  {
         },
         pickers = {
           buffers = {
-              ignore_current_buffer = true,
-              sort_lastused = true,
+            ignore_current_buffer = true,
+            sort_lastused = true,
           },
           colorscheme = {
-            enable_preview = true
+            enable_preview = true,
           },
         },
         extensions_list = { "fzf" },
@@ -76,7 +77,7 @@ return  {
           },
         },
       }
-      return options;
+      return options
     end,
     config = function(_, opts)
       local telescope = require "telescope"
@@ -86,5 +87,5 @@ return  {
         telescope.load_extension(ext)
       end
     end,
-  }
+  },
 }
