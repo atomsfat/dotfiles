@@ -1,12 +1,17 @@
-local present, blankline= pcall(require, "indent_blankline")
+local present, blankline= pcall(require, "ibl")
 
 if not present then
   return
 end
 
+local highlight = {
+    "CursorColumn",
+    "Whitespace",
+}
+
 local options = {
-  indentLine_enabled = 1,
-  filetype_exclude = {
+  exclude = {
+    filetypes = {
     "help",
     "terminal",
     "alpha",
@@ -15,13 +20,18 @@ local options = {
     "TelescopePrompt",
     "TelescopeResults",
     "mason",
-    "",
+
+    },
+    buftypes = {
+      "terminal"
+    }
   },
-  buftype_exclude = { "terminal" },
-  show_trailing_blankline_indent = false,
-  show_first_indent_level = false,
-  show_current_context = true,
-  show_current_context_start = true,
+  indent = { highlight = highlight, char = "" },
+    whitespace = {
+        highlight = highlight,
+        remove_blankline_trail = false,
+    },
+    scope = { enabled = false },
 }
 
 
