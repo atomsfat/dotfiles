@@ -88,8 +88,6 @@ batdiff() {
 source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 
-[ -s "~/.web3j/source.sh" ] && source "~/.web3j/source.sh"
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 popup-tmux-search() {
