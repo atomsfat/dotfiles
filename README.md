@@ -15,10 +15,6 @@ brew bundle
 ./link.sh
 ```
 
-### Setup nvim lua(inside dotfiles/nvim-lua)
-```
-./install.sh
-```
 
 ### Install nerd fonts
 
@@ -40,8 +36,9 @@ brew cask install font-hack-nerd-font
   ln -s ~/Workspace/github/dotfiles/tmux_wsdl.conf ~/.tmux_wsdl.conf
 ```
 
-Edit `%AppData%/Roaming/wsltty/config` config font `Font=RobotoMono Nerd Font`
-Install Neovim for windows 'choco install neovim'
+* Edit `%AppData%/Roaming/wsltty/config` config font `Font=RobotoMono Nerd Font`
+* Install Neovim for windows 'choco install neovim'
+
 ## Enable clipboard on windows
 ```
    sudo ln -s /mnt/c/tools/neovim/Neovim/bin/win32yank.exe ~/local/bin/win32yank
@@ -66,13 +63,11 @@ mklink /d ~/.nvim c:\Users\atoms\Workspace\github\dotfiles\nvim\
   pbcopy < ~/.ssh/id_rsa.pub
 ```
 
-### Setting up  old nvim 
+### Setting up nvim 
 ```
-  mkdir -p ~/.config/nvim
-  curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  ln -s ~/Work/dotfiles/nvim/init.vim ~/.config/nvim/init.vim
-  ln -s ~/Work/dotfiles/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
-
+ cd dotfiles/nvim-lua-lazy
+ ./install.sh
+ source ~/.config/nvim-lua-lazy/nvim/nv.sh
 ```
 
 ### To install linters
@@ -81,7 +76,7 @@ mklink /d ~/.nvim c:\Users\atoms\Workspace\github\dotfiles\nvim\
 ```
 
 
-Some ideas from:
+Inpiration from:
 * spf13
 * yadr
 * https://github.com/SpaceVim/SpaceVim/tree/master/config/plugins

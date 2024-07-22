@@ -48,6 +48,7 @@ return packer.startup(function(use)
   -- Highlight, edit, and navigate code
   use {
     'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
     config = function()
       require "plugins.configs.treesitter"
     end,
@@ -188,25 +189,25 @@ return packer.startup(function(use)
   }
 
   -- Collection of configurations for built-in LSP client
-  use {
-    'neovim/nvim-lspconfig',
-    config = function()
-      require "plugins.configs.lspconfig"
-      local on_attach = require("plugins.configs.lspconfig").on_attach
-      local capabilities = require("plugins.configs.lspconfig").capabilities
-      local servers = require("custom.lsp").servers
-
-      local lspconfig = require "lspconfig"
-      -- print(vim.inspect(servers))
-
-      for _, lsp in ipairs(servers) do
-        lspconfig[lsp].setup {
-          on_attach = on_attach,
-          capabilities = capabilities,
-        }
-      end
-    end,
-  }
+  -- use {
+  --   'neovim/nvim-lspconfig',
+  --   config = function()
+  --     require "plugins.configs.lspconfig"
+  --     local on_attach = require("plugins.configs.lspconfig").on_attach
+  --     local capabilities = require("plugins.configs.lspconfig").capabilities
+  --     local servers = require("custom.lsp").servers
+  --
+  --     local lspconfig = require "lspconfig"
+  --     -- print(vim.inspect(servers))
+  --
+  --     for _, lsp in ipairs(servers) do
+  --       lspconfig[lsp].setup {
+  --         on_attach = on_attach,
+  --         capabilities = capabilities,
+  --       }
+  --     end
+  --   end,
+  -- }
 
 
   -- Autocompletion
