@@ -11,7 +11,7 @@ nnoremap Q <nop>
 map q <Nop>
 
 " repmap ; to ;
-nnoremap ; :
+" nnoremap ; :
 " Plugins
 set commentary
 set easymotion
@@ -60,6 +60,10 @@ nnoremap <Leader>en :action EditSourceInNewWindow<CR>
 nnoremap <Leader>n :action NextWindow<CR>
 nnoremap <TAB> :action PreviousTab<CR>
 nnoremap <s-TAB> :action NextTab<CR>
+" buffer switching
+nnoremap <leader>] :bprevious<cr>
+nnoremap <leader>[ :bnext<cr>
+nnoremap <leader><tab> :b#<cr>
 
 " Closing tabs
 nnoremap q :action CloseContent<cr>
@@ -87,13 +91,13 @@ nnoremap <leader>j :action SearchEverywhere<cr>
 nnoremap <leader>r :action RecentChangedFiles<cr>
 nnoremap <leader>l :action RecentLocations<CR>
 nnoremap <leader>g :action FindInPath<cr>
-nnoremap <leader><tab> :action Switcher<cr>
-nnoremap <leader>e :action GotoNextError<CR>
-nnoremap <leader>E :action GotoPreviousError<CR>
+nnoremap <leader>b :action Switcher<cr>
+"nnoremap <leader>e :action GotoNextError<CR>
+"nnoremap <leader>E :action GotoPreviousError<CR>
 
 
-nnoremap g[ :action Back<cr>
-nnoremap g] :action Forward<cr>
+"nnoremap g[ :action Back<cr>
+"nnoremap g] :action Forward<cr>
 
 
 " nmap <leader>/  :action CommentByLineComment<cr>
