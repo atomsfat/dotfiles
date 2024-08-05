@@ -24,6 +24,12 @@ M.general = {
     ["<C-j>"] = { "<C-w>j", "window down" },
     ["<C-k>"] = { "<C-w>k", "window up" },
 
+    -- resize windows
+    ["<A-h>"] = { "<C-w><", "res left" },
+    ["<A-l>"] = { "<C-w>>", "res right" },
+    ["<A-j>"] = { ":res -1<CR>", "res down" },
+    ["<A-k>"] = { ":res +3<CR>", "res up" },
+
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "save file" },
 
@@ -53,13 +59,13 @@ M.general = {
     -- close buffer
     ["q"] = { ":bd<CR>", "close buffer" },
     -- redo
-    ["U"] = { ":<C-R>", "redo" },
+    ["U"] = { "<C-R>", "redo changes" },
     -- buffer switching
     ["<leader>."] = { ":bnext<CR>", "next buffer" },
     ["<leader>,"] = { ":bprevious<CR>", "previous buffer" },
     ["<leader><tab>"] = { ":b#<CR>", "switch last buffer" },
     --  repmap ; to ;
-    [";"] = { ":", "remap ; :" },
+    -- [";"] = { ":", "remap ; :" },
   },
 
   v = {
@@ -177,7 +183,7 @@ M.lspconfig = {
       "diagnostic setloclist",
     },
 
-    ["<leader>fm"] = {
+    ["<leader>="] = {
       function()
         vim.lsp.buf.format { async = true }
       end,
@@ -227,13 +233,13 @@ M.telescope = {
     -- Telescope actions
     ["<leader>a"] = { "<cmd> Telescope commands <CR>", "list of available commands and runs them" },
     ["<leader>p"] = { "<cmd> Telescope registers <CR>", "list vim register" },
-    ["<leader><tab>"] = { "<cmd> Telescope buffers <CR>", "list open buffers" },
+    -- ["<leader><tab>"] = { "<cmd> Telescope buffers <CR>", "list open buffers" },
     -- ["gf"] = { "<cmd> Telescope find_files <CR>", "find files" },
     ["<leader>m"] = { "<cmd> Telescope marks <CR>", "find marks" },
 
-    ["<leader>f"] = { "<cmd> Telescope find_files <CR>", "find files" },
+    ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
-    ["<leader>g"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
+    ["<leader>gr"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
     ["<leader>b"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>h"] = { "<cmd> Telescope help_tags <CR>", "help page" },
     ["<leader>r"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
@@ -241,10 +247,7 @@ M.telescope = {
 
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "git commits" },
-    ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "git status" },
-
-    -- pick a hidden term
-    ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "pick hidden term" },
+    -- ["<leader>gs"] = { "<cmd> Telescope git_status <CR>", "git status" },
   },
 }
 

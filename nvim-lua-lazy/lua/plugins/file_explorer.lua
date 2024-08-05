@@ -8,77 +8,12 @@ local view = {
   float = {
     enable = true,
     open_win_config = {
-        relative = "editor",
-        border = "rounded",
-        width = width,
-        height = height,
-        col = (ui.width/2) - (width/2),
-        row = (ui.height/2) - (height/2),
-      },
-  },
-}
-
-local options = {
-  on_attach = "default",
-  disable_netrw = true,
-  hijack_netrw = true,
-  view = {
-    number = true,
-    relativenumber = false,
-    float = {
-      enable = true,
-      open_win_config = {
-          relative = "editor",
-          border = "rounded",
-          width = width,
-          height = height,
-          col = (ui.width/2) - (width/2),
-          row = (ui.height/2) - (height/2),
-        },
-    },
-  },
-  filters = {
-    custom = { ".git" },
-  },
- renderer = {
-    highlight_git = false,
-    highlight_opened_files = "none",
-
-    indent_markers = {
-      enable = false,
-    },
-
-    icons = {
-      show = {
-        file = true,
-        folder = true,
-        folder_arrow = true,
-        git = true,
-      },
-
-      glyphs = {
-        default = "",
-        symlink = "",
-        folder = {
-          default = "",
-          empty = "",
-          empty_open = "",
-          open = "",
-          symlink = "",
-          symlink_open = "",
-          arrow_open = "",
-          arrow_closed = "",
-        },
-        git = {
-          unstaged = "✗",
-          staged = "✓",
-          unmerged = "",
-          renamed = "➜",
-          untracked = "★",
-          deleted = "",
-          ignored = "◌",
-        },
-      },
+      relative = "editor",
+      border = "rounded",
+      width = width,
+      height = height,
+      col = (ui.width / 2) - (width / 2),
+      row = (ui.height / 2) - (height / 2),
     },
   },
 }
@@ -89,16 +24,15 @@ return {
     "kyazdani42/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     dependencies = { "kyazdani42/nvim-web-devicons" },
-    init  = function()
-      require("core.load_mappings")("nvimtree")
+    init = function()
+      require "core.load_mappings" "nvimtree"
     end,
     opts = function(_, parentOpts)
       parentOpts.view = view
       return parentOpts
     end,
     config = function(_, opts)
-       require("nvim-tree").setup(opts)
+      require("nvim-tree").setup(opts)
     end,
-  }
-
+  },
 }

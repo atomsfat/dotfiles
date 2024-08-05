@@ -2,7 +2,7 @@ return {
   {
     "tpope/vim-fugitive",
     requires = {},
-    cmd = "Git",
+    -- cmd = "Git",
     init = function()
       require "core.load_mappings" "fugitive"
     end,

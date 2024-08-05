@@ -6,6 +6,10 @@ return {
       parentOps.options = {
         theme = "catppuccin",
       }
+      parentOps.sections = {
+        lualine_b = { "branch", "diff", "diagnostics" },
+        lualine_c = { "%S" },
+      }
 
       return parentOps
     end,

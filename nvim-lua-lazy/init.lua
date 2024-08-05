@@ -23,6 +23,6 @@ vim.cmd [[
      colorscheme catppuccin 
    catch /^Vim\%((\a\+)\)\=:E185/
      colorscheme default
-     set background=dark
+     set background=light
    endtry
  ]]
