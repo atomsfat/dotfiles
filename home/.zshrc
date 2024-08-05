@@ -43,12 +43,12 @@ zplug "b4b4r07/enhancd", use:init.sh
 zplug "~/.zsh", from:local
 
 # Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+# if ! zplug check --verbose; then
+#     printf "Install? [y/N]: "
+#     if read -q; then
+#         echo; zplug install
+#     fi
+# fi
 
 # Then, source plugins and add commands to $PATH
 # zplug load --verbose
@@ -101,9 +101,9 @@ zstyle :prompt:pure:path color 027
 zstyle :prompt:pure:git:stash show yes
 export PATH="/usr/local/sbin:$PATH"
 
-. $(brew --prefix)/opt/asdf/libexec/asdf.sh
+# . $(brew --prefix)/opt/asdf/libexec/asdf.sh
 
-source ~/.config/nvim-lua/nvim/nvl.sh
+source ~/.config/nvim-lua-lazy/nvim/nv.sh
 
 #PYENV
 export PYENV_ROOT="$HOME/.pyenv"

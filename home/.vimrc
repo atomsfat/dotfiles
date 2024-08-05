@@ -148,7 +148,7 @@ nnoremap <leader>\\ :vsplit<CR>
 nnoremap ; :
 
 " Undo
-nnoremap U :<C-R>
+nnoremap U <C-R>
 
 " swap files
 set directory^=$HOME/.vim/tmp//

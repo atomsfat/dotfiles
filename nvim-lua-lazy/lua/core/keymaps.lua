@@ -233,16 +233,14 @@ M.telescope = {
     -- Telescope actions
     ["<leader>a"] = { "<cmd> Telescope commands <CR>", "list of available commands and runs them" },
     ["<leader>p"] = { "<cmd> Telescope registers <CR>", "list vim register" },
-    -- ["<leader><tab>"] = { "<cmd> Telescope buffers <CR>", "list open buffers" },
-    -- ["gf"] = { "<cmd> Telescope find_files <CR>", "find files" },
     ["<leader>m"] = { "<cmd> Telescope marks <CR>", "find marks" },
 
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
+    ["<leader>fo"] = { "<cmd> Telescope oldfiles<CR>", "find old files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
     ["<leader>gr"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
     ["<leader>b"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>h"] = { "<cmd> Telescope help_tags <CR>", "help page" },
-    ["<leader>r"] = { "<cmd> Telescope oldfiles <CR>", "find oldfiles" },
     ["<leader>t"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
 
     -- git
