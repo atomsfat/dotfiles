@@ -238,7 +238,7 @@ M.telescope = {
     ["<leader>ff"] = { "<cmd> Telescope find_files <CR>", "find files" },
     ["<leader>fo"] = { "<cmd> Telescope oldfiles<CR>", "find old files" },
     ["<leader>fa"] = { "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", "find all" },
-    ["<leader>gr"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
+    ["<leader>fg"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
     ["<leader>b"] = { "<cmd> Telescope buffers <CR>", "find buffers" },
     ["<leader>h"] = { "<cmd> Telescope help_tags <CR>", "help page" },
     ["<leader>t"] = { "<cmd> Telescope keymaps <CR>", "show keys" },
