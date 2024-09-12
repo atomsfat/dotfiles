@@ -67,15 +67,8 @@ return {
             enable_preview = true,
           },
         },
-        extensions_list = { "fzf" },
-        extensions = {
-          fzf = {
-            fuzzy = true,
-            override_generic_sorter = true,
-            override_file_sorter = true,
-            case_mode = "smart_case",
-          },
-        },
+        extensions_list = {},
+        extensions = {},
       }
       return options
     end,
