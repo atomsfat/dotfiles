@@ -77,3 +77,8 @@ vim.g.clipboard = {
   },
   cache_enabled = 1,
 }
+
+if vim.g.neovide then
+  -- Put anything you want to happen only in Neovide here
+  opt.guifont = "Hack NF:h10"
+end
