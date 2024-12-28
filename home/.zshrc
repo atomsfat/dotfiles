@@ -40,6 +40,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "lib/clipboard",   from:oh-my-zsh
 zplug "plugins/brew",   from:oh-my-zsh
 zplug "b4b4r07/enhancd", use:init.sh
+zplug "zpm-zsh/ls"
 zplug "~/.zsh", from:local
 
 # Install plugins if there are plugins that have not been installed
