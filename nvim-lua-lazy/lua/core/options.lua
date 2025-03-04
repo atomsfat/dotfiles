@@ -35,9 +35,9 @@ opt.laststatus = 3
 opt.showcmd = true
 opt.showcmdloc = "statusline"
 opt.statusline = "%f"
-opt.tabline = "%S"
-opt.winbar = "%= %f"
-opt.showtabline = 2
+opt.showtabline = 0
+-- opt.tabline = "%S"
+-- opt.winbar = "%= %f"
 
 -- Highlight on yank
 vim.cmd [[
@@ -84,6 +84,3 @@ if vim.g.neovide then
   -- Put anything you want to happen only in Neovide here
   opt.guifont = "Hack NF:h10"
 end
-
-
-
