@@ -2,7 +2,7 @@
 # https://github.com/rike422/dotfiles
 export PATH=$HOME/bin:/usr/local/bin:/snap/bin:$PATH
 
-if [[ "$(uname -ai)" = *"microsoft"* ]]; then
+if [[ "$(uname -a)" = *"icrosoft"* ]]; then
   export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH" 
 fi
 
@@ -32,10 +32,23 @@ setopt equals             # = command the same as `which command`
 set -o ignoreeof          # Ignre C_D to exit shell
 
 export ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
-source ~/.antidote/antidote.zsh
-source ~/.zsh_plugins.zsh
 
-if [[ "$(uname -a)" = *"microsoft"* ]]; then
+
+# Set the root name of the plugins files (.txt and .zsh) antidote will use.
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
+
+fpath=(~/.antidote/functions $fpath)
+autoload -Uz antidote
+
+
+# Generate a new static file whenever .zsh_plugins.txt is updated.
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  antidote bundle <${zsh_plugins}.txt >|${zsh_plugins}.zsh
+fi
+
+source ${zsh_plugins}.zsh
+
+if [[ "$(uname -a)" = *"icrosoft"* ]]; then
   export PATH=$PATH:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/
 
   # alias pbcopy='xclip -selection clipboard'

@@ -8,6 +8,12 @@ Install brew
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
+
+Install (antidote)[https://antidote.sh/install]
+```bash
+git clone --depth=1 https://github.com/mattmc3/antidote.git ${ZDOTDIR:-~}/.antidote
+```
+
 ```bash
 brew install stow
 stow --target=~ home
@@ -39,10 +45,6 @@ brew cask install font-hack-nerd-font
 * Edit `%AppData%/Roaming/wsltty/config` config font `Font=RobotoMono Nerd Font`
 * Install Neovim for windows 'choco install neovim'
 
-## Enable clipboard on windows
-```
-   sudo ln -s /mnt/c/tools/neovim/Neovim/bin/win32yank.exe ~/local/bin/win32yank
-```
 ```
 Power shell
 mklink /d ~\AppData\Local\nvim c:\Users\atoms\Workspace\github\dotfiles\
