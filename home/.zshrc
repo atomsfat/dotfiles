@@ -1,16 +1,21 @@
 # Resources:
 # https://github.com/rike422/dotfiles
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-if [[ "$(uname -a)" = *"microsoft"* ]]; then
+export PATH=$HOME/bin:/usr/local/bin:/snap/bin:$PATH
+
+if [[ "$(uname -ai)" = *"microsoft"* ]]; then
   export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH" 
 fi
+
 
 
 export EDITOR=vim     # Set editor to vim
 export LANG=en_US.UTF-8
 export LC_TYPE=en_US.UTF-8
+LC_CTYPE=en_US.UTF-8
+LC_ALL=en_US.UTF-8
 export KCODE=utf-8    # Set UTF-8 to KCODE
 export AUTOFEATURE
+export DISABLE_AUTO_TITLE=true
 
 bindkey -v 
 # Reduce latency when pressing <Esc>
@@ -27,33 +32,8 @@ setopt equals             # = command the same as `which command`
 set -o ignoreeof          # Ignre C_D to exit shell
 
 export ZSH_SYSTEM_CLIPBOARD_TMUX_SUPPORT='true'
-# Zplug 
-export ZPLUG_HOME=$(brew --prefix)/opt/zplug
-source $ZPLUG_HOME/init.zsh
-
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-zplug "plugins/git",   from:oh-my-zsh
-zplug "plugins/z",   from:oh-my-zsh
-zplug "lukechilds/zsh-nvm"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "lib/clipboard",   from:oh-my-zsh
-zplug "plugins/brew",   from:oh-my-zsh
-zplug "b4b4r07/enhancd", use:init.sh
-zplug "zpm-zsh/ls"
-zplug "~/.zsh", from:local
-
-# Install plugins if there are plugins that have not been installed
-# if ! zplug check --verbose; then
-#     printf "Install? [y/N]: "
-#     if read -q; then
-#         echo; zplug install
-#     fi
-# fi
-
-# Then, source plugins and add commands to $PATH
-# zplug load --verbose
-zplug load
+source ~/.antidote/antidote.zsh
+source ~/.zsh_plugins.zsh
 
 if [[ "$(uname -a)" = *"microsoft"* ]]; then
   export PATH=$PATH:/mnt/c/Windows/System32:/mnt/c/Windows:/mnt/c/Windows/System32/WindowsPowerShell/v1.0/
@@ -102,15 +82,9 @@ zstyle :prompt:pure:path color 027
 zstyle :prompt:pure:git:stash show yes
 export PATH="/usr/local/sbin:$PATH"
 
-# . $(brew --prefix)/opt/asdf/libexec/asdf.sh
 
-source ~/.config/nvim-lua-lazy/nvim/nv.sh
+[ -f ~/.config/nvim-lua-lazy/nvim/nv.sh ] && source ~/.config/nvim-lua-lazy/nvim/nv.sh
 
-#PYENV
-export PYENV_ROOT="$HOME/.pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-
