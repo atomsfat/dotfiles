@@ -15,14 +15,17 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup "plugins"
 -- require "plugins"
-require "core.load_mappings"()
 
 -- Set colorscheme
 vim.cmd [[
    try
-     colorscheme catppuccin 
+     colorscheme catppuccin-nvim
    catch /^Vim\%((\a\+)\)\=:E185/
      colorscheme default
      set background=light
    endtry
  ]]
+
+vim.schedule(function()
+  require "core.mappings"
+end, 0)

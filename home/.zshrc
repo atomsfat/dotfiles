@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/home/atoms/.oh-my-zsh/custom/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 # Resources:
 # https://github.com/rike422/dotfiles
 export PATH=$HOME/bin:/usr/local/bin:/snap/bin:$PATH
@@ -54,8 +61,9 @@ if [[ "$(uname -a)" = *"icrosoft"* ]]; then
   # alias pbcopy='xclip -selection clipboard'
   # alias pbpaste='xclip -selection clipboard -o'
   # X server
+  # https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
+  export DISPLAY=$(ip route list default | awk '{print $3}'):0
   export LIBGL_ALWAYS_INDIRECT=1
-  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 fi
 
 # Alias
@@ -97,7 +105,17 @@ export PATH="/usr/local/sbin:$PATH"
 
 
 [ -f ~/.config/nvim-lua-lazy/nvim/nv.sh ] && source ~/.config/nvim-lua-lazy/nvim/nv.sh
+# [ -f ~/.config/lazyvim ] && alias lazyvim='XDG_DATA_HOME=~/.config/lazyvim/share XDG_CONFIG_HOME=~/.config/lazyvim nvim' 
+
+alias lazyvim='XDG_DATA_HOME=~/.config/lazyvim/share XDG_CONFIG_HOME=~/.config/lazyvim nvim'
 
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# opencode
+export PATH=/home/atoms/.opencode/bin:$PATH

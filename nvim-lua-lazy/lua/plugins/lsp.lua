@@ -1,5 +1,3 @@
-local load_mappings = require "core.load_mappings"
--- based on : https://github.com/josean-dev/dev-environment-files/blob/main/.config/nvim/lua/josean/plugins/lsp/lspconfig.lua
 return {
   "neovim/nvim-lspconfig",
   event = { "BufReadPre", "BufNewFile" },
@@ -8,125 +6,80 @@ return {
     { "antosha417/nvim-lsp-file-operations", config = true },
   },
   config = function()
-    -- import lspconfig plugin
-    local lspconfig = require "lspconfig"
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-    -- import cmp-nvim-lsp plugin
-    local cmp_nvim_lsp = require "cmp_nvim_lsp"
-
-    local keymap = vim.keymap -- for conciseness
-
-    local opts = { noremap = true, silent = true }
-    local on_attach = function(client, bufnr)
-      opts.buffer = bufnr
-
-      -- set keybinds
-      load_mappings("lspconfig", { buffer = bufnr })
-    end
-
-    -- used to enable autocompletion (assign to every lsp server config)
-    local capabilities = cmp_nvim_lsp.default_capabilities()
-
-    -- Change the Diagnostic symbols in the sign column (gutter)
-    -- (not in youtube nvim video)
     local signs = { Error = " ", Warn = " ", Hint = "󰠠 ", Info = " " }
-    for type, icon in pairs(signs) do
-      local hl = "DiagnosticSign" .. type
-      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-    end
-
-    -- configure html server
-    lspconfig["html"].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    }
-
-    -- configure typescript server with plugin
-    lspconfig["ts_ls"].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    }
-
-    -- configure css server
-    lspconfig["cssls"].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    }
-
-    -- configure tailwindcss server
-    lspconfig["tailwindcss"].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    }
-
-    -- configure svelte server
-    lspconfig["svelte"].setup {
-      capabilities = capabilities,
-      on_attach = function(client, bufnr)
-        on_attach(client, bufnr)
-
-        vim.api.nvim_create_autocmd("BufWritePost", {
-          pattern = { "*.js", "*.ts" },
-          callback = function(ctx)
-            if client.name == "svelte" then
-              client.notify("$/onDidChangeTsOrJsFile", { uri = ctx.file })
-            end
-          end,
-        })
-      end,
-    }
-
-    -- configure prisma orm server
-    lspconfig["prismals"].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    }
-
-    -- configure graphql language server
-    lspconfig["graphql"].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      filetypes = { "graphql", "gql", "svelte", "typescriptreact", "javascriptreact" },
-    }
-
-    -- configure emmet language server
-    lspconfig["emmet_ls"].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "svelte" },
-    }
-
-    -- configure python server
-    lspconfig["pyright"].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    }
-
-    -- configure lua server (with special settings)
-    lspconfig["lua_ls"].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = { -- custom settings for lua
-        Lua = {
-          -- make the language server recognize "vim" global
-          diagnostics = {
-            globals = { "vim" },
-          },
-          workspace = {
-            -- make language server aware of runtime files
-            library = {
-              [vim.fn.expand "$VIMRUNTIME/lua"] = true,
-              [vim.fn.stdpath "config" .. "/lua"] = true,
-            },
+    local ret = {
+      -- options for vim.diagnostic.config()
+      ---@type vim.diagnostic.Opts
+      -- options for vim.diagnostic.config()
+      ---@type vim.diagnostic.Opts
+      diagnostics = {
+        underline = true,
+        update_in_insert = false,
+        virtual_text = {
+          spacing = 4,
+          source = "if_many",
+          prefix = "●",
+          -- this will set set the prefix to a function that returns the diagnostics icon based on the severity
+          -- prefix = "icons",
+        },
+        severity_sort = true,
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = signs.Error,
+            [vim.diagnostic.severity.WARN] = signs.Warn,
+            [vim.diagnostic.severity.HINT] = signs.Hint,
+            [vim.diagnostic.severity.INFO] = signs.Info,
           },
         },
       },
     }
 
+    vim.lsp.config("*", {
+      capabilities = {
+        workspace = {
+          fileOperations = {
+            didRename = true,
+            willRename = true,
+          },
+        },
+      },
+      -- stylua: ignore
+      keys = {
+        -- { "<leader>cl", function() Snacks.picker.lsp_config() end, desc = "Lsp Info" },
+        { "gd", vim.lsp.buf.definition, desc = "Goto Definition", has = "definition" },
+        { "gr", vim.lsp.buf.references, desc = "References", nowait = true },
+        { "gI", vim.lsp.buf.implementation, desc = "Goto Implementation" },
+        { "gy", vim.lsp.buf.type_definition, desc = "Goto T[y]pe Definition" },
+        { "gD", vim.lsp.buf.declaration, desc = "Goto Declaration" },
+        { "K", function() return vim.lsp.buf.hover() end, desc = "Hover" },
+        { "gK", function() return vim.lsp.buf.signature_help() end, desc = "Signature Help", has = "signatureHelp" },
+        { "<c-k>", function() return vim.lsp.buf.signature_help() end, mode = "i", desc = "Signature Help", has = "signatureHelp" },
+        { "<leader>ca", vim.lsp.buf.code_action, desc = "Code Action", mode = { "n", "x" }, has = "codeAction" },
+        { "<leader>cc", vim.lsp.codelens.run, desc = "Run Codelens", mode = { "n", "x" }, has = "codeLens" },
+        { "<leader>cC", vim.lsp.codelens.refresh, desc = "Refresh & Display Codelens", mode = { "n" }, has = "codeLens" },
+        -- { "<leader>cR", function() Snacks.rename.rename_file() end, desc = "Rename File", mode ={"n"}, has = { "workspace/didRenameFiles", "workspace/willRenameFiles" } },
+        { "<leader>cr", vim.lsp.buf.rename, desc = "Rename", has = "rename" },
+        -- { "<leader>cA", LazyVim.lsp.action.source, desc = "Source Action", has = "codeAction" },
+        -- { "]]", function() Snacks.words.jump(vim.v.count1) end, has = "documentHighlight",
+          -- desc = "Next Reference", enabled = function() return Snacks.words.is_enabled() end },
+        -- { "[[", function() Snacks.words.jump(-vim.v.count1) end, has = "documentHighlight",
+          -- desc = "Prev Reference", enabled = function() return Snacks.words.is_enabled() end },
+        -- { "<a-n>", function() Snacks.words.jump(vim.v.count1, true) end, has = "documentHighlight",
+          -- desc = "Next Reference", enabled = function() return Snacks.words.is_enabled() end },
+        -- { "<a-p>", function() Snacks.words.jump(-vim.v.count1, true) end, has = "documentHighlight",
+          -- desc = "Prev Reference", enabled = function() return Snacks.words.is_enabled() end },
+      },
+    })
+
     -- configure jdtls
-    lspconfig["jdtls"].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-    }
+    -- vim.lsp.config["jdtls"] = {
+    --   capabilities = capabilities,
+    -- }
+
+    vim.diagnostic.config(vim.deepcopy(ret.diagnostics))
+
+    return ret
   end,
 }

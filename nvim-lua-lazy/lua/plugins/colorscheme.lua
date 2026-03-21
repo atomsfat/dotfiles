@@ -15,7 +15,7 @@ return {
     priority = 1000,
     opts = {
       integrations = {
-        alpha = true,
+        alpha = false,
         cmp = true,
         flash = true,
         gitsigns = true,

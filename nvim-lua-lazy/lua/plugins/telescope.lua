@@ -2,12 +2,22 @@ return {
 
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.8",
+    tag = "v0.2.0",
     dependencies = { "nvim-treesitter/nvim-treesitter" },
     cmd = "Telescope",
-    init = function()
-      require "core.load_mappings" "telescope"
-    end,
+    keys = {
+      { "<leader>a", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree Toggle" },
+      { "<leader>a", "<cmd> Telescope commands <CR>", desc = "list of available commands and runs them" },
+      { "<leader>p", "<cmd> Telescope registers <CR>", desc = "list vim register" },
+      { "<leader>m", "<cmd> Telescope marks <CR>", desc = "find marks" },
+      { "<leader>ff", "<cmd> Telescope find_files <CR>", desc = "find files" },
+      { "<leader>fo", "<cmd> Telescope oldfiles<CR>", desc = "find old files" },
+      { "<leader>fa", "<cmd> Telescope find_files follow=true no_ignore=true hidden=true <CR>", desc = "find all" },
+      { "<leader>fg", "<cmd> Telescope live_grep <CR>", desc = "live grep" },
+      { "<leader>b", "<cmd> Telescope buffers <CR>", desc = "find buffers" },
+      { "<leader>h", "<cmd> Telescope help_tags <CR>", desc = "help page" },
+      { "<leader>t", "<cmd> Telescope keymaps <CR>", desc = "show keys" },
+    },
     opts = function()
       local options = {
         defaults = {
@@ -67,18 +77,9 @@ return {
             enable_preview = true,
           },
         },
-        extensions_list = {},
         extensions = {},
       }
       return options
-    end,
-    config = function(_, opts)
-      local telescope = require "telescope"
-      telescope.setup(opts)
-      -- load extensions
-      for _, ext in ipairs(opts.extensions_list) do
-        telescope.load_extension(ext)
-      end
     end,
   },
 }

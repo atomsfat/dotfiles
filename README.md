@@ -72,6 +72,15 @@ mklink /d ~/.nvim c:\Users\atoms\Workspace\github\dotfiles\nvim\
  source ~/.config/nvim-lua-lazy/nvim/nv.sh
 ```
 
+### Setting lazyvim
+```
+mkdir -p ~/.config/lazyvim/share
+git clone https://github.com/LazyVim/starter ~/.config/lazyvim/nvim
+
+#Set lazyvim alias
+alias lazyvim='XDG_DATA_HOME=~/.config/lazyvim/share XDG_CONFIG_HOME=~/.config/lazyvim nvim' 
+```
+
 ### To install linters
 ```bash
   npm install -g eslint

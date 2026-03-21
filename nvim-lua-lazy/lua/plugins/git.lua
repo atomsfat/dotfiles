@@ -4,7 +4,7 @@ return {
     requires = {},
     -- cmd = "Git",
     init = function()
-      require "core.load_mappings" "fugitive"
+      -- require "core.load_mappings" "fugitive"
     end,
   },
   {

@@ -24,15 +24,13 @@ return {
     "kyazdani42/nvim-tree.lua",
     cmd = { "NvimTreeToggle", "NvimTreeFocus" },
     dependencies = { "kyazdani42/nvim-web-devicons" },
-    init = function()
-      require "core.load_mappings" "nvimtree"
-    end,
     opts = function(_, parentOpts)
       parentOpts.view = view
       return parentOpts
     end,
-    config = function(_, opts)
-      require("nvim-tree").setup(opts)
-    end,
+    keys = {
+      { "<leader>n", "<cmd>NvimTreeToggle<cr>", desc = "NvimTree Toggle" },
+      { "<leader>e", "<cmd>NvimTreeFocus<cr>", desc = "NvimTree locate file" },
+    },
   },
 }
