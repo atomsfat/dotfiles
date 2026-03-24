@@ -7,3 +7,4 @@ tmux-client-9180.log
 vim/plugged
 *.iml
 .netrwhist
+home/local_env.sh
